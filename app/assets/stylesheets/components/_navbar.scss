@@ -10,3 +10,56 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.translucent-background {
+    background: rgba(0,0,0,0.0);
+}
+
+.navbar {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+}
+
+.onebite-home {
+	color: rgba(244,244,244,1.0);
+	font-size: 36px;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	font-family: nunito;
+	transition: 0.2s;
+}
+
+.banner-h1 {
+	font-family: helvetica;
+  font-weight: normal;
+  color: rgba(244,244,244,1.0);
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	font-size: 24px;
+}
+
+.banner-p {
+	font-family: helvetica;
+  font-weight: normal;
+  color: rgba(244,244,244,1.0);
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	font-size: 16px;
+}
+
+.navbar-link-text {
+	color: rgba(244,244,244,1.0) !important;
+	font-size: 16px;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+	font-family: helvetica;
+  transition: 0.2s;
+}
+
+.navbar-link-text:hover {
+	text-decoration: none !important;
+	color: rgb(204,204,204) !important;
+}
+
+.onebite-home:hover {
+	text-decoration: none;
+	color: rgb(204,204,204);
+}
