@@ -1,0 +1,44 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: #f4f4f4 !important;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-searchbar {
+  position: relative;
+  top: 96px;
+  width: 40vw;
+  height: 2.4em;
+}
+
+.banner-searchbar-round {
+  border-radius: 40px 0px 0px 40px;
+}
+
+.banner-searchbar-roundbutton {
+  border-radius: 0px 40px 40px 0px;
+  background-color: #FF9A76;
+  width: 120px;
+  border: none;
+  transition: 0.2s;
+}
+
+.banner-searchbar-roundbutton:hover {
+  background-color: #fa855b;
+}
+

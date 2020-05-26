@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+# require 'nokogiri'
 
 puts 'Cleaning up the courses...'
 Course.destroy_all
@@ -77,6 +79,7 @@ puts 'Creating courses...'
   platform_id: @codecademy.id
 )
 
+
 @learn_c_plus_plus = Course.create!(
   title: 'Learn C++',
   url: 'https://www.codecademy.com/learn/learn-c-plus-plus',
@@ -106,6 +109,23 @@ puts 'Creating courses...'
   expected_time_to_complete: 3,
   platform_id: @codecademy.id
 )
+
+# scraping
+# url = "https://www.codecademy.com/catalog/subject/all"
+# html_file = open(url).read
+# html_doc = Nokogiri::HTML(html_file)
+
+# html_doc.search('.wrapper__3fzpm0z50tenx2fYXBGSMJ').each do |section|
+ # section.search('.header__dZgqyr9p7zUaFIBL72Yhb').each do |element|
+  #  Course.create!(
+   #   title: element.text.strip,
+    #  url: "https://www.codecademy.com/learn/#{element.text.strip}",
+     # platform_id: @codecademy.id
+   # )
+   # puts element.text.strip
+    # puts element.attribute('href').value
+ # end
+# end
 
 
 puts "Finished creating #{Course.count} courses!"
