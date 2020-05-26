@@ -5,6 +5,10 @@ class EnrollmentPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    record.user == user
+  end
+
   def create?
     record.user == user
   end
