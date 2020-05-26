@@ -10,6 +10,7 @@ class EnrollmentsController < ApplicationController
   end
 
   def new
+    @course = Course.find(params[:course_id])
     @enrollment = Enrollment.new
     authorize @enrollment
   end
@@ -18,11 +19,11 @@ class EnrollmentsController < ApplicationController
     @course = Course.find(params[:course_id])
     @enrollment = Enrollment.new(enrollment_params)
     @enrollment.course = @course
-    @enrollment.user = user
-    authorize @course
+    @enrollment.completion_status = 0
+    @enrollment.user = current_user
     authorize @enrollment
     if @enrollment.save
-      redirect_to enrollments_path
+      redirect_to user_path(current_user)
     else
       render :new
     end
