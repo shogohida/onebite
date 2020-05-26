@@ -1,4 +1,9 @@
 // Import your components CSS files here.
+body {
+	background-color: #F4F4F4;
+}
+
 @import "alert";
 @import "avatar";
 @import "navbar";
+@import "banner";
