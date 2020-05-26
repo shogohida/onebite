@@ -49,6 +49,17 @@ puts 'Creating courses...'
   platform_id: @codecademy.id
 )
 
+chapter_one = Chapter.create!(
+    name: "1 - Introduction to Ruby",
+    course_id: @ruby.id
+)
+chapter_two = Chapter.create!(
+    name: "2 - Control Flow in Ruby",
+    course_id: @ruby.id
+)
+
+
+
 @learn_html = Course.create!(
   title: 'Learn HTML',
   url: 'https://www.codecademy.com/learn/learn-html',
