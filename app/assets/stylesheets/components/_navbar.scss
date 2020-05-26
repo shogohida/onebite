@@ -63,3 +63,36 @@
 	text-decoration: none;
 	color: rgb(204,204,204);
 }
+
+.onebite-home-orange {
+	color: #FF9A76;
+	font-size: 36px;
+	font-family: nunito;
+	transition: 0.2s;
+}
+
+.onebite-home-orange:hover {
+	text-decoration: none;
+	color: #fa855b;
+}
+
+.gray-background {
+  background: #E5E5E5;
+}
+
+.navbar-link-text-orange {
+	color: #FF9A76 !important;
+	font-size: 20px;
+	font-family: nunito;
+	transition: 0.2s;
+	font-weight: bold;
+}
+
+.navbar-link-text-orange:hover {
+	text-decoration: none;
+	color: #fa855b !important;
+}
+
+.navbar-searchbar {
+  width: 32vw;
+}

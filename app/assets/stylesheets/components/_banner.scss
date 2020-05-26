@@ -4,6 +4,12 @@
   padding: 200px 0;
 }
 
+.banner-showpage {
+  background-size: cover;
+  background-position: center;
+  padding: 160px 0;
+}
+
 .banner h1 {
   margin: 0;
   color: white;
@@ -42,3 +48,19 @@
   background-color: #fa855b;
 }
 
+.banner-enroll-roundbutton {
+  border-radius: 40px;
+  background-color: #FF9A76;
+  width: 120px;
+  border: none;
+  transition: 0.2s;
+}
+
+.banner-enroll-roundbutton:hover {
+  background-color: #fa855b;
+}
+
+.banner-text-container {
+  position:relative;
+  top: 96px;
+}
