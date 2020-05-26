@@ -1,6 +1,17 @@
-<h1>Test</h1>
+<h1>Results for your search</h1>
+
 
 <% @courses.each do |course| %>
-  <%= course.title %>
-  <%= link_to 'Go to course', course.url  %>
+  <div class="card-courses-index">
+    <img src="https://i1.wp.com/launcheers.com/wp-content/uploads/2018/03/323b146a54f4e6be71adf4fa2c056374.png?w=797&ssl=1" />
+    <div class="card-ourses-index-infos">
+      <h2><%= course.title %></h2>
+      <p><%= course.description %></p>
+      <p><%= course.rating %></p>
+      <p><%= course.difficulty %></p>
+      <p><%= course.expected_time_to_complete %></p>
+      <p><%= link_to 'Go to course', course.url  %></p>
+    </div>
+  </div>
 <% end %>
+
