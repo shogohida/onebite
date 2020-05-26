@@ -1,6 +1,8 @@
 <h1>Test</h1>
 
-<%= simple_form_for [@course, @enrollment] do |f| %>
+<%= simple_form_for [ @course, @enrollment ] do |f| %>
     <%= f.input :start_date %>
+    <%= f.input :duration %>
+    <%= f.input :time_of_day %>
     <%= f.submit %>
 <% end %>

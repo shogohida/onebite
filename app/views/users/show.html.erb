@@ -3,5 +3,6 @@
 <%= @user.name %>
 
 <% @user.enrollments.each do |enrollment| %>
-  <%= enrollment.start_date %>
+  <p> Start date <%= enrollment.start_date %></p>
+  <p>Duration: <%= enrollment.duration %> hours</p>
 <% end %>
