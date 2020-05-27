@@ -1,0 +1,22 @@
+.show-info-section {
+	display: flex;
+	justify-content: center;
+	font-family: arial !important;
+	color: #505050 !important;
+}
+
+.show-info-left {
+  width: 40vw;
+	background-color: white;
+	padding: 16px;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.show-info-right {
+	width: 240px;
+	height: 320px;
+	background-color: white;
+	padding: 16px;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+

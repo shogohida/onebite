@@ -36,17 +36,30 @@
 	    </ul>
 	  </div>
 	</div>
-<%# raise %>
+
   <div class="container banner-text-container">
     <h1 class="banner-h1"><strong><%= @course.title %></strong></h1>
     <p class="banner-p"><%= @course.platform.name %></p>
     <a class="btn banner-enroll-roundbutton text-white" href="#">Enroll now</a> <%#= link_to "Enroll now", new_course_enrollment_path class: "btn banner-enroll-roundbutton text-white"  %>
-
   </div>
 </div>
 
+<div class="container my-3">
+	<div class="show-info-section">
+		<div class="show-info-left mx-3">
+		  <% @course.chapters.each do |chapter| %>
+  			<p><%= chapter.name %></p>
+			<% end %>
+		</div>
+		
+		<div class="show-info-right mx-3">
+			<h3 class=""><strong><%= @course.title %></strong></h3>
+			<h6><%= @course.platform.name %></h6> 
+			<%= @course.description %>
+			<br>
+			<%= @course.chapters.count %>
+		</div>
+	</div>
+</div>
+
 <%= link_to 'Back to results', courses_path %>
-
-<h1>Test</h1>
-
-<%= @course.title %>
