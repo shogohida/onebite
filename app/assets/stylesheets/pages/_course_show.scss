@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	font-family: arial !important;
-	color: #505050 !important;
+	color: #424242 !important;
 }
 
 .show-info-left {
@@ -13,10 +13,31 @@
 }
 
 .show-info-right {
-	width: 240px;
-	height: 320px;
+	width: 280px;
+	height: 240px;
 	background-color: white;
 	padding: 16px;
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.rounded-box {
+	border-radius: 8px;
+}
+
+.platform-font {
+	color: #909090 !important;
+  font-size: 12px;
+  	font-family: arial !important;
+
+}
+
+.course-font {
+	color: #1f1f1f !important;
+		font-family: arial !important;
+}
+
+.back-to-results {
+	position: relative;
+	left: 42px;
+	top: 24px;
+}
