@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 # require 'nokogiri'
+puts 'Cleaning up the chapters...'
+Chapter.destroy_all
 
 puts 'Cleaning up the courses...'
 Course.destroy_all
