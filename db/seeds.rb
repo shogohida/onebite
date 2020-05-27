@@ -12,8 +12,6 @@ require 'open-uri'
 puts 'Cleaning up the chapters...'
 Chapter.destroy_all
 
-puts 'Finished creating user julien'
-
 puts 'Cleaning up the enrollments...'
 Enrollment.destroy_all
 
@@ -25,6 +23,8 @@ User.destroy_all
   email: "julien.ergan@gmail.com",
   password: 'secret'
 )
+
+puts 'Finished creating user julien'
 
 puts 'Cleaning up the courses...'
 Course.destroy_all
@@ -248,7 +248,7 @@ puts 'Creating the enrollments..'
 puts "Finished creating #{Enrollment.count} enrollments!"
 
 
-# scraping
+# scraping example of Codecademy
 # url = "https://www.codecademy.com/catalog/subject/all"
 # html_file = open(url).read
 # html_doc = Nokogiri::HTML(html_file)
@@ -264,6 +264,51 @@ puts "Finished creating #{Enrollment.count} enrollments!"
     # puts element.attribute('href').value
  # end
 # end
+# puts "Finished creating #{Course.count} courses!"
 
+
+# scraping example of Udemy
+
+@udemy = Platform.create!(
+  name: 'Udemy',
+  url: 'https://www.udemy.com'
+)
+
+url = "https://www.udemy.com/courses/search/?q=ruby"
+html_file = open(url).read
+html_doc = Nokogiri::HTML(html_file)
+
+html_doc.search("div[class*='udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE']").each do |element|
+  Course.create!(
+    title: element.text.strip,
+    url: "https://www.udemy.com/course/#{element.text.strip}/",
+    platform_id: @udemy.id
+  )
+  puts element.text.strip
+end
+
+# .course-card--main-content--3xEIw > .udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE
+# description class, course-card--course-headline--yIrRk
+
+
+# Scraping example of Coursera
+
+# @coursera = Platform.create!(
+#   name: 'Coursera',
+#   url: 'https://www.cousera.org'
+# )
+
+# url = "https://ja.coursera.org/browse/computer-science/software-development"
+# html_file = open(url).read
+# html_doc = Nokogiri::HTML(html_file)
+
+# html_doc.search("div[data-reactid]").each do |element|
+#   Course.create!(
+#     title: element.text.strip,
+#     url: "https://ja.coursera.org/learn/#{element.text.strip}",
+#     platform_id: @coursera.id
+#   )
+#   puts element.text.strip
+# end
 
 puts "Finished creating #{Course.count} courses!"
