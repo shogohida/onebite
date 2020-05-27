@@ -2,16 +2,18 @@
 
 .card-courses-index {
   overflow: hidden;
-  height: 120px;
+  height: 220px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
   display: flex;
   align-items: center;
+  font-family: helvetica !important;
 }
 
 .card-courses-index img {
   height: 100%;
-  width: 120px;
+  width: 160px;
   object-fit: cover;
 }
 
@@ -71,5 +73,45 @@
   padding: 16px;
 }
 
+.results-h2 {
+  font-size: 32px !important;
+  color: #252525 !important;
+  font-family: helvetica !important;
+}
 
+.index-card-title-font {
+  font-size: 22px !important;
+  color: #252525 !important;
+  font-family: helvetica !important;
+}
+
+.index-card-description-font {
+  font-size: 18px !important;
+  color: #252525 !important;
+  font-family: helvetica !important;
+}
+
+.index-card-goto-show-font {
+  font-size: 18px !important;
+  font-family: helvetica !important;
+  text-decoration: none !important;
+  margin-top: 16px !important;
+}
+
+.btn-onebite-orange {
+  color: white;
+  background-color: #FF9A76 !important;
+  transition: 0.2s;
+  color: white;
+  border-radius: 8px;
+}
+
+.btn-onebite-orange:hover {
+  background-color: #fa855b !important;
+    color: white;
+}
+
+.results-info-left {
+  flex-grow: 1;
+}
 // END - cards for user dashboard

@@ -20,10 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <%= link_to "A Link Here", "#", class: "nav-link navbar-link-text-orange" %>
+          <%= link_to "Lessons", "#", class: "nav-link navbar-link-text-orange" %>
         </li>
         <li class="nav-item">
-          <%= link_to "A Link Here", "#", class: "nav-link navbar-link-text-orange mx-3" %>
+          <%= link_to "Profile", "#", class: "nav-link navbar-link-text-orange mx-3" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -43,10 +43,10 @@
       <div class="simple-form p-3 rounded-box py-4">
         <h2 class="form-title-font">Schedule your lessons</h2>
         <%= simple_form_for [ @course, @enrollment ] do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :duration, label: "Duration (hours)" %>
-          <%= f.input :time_of_day %>
-          <%= f.submit class: "mt-4 btn banner-enroll-roundbutton text-white", value: "Enroll in \"#{@course.title}\"" %>
+          <%= f.input :start_date, label: "When would you like to start this course?" %>
+          <%= f.input :duration, label: "Amount of time you want to study per day (in minutes)" %>
+          <%= f.input :time_of_day, label: "What time of the day would you like to study?" %>
+          <%= f.submit class: "mt-4 btn banner-enroll-roundbutton text-white", value: "Schedule this \"#{@course.title}\" course now" %>
         <% end %>
       </div>
     </div>

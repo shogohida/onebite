@@ -21,10 +21,10 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <%= link_to "A Link Here", "#", class: "nav-link navbar-link-text-orange" %>
+	        <%= link_to "Lessons", "#", class: "nav-link navbar-link-text-orange" %>
 	      </li>
 	      <li class="nav-item">
-	        <%= link_to "A Link Here", "#", class: "nav-link navbar-link-text-orange mx-3" %>
+	        <%= link_to "Profile", "#", class: "nav-link navbar-link-text-orange mx-3" %>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -55,12 +55,15 @@
   			<p><%= chapter.name %></p>
 			<% end %>
 		</div>
-		
+
 		<div>
 			<div class="show-info-right mx-3 rounded-box">
 				<h3 class="course-font"><strong><%= @course.title %></strong></h3>
 				<h6 class="platform-font"><%= @course.platform.name %></h6> 
 				<h6><%= @course.description %></h6> 
+				<br>
+				 <h6 class="">Time to complete: <%= @course.expected_time_to_complete %> hours</h6>
+
 			</div>
 				<%= link_to 'Back to results', courses_path, class: "navbar-link-text-orange m-5 back-to-results" %>
 			</div>
