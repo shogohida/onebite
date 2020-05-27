@@ -7,9 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 # require 'nokogiri'
+
+
 puts 'Cleaning up the chapters...'
 Chapter.destroy_all
 
+puts 'Finished creating user julien'
+
+puts 'Cleaning up the enrollments...'
+Enrollment.destroy_all
 
 puts 'Cleaning up the users...'
 User.destroy_all
@@ -19,14 +25,6 @@ User.destroy_all
   email: "julien.ergan@gmail.com",
   password: 'secret'
 )
-puts 'Finished creating user julien'
-
-puts 'Cleaning up the chapers...'
-Chapter.destroy_all
-puts "Finished cleaning up the chapters"
-
-puts 'Cleaning up the enrollments...'
-Enrollment.destroy_all
 
 puts 'Cleaning up the courses...'
 Course.destroy_all
