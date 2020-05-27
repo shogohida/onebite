@@ -21,10 +21,10 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	        <%= link_to "A Linkadkfjasldfj", "#", class: "nav-link navbar-link-text-orange" %>
+	        <%= link_to "A Link Here", "#", class: "nav-link navbar-link-text-orange" %>
 	      </li>
 	      <li class="nav-item">
-	        <%= link_to "A Linkadlfkajsdf", "#", class: "nav-link navbar-link-text-orange mx-3" %>
+	        <%= link_to "A Link Here", "#", class: "nav-link navbar-link-text-orange mx-3" %>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -36,7 +36,6 @@
 	    </ul>
 	  </div>
 	</div>
-	<% raise %>
 
   <div class="container banner-text-container">
     <h1 class="banner-h1"><strong><%= @course.title %></strong></h1>
@@ -48,20 +47,23 @@
 
 <div class="container my-3">
 	<div class="show-info-section">
-		<div class="show-info-left mx-3">
+		<div class="show-info-left mx-3  rounded-box">
+			<div>
+				<h3 class="mb-3 course-font"><strong>What you'll learn.</strong></h3>
+			</div>
 		  <% @course.chapters.each do |chapter| %>
   			<p><%= chapter.name %></p>
 			<% end %>
 		</div>
 		
-		<div class="show-info-right mx-3">
-			<h3 class=""><strong><%= @course.title %></strong></h3>
-			<h6><%= @course.platform.name %></h6> 
-			<%= @course.description %>
-			<br>
-			<%= @course.chapters.count %>
-		</div>
+		<div>
+			<div class="show-info-right mx-3 rounded-box">
+				<h3 class="course-font"><strong><%= @course.title %></strong></h3>
+				<h6 class="platform-font"><%= @course.platform.name %></h6> 
+				<h6><%= @course.description %></h6> 
+			</div>
+				<%= link_to 'Back to results', courses_path, class: "navbar-link-text-orange m-5 back-to-results" %>
+			</div>
 	</div>
 </div>
 
-<%= link_to 'Back to results', courses_path %>
