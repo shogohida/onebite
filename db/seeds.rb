@@ -49,6 +49,7 @@ puts 'Creating courses...'
   platform_id: @codecademy.id
 )
 
+puts 'Chapters being created...'
 chapter_one = Chapter.create!(
     name: "1 - Introduction to Ruby",
     course_id: @ruby.id
@@ -57,7 +58,97 @@ chapter_two = Chapter.create!(
     name: "2 - Control Flow in Ruby",
     course_id: @ruby.id
 )
+chapter_three = Chapter.create!(
+    name: "3 - Looping with Ruby",
+    course_id: @ruby.id
+)
+chapter_four = Chapter.create!(
+    name: "4 - Arrays and Hashes",
+    course_id: @ruby.id
+)
+chapter_five = Chapter.create!(
+    name: "5 - Blocks and Sorting",
+    course_id: @ruby.id
+)
+chapter_six = Chapter.create!(
+    name: "6 - Hashes and Symbols",
+    course_id: @ruby.id
+)
+chapter_seven = Chapter.create!(
+    name: "7 - Refactoring",
+    course_id: @ruby.id
+)
+chapter_eight = Chapter.create!(
+    name: "8 - Blocks, Procs, and Lambdas",
+    course_id: @ruby.id
+)
+chapter_nine = Chapter.create!(
+    name: "9 - Object-Oriented Programming, Part 1",
+    course_id: @ruby.id
+)
+chapter_ten = Chapter.create!(
+    name: "10 - Object-Oriented Programming, Part 2",
+    course_id: @ruby.id
+)
 
+chapter_one = Chapter.create!(
+    name: "1 - Introduction",
+    course_id: @javascript.id
+)
+chapter_two = Chapter.create!(
+    name: "2 - Conditionals",
+    course_id: @javascript.id
+)
+chapter_three = Chapter.create!(
+    name: "3 - Functions",
+    course_id: @javascript.id
+)
+chapter_four = Chapter.create!(
+    name: "4 - Scope",
+    course_id: @javascript.id
+)
+chapter_five = Chapter.create!(
+    name: "5 - Arrays",
+    course_id: @javascript.id
+)
+chapter_six = Chapter.create!(
+    name: "6 - Loops",
+    course_id: @javascript.id
+)
+chapter_seven = Chapter.create!(
+    name: "7 - Iterators",
+    course_id: @javascript.id
+)
+chapter_eight = Chapter.create!(
+    name: "8 - Objects",
+    course_id: @javascript.id
+)
+chapter_nine = Chapter.create!(
+    name: "9 - Classes",
+    course_id: @javascript.id
+)
+chapter_ten = Chapter.create!(
+    name: "10 - Browser Compatibility and Transpilation",
+    course_id: @javascript.id
+)
+chapter_eleven = Chapter.create!(
+    name: "11 - Modules",
+    course_id: @javascript.id
+)
+chapter_twelve = Chapter.create!(
+    name: "12 - Promises",
+    course_id: @javascript.id
+)
+chapter_thirteen = Chapter.create!(
+    name: "13 - Async-Await",
+    course_id: @javascript.id
+)
+chapter_fourteen = Chapter.create!(
+    name: "14 - Requests",
+    course_id: @javascript.id
+)
+
+puts 'Chapters have been created...'
 
 
 @learn_html = Course.create!(
