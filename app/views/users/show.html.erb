@@ -1,8 +1,21 @@
-<h1>Test</h1>
+<h1>Welcome to your dashboard <%= @user.name.capitalize %></h1>
 
-<%= @user.name %>
 
 <% @user.enrollments.each do |enrollment| %>
-  <p> Start date <%= enrollment.start_date %></p>
-  <p>Duration: <%= enrollment.duration %> hours</p>
+  <div class="card-user-dashboard">
+    <img src="https://i1.wp.com/launcheers.com/wp-content/uploads/2018/03/323b146a54f4e6be71adf4fa2c056374.png?w=797&ssl=1" />
+    <div class="card-user-dashboard-infos">
+      <h2><%= enrollment.course.title %></h2>
+      <p> Course started on: <strong><%= enrollment.start_date %></strong></p>
+      <p>Your chosen start time to do your lesson every day <strong><%= enrollment.time_of_day %></strong></p>
+      <p>How long you decided to study every day <strong><%= enrollment.duration %> mins</strong></p>
+      <p>Completion status <strong><%= enrollment.completion_status %> %</strong></p>
+    </div>
+  </div>
 <% end %>
+
+
+<%= link_to 'Homepage', root_path %>
+
+
+
