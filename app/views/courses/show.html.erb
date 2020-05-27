@@ -36,11 +36,13 @@
 	    </ul>
 	  </div>
 	</div>
+	<%# raise %>
 
   <div class="container banner-text-container">
     <h1 class="banner-h1"><strong><%= @course.title %></strong></h1>
     <p class="banner-p"><%= @course.platform.name %></p>
-    <a class="btn banner-enroll-roundbutton text-white" href="#">Enroll now</a> <%#= link_to "Enroll now", new_course_enrollment_path class: "btn banner-enroll-roundbutton text-white"  %>
+    <!-- <a class="btn banner-enroll-roundbutton text-white" href="#">Enroll now</a>  -->
+    <%= link_to "Enroll now", new_course_enrollment_path(@course), class: "btn banner-enroll-roundbutton text-white"  %>
   </div>
 </div>
 
