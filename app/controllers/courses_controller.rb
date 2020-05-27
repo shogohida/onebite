@@ -8,7 +8,11 @@ class CoursesController < ApplicationController
     end
   end
 
+
   def show
+    # update the completion and syllabus structure
+    # scraper = CodecademyScraper.new(@course.platform_id)
+    # scaper.perform_scraping
     @course = Course.find(params[:id])
     authorize @course
   end
