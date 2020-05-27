@@ -10,7 +10,8 @@
       <p><%= course.rating %></p>
       <p><%= course.difficulty %></p>
       <p><%= course.expected_time_to_complete %></p>
-      <p><%= link_to 'Go to course', course.url  %></p>
+      <p><%= link_to "See course show page", course_path(course) %></p>
+      <p><%= link_to "Go to course page on #{course.platform.name}", course.url  %></p>
     </div>
   </div>
 <% end %>
