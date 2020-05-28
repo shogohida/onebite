@@ -2,21 +2,17 @@
     display: flex;
     margin: 16px;
     font-family: helvetica;
+    justify-content: center;
 }
 
 .dashboard-left {
     margin-right: 24px;
-    width: 20vw;
+    width: 240px;
     text-align: center;
 }
 
 .dashboard-right {
-    border: solid;
     flex-grow: 1;
-    padding: 16px;
-    background-color: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 8px;
 }
 
 .user-name-card {
@@ -32,9 +28,6 @@
     color: #252525 !important;
     font-size: 24px;
     font-weight: bold; 
-}
-
-.dark-grey-font {
 }
 
 .user-course-card {
@@ -64,4 +57,64 @@
 .logo-photo-round {
     width: 64px;
     height: 100%;
+}
+
+.dashboard-right-top {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.dashboard-right-bottom {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.stats-left {
+    text-align: center;
+}
+
+.streak-text-font {
+    color: #f4f4f4;
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.streak-number-font {
+    color: #f4f4f4;
+    font-size: 24px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.streak-bubble {
+    background-color: #FF9A76;
+    border-radius: 80px;
+    padding: 20px;
+    text-align: center;
+}
+
+.tabs-underlined {
+  display: flex;
+  align-items: center;
+}
+
+.tabs-underlined .tab-underlined {
+  color: black;
+  padding: 8px;
+  margin: 8px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+.tabs-underlined .tab-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid #555555;
 }

@@ -26,7 +26,7 @@
   </div>
 </div>
 <%# raise %>
-<div class="container dashboard-container">
+<div class="dashboard-container">
     <div class="dashboard-left">
         <div class="user-name-card">
             <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
@@ -47,8 +47,38 @@
         </div>
     </div>
     <div class="dashboard-right">
-          <img class="avatar" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png" alt="profle photo">
-          <p class="dark-grey-font-p">Friend's Name</p>
+      <div class="dashboard-right-top">
+        <p class="dark-grey-font-p text-center py-0 mb-3">Stats</p>
+        <div class="d-flex">
+          <div class="stats-left">
+            <div class="d-flex">
+              <div class="streak-bubble">              
+                <p class="streak-text-font">current streak</p>
+                <p class="streak-number-font">24 days</p>
+              </div>
+              <div class="mx-3 streak-bubble">
+                <p class="streak-text-font">longest streak</p>
+                <p class="streak-number-font">71 days</p>
+              </div>
+            </div>
+          </div>
+          <div class="stats-right">
+            <ul class="list-inline tabs-underlined">
+              <li>
+                <a href="#" class="tab-underlined active">This Week</a>
+              </li>
+              <li>
+                <a href="#" class="tab-underlined">This Month</a>
+              </li>
+              <li>
+                <a href="#" class="tab-underlined">Total Time</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard-right-bottom">
+      </div>
 
     </div>
 </div>
@@ -59,21 +89,21 @@
 
 
 
-<h1>Welcome to your dashboard <%= @user.name.capitalize %></h1>
+<!-- <h1>Welcome to your dashboard <%#= @user.name.capitalize %></h1>
 
 
-<% @user.enrollments.each do |enrollment| %>
+<%# @user.enrollments.each do |enrollment| %>
   <div class="card-user-dashboard">
     <img src="https://i1.wp.com/launcheers.com/wp-content/uploads/2018/03/323b146a54f4e6be71adf4fa2c056374.png?w=797&ssl=1" />
     <div class="card-user-dashboard-infos">
-      <h2><%= enrollment.course.title %></h2>
-      <p> Course started on: <strong><%= enrollment.start_date %></strong></p>
-      <p>Your chosen start time to do your lesson every day <strong><%= enrollment.time_of_day %></strong></p>
-      <p>How long you decided to study every day <strong><%= enrollment.duration %> mins</strong></p>
-      <p>Completion status <strong><%= enrollment.completion_status %> %</strong></p>
+      <h2><%#= enrollment.course.title %></h2>
+      <p> Course started on: <strong><%#= enrollment.start_date %></strong></p>
+      <p>Your chosen start time to do your lesson every day <strong><%#= enrollment.time_of_day %></strong></p>
+      <p>How long you decided to study every day <strong><%#= enrollment.duration %> mins</strong></p>
+      <p>Completion status <strong><%#= enrollment.completion_status %> %</strong></p>
     </div>
   </div>
-<% end %>
+<%# end %>
 
 
-<%= link_to 'Homepage', root_path %>
+<%#= link_to 'Homepage', root_path %> -->
