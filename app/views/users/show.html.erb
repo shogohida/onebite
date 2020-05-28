@@ -1,4 +1,4 @@
-<div>
+  <div>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon gray-background">
     <%= link_to "OneBite", root_path, class: "onebite-home-orange"  %>
 
@@ -25,6 +25,23 @@
     </div>
   </div>
 </div>
+
+<div class="container dashboard-container">
+    <div class="dashboard-left">
+        <div class="user-name-card">
+            <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
+            <a href="#" class="follow-button">follow</a>
+        </div>
+        <div class="user-course-card">
+            <p>testing testing</p>
+        </div>
+    </div>
+    <div class="dashboard-right">
+        <p>test right</p>
+    </div>
+</div>
+
+
 
 
 
