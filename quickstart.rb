@@ -5,13 +5,14 @@ require "date"
 require "fileutils"
 
 OOB_URI = "urn:ietf:wg:oauth:2.0:oob".freeze
-APPLICATION_NAME = "Google Calendar API Ruby Quickstart".freeze
+APPLICATION_NAME = "Onebite".freeze
 CREDENTIALS_PATH = "credentials.json".freeze
 # The file token.yaml stores the user's access and refresh tokens, and is
 # created automatically when the authorization flow completes for the first
 # time.
 TOKEN_PATH = "token.yaml".freeze
-SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
+SCOPE = "https://www.googleapis.com/auth/calendar"
+# Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
 
 ##
 # Ensure valid credentials, either by restoring from the saved credentials
@@ -42,8 +43,57 @@ service = Google::Apis::CalendarV3::CalendarService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
+# 1 button to click add a calendar, (connect)  with click RUNS THIS CODE, shows the page of calendar
+# 2 it gives url to click of calendar BUTTON
+# 3 retrive the number from the user to Google calendar
+# 4
+
+# click
+event = Google::Apis::CalendarV3::Event.new(
+  calendar_id: 'primary',
+  summary: 'Python codecademy Course',
+  location: '800 Howard St., San Francisco, CA 94103',
+  description: 'A chance to hear more about Google\'s developer products.',
+  start: Google::Apis::CalendarV3::EventDateTime.new(
+    date_time: '2020-05-30T09:00:00-07:00',
+    time_zone: 'America/Los_Angeles'
+  ),
+  end: Google::Apis::CalendarV3::EventDateTime.new(
+    date_time: '2020-05-30T17:00:00-07:00',
+    time_zone: 'America/Los_Angeles'
+  ),
+  recurrence: [
+    'RRULE:FREQ=DAILY;COUNT=2'
+  ],
+  attendees: [
+    Google::Apis::CalendarV3::EventAttendee.new(
+      email: 'lpage@example.com'
+    ),
+    Google::Apis::CalendarV3::EventAttendee.new(
+      email: 'sbrin@example.com'
+    )
+  ],
+  reminders: Google::Apis::CalendarV3::Event::Reminders.new(
+    use_default: false,
+    overrides: [
+      Google::Apis::CalendarV3::EventReminder.new(
+        reminder_method: 'email',
+        minutes: 24 * 60
+      ),
+      Google::Apis::CalendarV3::EventReminder.new(
+        reminder_method: 'popup',
+        minutes: 10
+      )
+    ]
+  )
+)
+
+result = service.insert_event('shogo.hida@gmail.com', event)
+# primary == my google calendar id
+# puts "Event created: #{result.html_link}"
+
 # Fetch the next 10 events for the user
-calendar_id = "primary"
+calendar_id = "shogo.hida@gmail.com"
 response = service.list_events(calendar_id,
                                max_results:   10,
                                single_events: true,
