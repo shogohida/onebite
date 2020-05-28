@@ -1,15 +1,18 @@
 import flatpickr from "flatpickr";
 
-flatpickr(".datepicker", {
-  altInput: true,
-  altFormat: "F j, Y",
-  dateFormat: "Y-m-d",
-});
 
+const initFlatpickr = () => {
+  flatpickr(".datepicker", {
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+  });
+  flatpickr(".timepicker", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true
+  });
+};
 
-flatpickr(".timepicker", {
-  enableTime: true,
-  noCalendar: true,
-  dateFormat: "H:i",
-  time_24hr: true
-});
+export { initFlatpickr };
