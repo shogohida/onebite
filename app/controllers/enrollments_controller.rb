@@ -21,6 +21,7 @@ class EnrollmentsController < ApplicationController
     @enrollment.course = @course
     @enrollment.completion_status = 0
     @enrollment.user = current_user
+    @date = params[:start_date]
     authorize @enrollment
     if @enrollment.save
       redirect_to user_path(current_user)

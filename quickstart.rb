@@ -47,9 +47,11 @@ service.authorization = authorize
 # 2 it gives url to click of calendar BUTTON
 # 3 retrive the number from the user to Google calendar
 # 4
+
+# click
 event = Google::Apis::CalendarV3::Event.new(
   calendar_id: 'primary',
-  summary: 'Google I/O 2015',
+  summary: 'Python codecademy Course',
   location: '800 Howard St., San Francisco, CA 94103',
   description: 'A chance to hear more about Google\'s developer products.',
   start: Google::Apis::CalendarV3::EventDateTime.new(
