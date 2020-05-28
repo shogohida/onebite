@@ -12,6 +12,12 @@
 @import "components/index";
 @import "pages/index";
 
-
 // flatpickr
 @import "flatpickr/dist/flatpickr";
+
+// Simple calendar
+/*
+ *= require simple_calendar
+ *= require_tree .
+ *= require_self
+ */

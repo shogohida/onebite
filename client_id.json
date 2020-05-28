@@ -1,0 +1,9 @@
+{"web":{"client_id":"363588508541-fdkbefqr4qq74tj8oti31uq6u09m7s0m.apps.googleusercontent.com","project_id":"onebite-calendar","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"fS101NLtkADTaiXBDIGXxTnS","redirect_uris":["https://onebite-learning.herokuapp.com","http://localhost:3000"],"javascript_origins":["https://onebite-learning.herokuapp.com","http://localhost:3000"]}}
+
+//https://accounts.google.com/o/oauth2/auth?client_id=363588508541-fdkbefqr4qq74tj8oti31uq6u09m7s0m.apps.googleusercontent.com&redirect_uri=http://localhost:3000&scope=https://www.googleapis.com/auth/calendar&response_type=code&approval_prompt=force&access_type=offline
+
+//http://localhost:3000/?code=4/0AGwFIoz26B4Eo3mvrxWZkOZ862TUaKa4bOhkbnn1eJZGfwCKM9mHoURmdwJgDLg3PruQLklyRRWqrbtxAm3nu0&scope=https://www.googleapis.com/auth/calendar
+// copy after code=
+
+
+// curl -d client_id=363588508541-fdkbefqr4qq74tj8oti31uq6u09m7s0m.apps.googleusercontent.com -d client_secret=fS101NLtkADTaiXBDIGXxTnS -d redirect_uri=http://localhost:3000 -d grant_type=authorization_code -d code=4/0AGwFIoz26B4Eo3mvrxWZkOZ862TUaKa4bOhkbnn1eJZGfwCKM9mHoURmdwJgDLg3PruQLklyRRWqrbtxAm3nu0 https://accounts.google.com/o/oauth2/token
