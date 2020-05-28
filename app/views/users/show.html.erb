@@ -1,3 +1,35 @@
+<div>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon gray-background">
+    <%= link_to "OneBite", root_path, class: "onebite-home-orange"  %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Lessons", "#", class: "nav-link navbar-link-text-orange" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Profile", "#", class: "nav-link navbar-link-text-orange mx-3" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 <h1>Welcome to your dashboard <%= @user.name.capitalize %></h1>
 
 
@@ -16,6 +48,3 @@
 
 
 <%= link_to 'Homepage', root_path %>
-
-
-
