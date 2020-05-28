@@ -5,9 +5,9 @@
 }
 
 .dashboard-left {
-    border: solid;
-    margin-right: 16px;
+    margin-right: 24px;
     width: 20vw;
+    text-align: center;
 }
 
 .dashboard-right {
@@ -43,6 +43,8 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 8px;
     margin-top: 16px;
+    text-align: center;
+    padding-bottom: 24px;
 }
 
 .follow-button {
@@ -57,4 +59,9 @@
   background-color: #fa855b !important;
   text-decoration: none;
   color: white;
+}
+
+.logo-photo-round {
+    width: 64px;
+    height: 100%;
 }
