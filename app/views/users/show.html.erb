@@ -62,7 +62,7 @@
               </div>
             </div>
           </div>
-          <div class="stats-right">
+          <div class="stats-right ml-3">
             <ul class="list-inline tabs-underlined">
               <li>
                 <a href="#" class="tab-underlined active">This Week</a>
@@ -74,10 +74,23 @@
                 <a href="#" class="tab-underlined">Total Time</a>
               </li>
             </ul>
+            <div class="d-flex">
+              <button type="button" class="mt-3 ml-3 stats-button"></button>
+              <button type="button" class="mt-3 stats-button-remainder"></button>
+            </div>
+              <p class="stats-button-remainder-font ml-4">300/420 minutes</p>
           </div>
         </div>
       </div>
       <div class="dashboard-right-bottom">
+        <ul class="list-inline tabs-underlined">
+          <li>
+            <a href="#" class="tab-underlined active">Following</a>
+          </li>
+          <li>
+            <a href="#" class="tab-underlined">Followers</a>
+          </li>
+        </ul>
       </div>
 
     </div>
@@ -97,11 +110,11 @@
     <img src="https://i1.wp.com/launcheers.com/wp-content/uploads/2018/03/323b146a54f4e6be71adf4fa2c056374.png?w=797&ssl=1" />
     <div class="card-user-dashboard-infos">
 
-      <h2><%= enrollment.course.title %></h2>
-      <p> Course started on: <strong><%= enrollment.start_date.strftime("%A, %b %d") %></strong></p>
-      <p>Your chosen start time to do your lesson every day <strong><%= enrollment.time_of_day.strftime("%l:%M %p") %></strong></p>
-      <p>How long you decided to study every day <strong><%= enrollment.duration %> mins</strong></p>
-      <p>Completion status <strong><%= enrollment.completion_status %> %</strong></p>
+      <h2><%#= enrollment.course.title %></h2>
+      <p> Course started on: <strong><%#= enrollment.start_date.strftime("%A, %b %d") %></strong></p>
+      <p>Your chosen start time to do your lesson every day <strong><%#= enrollment.time_of_day.strftime("%l:%M %p") %></strong></p>
+      <p>How long you decided to study every day <strong><%#= enrollment.duration %> mins</strong></p>
+      <p>Completion status <strong><%#= enrollment.completion_status %> %</strong></p>
     </div>
   </div>
 <%# end %>

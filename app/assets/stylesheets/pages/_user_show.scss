@@ -76,6 +76,8 @@
 
 .stats-left {
     text-align: center;
+        position: relative;
+    bottom: 20px;
 }
 
 .streak-text-font {
@@ -94,7 +96,7 @@
 
 .streak-bubble {
     background-color: #FF9A76;
-    border-radius: 80px;
+    border-radius: 56px;
     padding: 20px;
     text-align: center;
 }
@@ -105,9 +107,9 @@
 }
 
 .tabs-underlined .tab-underlined {
-  color: black;
+  color: #252525;
   padding: 8px;
-  margin: 8px 16px;
+  margin: 16px 16px;
   opacity: .4;
   cursor: pointer;
   text-decoration: none;
@@ -118,3 +120,31 @@
   opacity: 1;
   border-bottom: 3px solid #555555;
 }
+
+.stats-button {
+  background-color: #FF9A76;
+  border: none;
+  padding: 8px;
+  padding-right: 300px;
+  border-radius: 40px 0px 0px 40px;
+}
+
+.stats-button-remainder {
+  background-color: #f4f4f4;
+  border: none;
+  padding: 8px;
+  padding-right: 120px;
+  border: solid #FF9A76;
+  font-size: 12px;
+  border-radius: 0px 40px 40px 0px;
+}
+
+.stats-button-remainder-font {
+  font-size: 10px;
+  color: #f4f4f4;
+  // opacity: .7;
+  position: relative;
+  bottom: 18px;
+  left: 8px;
+}
+
