@@ -1,0 +1,60 @@
+.dashboard-container {
+    display: flex;
+    margin: 16px;
+    font-family: helvetica;
+}
+
+.dashboard-left {
+    border: solid;
+    margin-right: 16px;
+    width: 20vw;
+}
+
+.dashboard-right {
+    border: solid;
+    flex-grow: 1;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+.user-name-card {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    text-align: center;
+    padding-bottom: 24px;
+}
+
+.dark-grey-font-p {
+    color: #252525 !important;
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+.dark-grey-font {
+}
+
+.user-course-card {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin-top: 16px;
+}
+
+.follow-button {
+    padding: 8px 24px;
+    border-radius: 8px;
+    background-color: #FF9A76;
+    color: white;
+    text-align: center;
+}
+
+.follow-button:hover {
+  background-color: #fa855b !important;
+  text-decoration: none;
+  color: white;
+}
