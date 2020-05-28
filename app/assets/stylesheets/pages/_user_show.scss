@@ -3,11 +3,11 @@
     margin: 16px;
     font-family: helvetica;
     justify-content: center;
+    width: 90vw;
 }
 
 .dashboard-left {
     margin-right: 24px;
-    width: 240px;
     text-align: center;
 }
 
@@ -22,6 +22,8 @@
     border-radius: 8px;
     text-align: center;
     padding-bottom: 24px;
+        width: 320px;
+
 }
 
 .dark-grey-font-p {
@@ -88,7 +90,7 @@
 }
 
 .streak-number-font {
-    color: #f4f4f4;
+    color: white;
     font-size: 24px;
     padding: 0px;
     margin: 0px;
@@ -148,3 +150,22 @@
   left: 440px;
 }
 
+.card-title-font {
+  color: #555555;
+  font-family: helvetica;
+  font-size: 24 px;
+  font-weight: bold;
+}
+
+.card-text-font {
+  color: #555555;
+  font-family: helvetica;
+  font-size: 20 px;
+}
+
+.card {
+  border-radius: 8px;
+  border-width: 2px;
+  margin: 16px;
+  width: 480px;
+}
