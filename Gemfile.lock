@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/jonhue/acts_as_favoritor.git
+  revision: dfc22c8be6b268d0573916ce68a9119eb5c30753
+  specs:
+    acts_as_favoritor (5.0.0)
+      activerecord (>= 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -240,6 +247,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_favoritor!
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug

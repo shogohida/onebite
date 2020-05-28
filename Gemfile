@@ -33,7 +33,11 @@ gem 'devise'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'nokogiri'
+
+gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
+
 gem 'simple_calendar', '~> 2.0'
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

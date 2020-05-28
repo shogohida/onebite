@@ -6,4 +6,9 @@ class User < ApplicationRecord
   validates :name, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # setup for gem acts_as_favoritor
+  # see link here https://github.com/jonhue/acts_as_favoritor#setup
+  acts_as_favoritable
+  acts_as_favoritor
 end
