@@ -10,16 +10,16 @@
   padding: 144px 0;
 }
 
-.banner h1 {
+.banner-h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 44px !important;
   font-weight: bold;
 }
 
-.banner p {
-  font-size: 20px;
+.banner-p {
+  font-size: 18px;
   color: #f4f4f4 !important;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -51,9 +51,12 @@
 .banner-enroll-roundbutton {
   border-radius: 40px;
   background-color: #FF9A76;
-  width: 120px;
+  width: 220px;
   border: none;
   transition: 0.2s;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 20px;
 }
 
 .banner-enroll-roundbutton:hover {
