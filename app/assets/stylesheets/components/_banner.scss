@@ -26,10 +26,13 @@
 }
 
 .banner-searchbar {
+  width: 560px;
+  height: 48px;
+}
+
+.search-position {
   position: relative;
   top: 96px;
-  width: 40vw;
-  height: 2.4em;
 }
 
 .banner-searchbar-round {
@@ -67,3 +70,8 @@
   position:relative;
   top: 96px;
 }
+
+.home-bottom {
+  text-align: center;
+}
+
