@@ -55,15 +55,15 @@ class AddToGoogleCalendar
     # click
 
     event = Google::Apis::CalendarV3::Event.new(
-      summary: 'JavaScript Codecademy Course',
-      location: 'My house',
+      summary: 'Learn JavaScript',
+      location: 'At home',
       description: 'Learn JavaScript basics',
       start: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: '2020-05-30T04:00:00-07:00',
+        date_time: '2020-05-30T20:00:00+09:00',
         time_zone: 'Asia/Tokyo'
       ),
       end: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: '2020-05-30T05:00:00-07:00',
+        date_time: '2020-05-30T21:00:00+09:00',
         time_zone: 'Asia/Tokyo'
       ),
       recurrence: [
