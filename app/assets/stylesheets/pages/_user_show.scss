@@ -29,7 +29,7 @@
 .dark-grey-font-p {
     color: #252525 !important;
     font-size: 24px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .user-course-card {
@@ -42,6 +42,7 @@
     padding-bottom: 24px;
 }
 
+// BEGINNING - style for follow button on user show page
 .follow-button {
     padding: 8px 24px;
     border-radius: 8px;
@@ -55,6 +56,24 @@
   text-decoration: none;
   color: white;
 }
+// END - style for unfollow button on user show page
+
+// BEGINNING - style for unfollow button on user show page
+.unfollow-button {
+    padding: 8px 24px;
+    border-radius: 8px;
+    background-color: white;
+    color: #FF9A76;
+    text-align: center;
+}
+
+.unfollow-button:hover {
+  background-color: white !important;
+  text-decoration: none;
+  color: #fa855b;
+}
+// END - style for unfollow button on user show page
+
 
 .logo-photo-round {
     width: 64px;

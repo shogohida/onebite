@@ -7,8 +7,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # setup for gem acts_as_favoritor
-  # see link here https://github.com/jonhue/acts_as_favoritor#setup
+  # SETUP for gem acts_as_favoritor https://github.com/jonhue/acts_as_favoritor#setup
+  # -  Add acts_as_favoritable to the models you want to be able to get favorited:
   acts_as_favoritable
+  # - Specify which models can favorite other models by adding acts_as_favoritor:
   acts_as_favoritor
 end

@@ -18,13 +18,107 @@ Enrollment.destroy_all
 puts 'Cleaning up the users...'
 User.destroy_all
 
+
+puts 'Creating users...'
+
 @user_julien = User.create!(
   name: 'julien',
   email: "julien.ergan@gmail.com",
   password: 'secret'
 )
 
-puts 'Finished creating user julien'
+@user_yun = User.create!(
+  name: 'yun',
+  email: "yunshine@gmail.com",
+  password: 'secret'
+)
+
+@user_shogo = User.create!(
+  name: 'shogo',
+  email: "shogo.hida@gmail.com",
+  password: 'secret'
+)
+
+@user_doug = User.create!(
+  name: 'doug',
+  email: "doug.hida@gmail.com",
+  password: 'secret'
+)
+
+@user_yann = User.create!(
+  name: 'yann',
+  email: "yann.hida@gmail.com",
+  password: 'secret'
+)
+
+@user_trouni = User.create!(
+  name: 'trouni',
+  email: "trouni.hida@gmail.com",
+  password: 'secret'
+)
+
+@user_sylvain = User.create!(
+  name: 'sylvain',
+  email: "sylvain.hida@gmail.com",
+  password: 'secret'
+)
+
+@user_sasha = User.create!(
+  name: 'sasha',
+  email: "sasha.hida@gmail.com",
+  password: 'secret'
+)
+
+@user_genesis = User.create!(
+  name: 'genesis',
+  email: "genesis@gmail.com",
+  password: 'secret'
+)
+
+@user_annie = User.create!(
+  name: 'annie',
+  email: "annie@gmail.com",
+  password: 'secret'
+)
+
+@user_jay = User.create!(
+  name: 'jay',
+  email: "jay@gmail.com",
+  password: 'secret'
+)
+
+@user_aaron = User.create!(
+  name: 'aaron',
+  email: "aaron@gmail.com",
+  password: 'secret'
+)
+
+@user_miki = User.create!(
+  name: 'miki',
+  email: "miki@gmail.com",
+  password: 'secret'
+)
+
+@user_dai = User.create!(
+  name: 'dai',
+  email: "dai@gmail.com",
+  password: 'secret'
+)
+
+@user_micky = User.create!(
+  name: 'micky',
+  email: "micky@gmail.com",
+  password: 'secret'
+)
+
+@user_tomoyuki = User.create!(
+  name: 'tomoyuki',
+  email: "tomoyuki@gmail.com",
+  password: 'secret'
+)
+
+puts "Finished creating #{User.count} users!"
+
 
 puts 'Cleaning up the courses...'
 Course.destroy_all
