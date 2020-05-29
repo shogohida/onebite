@@ -417,23 +417,23 @@ puts "Finished creating #{Enrollment.count} enrollments!"
 
 # scraping example of Udemy
 
-@udemy = Platform.create!(
-  name: 'Udemy',
-  url: 'https://www.udemy.com'
-)
+# @udemy = Platform.create!(
+#   name: 'Udemy',
+#   url: 'https://www.udemy.com'
+# )
 
-url = "https://www.udemy.com/courses/search/?q=ruby"
-html_file = open(url).read
-html_doc = Nokogiri::HTML(html_file)
+# url = "https://www.udemy.com/courses/search/?q=ruby"
+# html_file = open(url).read
+# html_doc = Nokogiri::HTML(html_file)
 
-html_doc.search("div[class*='udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE']").each do |element|
-  Course.create!(
-    title: element.text.strip,
-    url: "https://www.udemy.com/course/#{element.text.strip}/",
-    platform_id: @udemy.id
-  )
-  puts element.text.strip
-end
+# html_doc.search("div[class*='udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE']").each do |element|
+#   Course.create!(
+#     title: element.text.strip,
+#     url: "https://www.udemy.com/course/#{element.text.strip}/",
+#     platform_id: @udemy.id
+#   )
+#   puts element.text.strip
+# end
 
 # .course-card--main-content--3xEIw > .udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE
 # description class, course-card--course-headline--yIrRk
