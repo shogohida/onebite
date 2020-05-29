@@ -13,7 +13,11 @@
 	        <%= link_to "", "#", class: "nav-link navbar-link-text" %>
 	      </li>
 	      <li class="nav-item">
+	      	<% if current_user %>
 	        <%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text mx-3" %>
+	      	<% else %>
+  		        <%= link_to "Profile", "#", class: "nav-link navbar-link-text mx-3" %>
+	      	<% end %>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
