@@ -12,10 +12,7 @@
           <%= link_to "", "#", class: "nav-link navbar-link-text-orange" %>
         </li>
         <li class="nav-item">
-
-
-              <%= link_to "Profile", "#", class: "nav-link navbar-link-text-orange mx-3" %>
-
+          <%= link_to "Profile", "#", class: "nav-link navbar-link-text-orange mx-3" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -38,16 +35,31 @@
         <div class="mt-5">
           <h4>Your courses:</h4>          
         </div>
+
+        <% @user.courses.each do |course| %>
         <div class="user-course-card">
+
+        <% if course.platform.name == 'Codecademy' %>
           <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" class="avatar logo-photo-round" />
-<!--           <p class="dark-grey-font-p"><%#= @user.courses[0].title %></p>
- -->          <a href="#" class="follow-button">start lesson</a>
+        <% elsif course.platform.name == 'Udemy' %>
+          <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590646495/udemy_square_frdkbs.png" class="avatar logo-photo-round"  />
+        <% elsif course.platform.name == 'Coursera' %>
+          <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590722085/coursera-logo-square_y0yukg.webp" class="avatar logo-photo-round"  />
+        <% end %>
+<!-- 
+          <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" class="avatar logo-photo-round" /> -->
+
+          <p class="dark-grey-font-p"><%= course.title %></p>
+          <a href="#" class="follow-button">start lesson</a>
         </div>        
+        <% end %>
+
         <div class="user-course-card">
           <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590646495/udemy_square_frdkbs.png" class="avatar logo-photo-round" />
           <p class="dark-grey-font-p">Shaolin Kung Fu</p>
           <a href="#" class="follow-button">start lesson</a>
         </div>
+
     </div>
     <div class="dashboard-right">
       <div class="dashboard-right-top">
@@ -103,7 +115,7 @@
         <h5 class="card-title-font">Eugene</h5>
         <p class="card-text-font my-1">Current Streak: 12 days</p>
         <p class="card-text-font mt-1">Longest Streak: 28 days</p>
-        <a href="#" class="follow-button mt-3">unfollow</a>
+        <a href="#" class="unfollow-button mt-3">unfollow</a>
       </div>
     </div>
   </div>
@@ -114,7 +126,7 @@
         <h5 class="card-title-font">Cliff</h5>
         <p class="card-text-font my-1">Current Streak: 0 days</p>
         <p class="card-text-font mt-1">Longest Streak: 16 days</p>
-        <a href="#" class="follow-button mt-3">unfollow</a>
+        <a href="#" class="unfollow-button mt-3">unfollow</a>
       </div>
     </div>
   </div>
@@ -125,7 +137,7 @@
         <h5 class="card-title-font">Nicole</h5>
         <p class="card-text-font my-1">Current Streak: 786 days</p>
         <p class="card-text-font mt-1">Longest Streak: 786 days</p>
-        <a href="#" class="follow-button mt-3">unfollow</a>
+        <a href="#" class="unfollow-button mt-3">unfollow</a>
       </div>
     </div>
   </div>
@@ -136,7 +148,7 @@
         <h5 class="card-title-font">Jason</h5>
         <p class="card-text-font my-1">Current Streak: 123 days</p>
         <p class="card-text-font mt-1">Longest Streak: 423 days</p>
-        <a href="#" class="follow-button mt-3">unfollow</a>
+        <a href="#" class="unfollow-button mt-3">unfollow</a>
       </div>
     </div>
   </div>
@@ -147,7 +159,7 @@
         <h5 class="card-title-font">Richard</h5>
         <p class="card-text-font my-1">Current Streak: 4</p>
         <p class="card-text-font mt-1">Longest Streak: 7</p>
-        <a href="#" class="follow-button mt-3">unfollow</a>
+        <a href="#" class="unfollow-button mt-3">unfollow</a>
       </div>
     </div>
   </div>
