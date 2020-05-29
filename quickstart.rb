@@ -50,29 +50,28 @@ service.authorization = authorize
 
 # click
 event = Google::Apis::CalendarV3::Event.new(
-  calendar_id: 'primary',
-  summary: 'Python codecademy Course',
-  location: '800 Howard St., San Francisco, CA 94103',
-  description: 'A chance to hear more about Google\'s developer products.',
+  summary: 'JavaScript Codecademy Course',
+  location: 'My house',
+  description: 'Learn JavaScript basics',
   start: Google::Apis::CalendarV3::EventDateTime.new(
-    date_time: '2020-05-30T09:00:00-07:00',
-    time_zone: 'America/Los_Angeles'
+    date_time: '2020-05-30T04:00:00-07:00',
+    time_zone: 'Asia/Tokyo'
   ),
   end: Google::Apis::CalendarV3::EventDateTime.new(
-    date_time: '2020-05-30T17:00:00-07:00',
-    time_zone: 'America/Los_Angeles'
+    date_time: '2020-05-30T05:00:00-07:00',
+    time_zone: 'Asia/Tokyo'
   ),
   recurrence: [
-    'RRULE:FREQ=DAILY;COUNT=2'
+    'RRULE:FREQ=DAILY;COUNT=14'
   ],
-  attendees: [
-    Google::Apis::CalendarV3::EventAttendee.new(
-      email: 'lpage@example.com'
-    ),
-    Google::Apis::CalendarV3::EventAttendee.new(
-      email: 'sbrin@example.com'
-    )
-  ],
+  # attendees: [
+  #   Google::Apis::CalendarV3::EventAttendee.new(
+  #     email: 'lpage@example.com'
+  #   ),
+  #   Google::Apis::CalendarV3::EventAttendee.new(
+  #     email: 'sbrin@example.com'
+  #   )
+  # ],
   reminders: Google::Apis::CalendarV3::Event::Reminders.new(
     use_default: false,
     overrides: [
