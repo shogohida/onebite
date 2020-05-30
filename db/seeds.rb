@@ -378,22 +378,22 @@ puts 'Chapters have been created...'
   platform_id: @codecademy.id
 )
 
-puts 'Creating the enrollments..'
+# puts 'Creating the enrollments..'
 
-# How to create a date - https://stackoverflow.com/questions/12544552/how-can-i-create-a-new-date-instance-in-ruby
+# # How to create a date - https://stackoverflow.com/questions/12544552/how-can-i-create-a-new-date-instance-in-ruby
 
-@enrollment_ruby = Enrollment.create!(
-  start_date: Date.new(2020, 6, 8),
-  completed_at: nil,
-  duration: 14,
-  time_of_day: Time.new(2020, 6, 8, 21, 30),
-  completion_status: 30,
-  course_id: @ruby.id,
-  user_id: @user_julien.id
-)
+# @enrollment_ruby = Enrollment.create!(
+#   start_date: Date.new(2020, 6, 8),
+#   completed_at: nil,
+#   duration: 14,
+#   time_of_day: Time.new(2020, 6, 8, 21, 30),
+#   completion_status: 30,
+#   course_id: @ruby.id,
+#   user_id: @user_julien.id
+# )
 
 
-puts "Finished creating #{Enrollment.count} enrollments!"
+# puts "Finished creating #{Enrollment.count} enrollments!"
 
 
 # scraping example of Codecademy
