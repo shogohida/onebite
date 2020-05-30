@@ -40,7 +40,7 @@ class AddToGoogleCalendar
   end
 
   # rewrite as self.add_events(some arguments), to pass arguments to create events
-  def self.add_events(summary, time)
+  def self.add_events(summary, description, time, frequency, count)
     # Initialize the API
     service = Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = APPLICATION_NAME
@@ -57,7 +57,7 @@ class AddToGoogleCalendar
     event = Google::Apis::CalendarV3::Event.new(
       summary: summary,
       location: 'At home',
-      description: 'Learn JavaScript basics',
+      description: description,
       start: Google::Apis::CalendarV3::EventDateTime.new(
         date_time: "#{time[0]}T#{time[1]}+09:00",
         time_zone: 'Asia/Tokyo'
@@ -66,9 +66,15 @@ class AddToGoogleCalendar
         date_time: "#{time[0]}T#{time[3]}+09:00",
         time_zone: 'Asia/Tokyo'
       ),
-      recurrence: [
-        'RRULE:FREQ=DAILY;COUNT=14'
-      ],
+      # if frequency[1]
+        recurrence: [
+          "RRULE:FREQ=#{frequency[0]};COUNT=#{count}#{frequency[1]}"
+        ],
+      # else
+      #   recurrence: [
+      #     "RRULE:FREQ=#{frequency[0]};COUNT=#{count}"
+      #   ],
+      # end
       # attendees: [
       #   Google::Apis::CalendarV3::EventAttendee.new(
       #     email: 'lpage@example.com'
@@ -91,6 +97,11 @@ class AddToGoogleCalendar
         ]
       )
     )
+    # if frequency[1]
+    #   event.recurrence =  "RRULE:FREQ=#{frequency[0]};COUNT=#{count};BYDAY=#{frequency[1]}"
+    # else
+    #   event.recurrence =  "RRULE:FREQ=#{frequency[0]};COUNT=#{count}"
+    # end
 
     result = service.insert_event('shogo.hida@gmail.com', event)
     # primary == my google calendar id
