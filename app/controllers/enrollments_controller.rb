@@ -16,14 +16,32 @@ class EnrollmentsController < ApplicationController
   end
 
   def create
+    # creation of enrollment
     @course = Course.find(params[:course_id])
     @enrollment = Enrollment.new(enrollment_params)
     @enrollment.course = @course
     @enrollment.completion_status = 0
     @enrollment.user = current_user
+    # creation of time
+    @time = @enrollment.time_of_day.to_s.split
+    @time_split = @time[1].split(":")
+    if (@enrollment.duration / 60) >= 1
+      @add_hour = (@enrollment.duration / 60).to_i
+      @add_minutes = @enrollment.duration - (@add_hour * 60)
+      @time_split[0] = (@time_split[0].to_i + @add_hour).to_s
+      @time_split[1] = (@time_split[1].to_i + @add_minutes).to_s
+      @time << @time_split.join(":")
+    else
+      @add_minutes = @enrollment.duration
+      @time_split[1] = (@time_split[1].to_i + @add_minutes).to_s
+      @time << @time_split.join(":")
+    end
+
     authorize @enrollment
+    # raise
+
     if @enrollment.save
-      AddToGoogleCalendar.add_events
+      AddToGoogleCalendar.add_events(@enrollment.course.title, @time)
       redirect_to user_path(current_user)
     else
       render :new
