@@ -46,6 +46,7 @@
           <%= f.input :start_date, label: "When would you like to start this course?", as: :string, required: false, input_html: {class: "datepicker"} %>
           <%= f.input :duration, label: "How long do you want to study each day (in minutes)", placeholder: '60' %>
           <%= f.input :time_of_day, label: "From what time would you like to study (each day)?", as: :string, required: false, input_html: {class: "timepicker"} %>
+          <%= f.input :frequency, as: :select, collection: ['Daily', 'Every Monday', 'Every Tuesday', 'Every Wednesday', 'Every Thursday', 'Every Friday', 'Every Saturday', 'Every Sunday'] %>
           <%= f.submit class: "mt-4 btn banner-enroll-roundbutton text-white", value: "Schedule this \"#{@course.title}\" course now" %>
         <% end %>
       </div>

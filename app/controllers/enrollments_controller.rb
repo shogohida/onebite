@@ -37,11 +37,24 @@ class EnrollmentsController < ApplicationController
       @time << @time_split.join(":")
     end
 
+    # creation of frequency
+    @user_frequency = []
+    case @enrollment.frequency
+    when "Daily" then @user_frequency = ["DAILY", ""]
+    when "Every Monday" then @user_frequency = ["WEEKLY", ";BYDAY=MO"]
+    when "Every Tuesday" then @user_frequency = ["WEEKLY", ";BYDAY=TU"]
+    when "Every Wednesday" then @user_frequency = ["WEEKLY", ";BYDAY=WE"]
+    when "Every Thursday" then @user_frequency = ["WEEKLY", ";BYDAY=TH"]
+    when "Every Friday" then @user_frequency = ["WEEKLY", ";BYDAY=FR"]
+    when "Every Saturday" then @user_frequency = ["WEEKLY", ";BYDAY=SA"]
+    when "Every Sunday" then @user_frequency = ["WEEKLY", ";BYDAY=SU"]
+    end
+
     authorize @enrollment
     # raise
 
     if @enrollment.save
-      AddToGoogleCalendar.add_events(@enrollment.course.title, @time)
+      AddToGoogleCalendar.add_events(@enrollment.course.title, @enrollment.course.description, @time, @user_frequency, @enrollment.course.chapters.count)
       redirect_to user_path(current_user)
     else
       render :new
@@ -51,6 +64,6 @@ class EnrollmentsController < ApplicationController
   private
 
   def enrollment_params
-    params.require(:enrollment).permit(:course_id, :user_id, :start_date, :completed_at, :duration, :time_of_day, :completion_status)
+    params.require(:enrollment).permit(:course_id, :user_id, :start_date, :completed_at, :duration, :time_of_day, :completion_status, :frequency)
   end
 end
