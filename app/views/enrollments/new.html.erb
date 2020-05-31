@@ -50,6 +50,8 @@
           <%= f.submit class: "mt-4 btn banner-enroll-roundbutton text-white", value: "Schedule this \"#{@course.title}\" course now" %>
         <% end %>
       </div>
+      <!-- Need to change the style  -->
+      <%= link_to "Go to course", @course.url, target: :_blank %>
   </div>
 </div>
 

@@ -49,7 +49,7 @@
         <% if course.platform.name == 'Codecademy' %>
           <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" class="avatar logo-photo-round" />
 <!-- Beginning - CONFLICT - Julien to ask Yun -->
-<!--           <!-- <p class="dark-grey-font-p"><%#= @user.courses[0].title %></p> --> -->
+<!--           <p class="dark-grey-font-p"><%#= @user.courses[0].title %></p> -->
 <!--           <a href="#" class="follow-button">start lesson</a> -->
 <!--         </div> -->
 <!-- End - CONFLICT - Julien to ask Yun -->
@@ -62,7 +62,9 @@
           <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" class="avatar logo-photo-round" /> -->
 
           <p class="dark-grey-font-p"><%= course.title %></p>
-          <a href="#" class="follow-button">start lesson</a>
+          <%= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
+          <!-- memo, this start lesson button links to the count of current streak -->
+          <!-- <a href="#" class="follow-button">start lesson</a> -->
         </div>
         <% end %>
 
