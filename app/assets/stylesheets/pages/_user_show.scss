@@ -75,6 +75,21 @@
 // END - style for unfollow button on user show page
 
 
+.unfollow-button {
+    padding: 8px 24px;
+    border-radius: 8px;
+    background-color: white;
+    color: #FF9A76;
+    text-align: center;
+    border: solid #FF9A76 1px;
+}
+
+.unfollow-button:hover {
+  background-color: #FF9A76 !important;
+  text-decoration: none;
+  color: white;
+}
+
 .logo-photo-round {
     width: 64px;
     height: 100%;

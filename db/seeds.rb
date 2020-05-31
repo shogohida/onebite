@@ -132,6 +132,14 @@ puts 'Creating the platforms..'
   name: 'Codecademy',
   url: 'https://www.codecademy.com'
 )
+@udemy = Platform.create!(
+  name: 'Udemy',
+  url: 'https://www.udemy.com'
+)
+@coursera = Platform.create!(
+  name: 'Coursera',
+  url: 'https://www.coursera.com'
+)
 @wanikani = Platform.create!(
   name: 'Wanikani',
   url: 'https://www.wanikani.com'
@@ -148,8 +156,35 @@ puts 'Creating courses...'
   description: "Learn the JavaScript fundamentals you'll need for front-end or back-end development.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 25,
+  expected_time_to_complete: 30,
   platform_id: @codecademy.id
+)
+@javascript_2 = Course.create!(
+  title: 'The Complete JavaScript Course 2020',
+  url: 'https://www.udemy.com/course/the-complete-javascript-course/',
+  description: "Master JavaScript with the most complete course! Projects, challenges, quizzes, JavaScript ES6+, OOP, AJAX, Webpack",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: 28,
+  platform_id: @udemy.id
+)
+@javascript_3 = Course.create!(
+  title: 'JavaScript: Understanding the Weird Parts',
+  url: 'https://www.udemy.com/course/understand-javascript/',
+  description: "An advanced JavaScript course for everyone! Scope, closures, prototypes, 'this', build your own framework, and more.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: 12,
+  platform_id: @udemy.id
+)
+@javascript_4 = Course.create!(
+  title: 'Interactivity with JavaScript',
+  url: 'https://www.coursera.org/learn/javascript?specialization=web-design#syllabus',
+  description: "This course will introduce you to the basics of the JavaScript language.  We will cover concepts such as variables, looping, functions, and even a little bit about debugging tools.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: 11,
+  platform_id: @coursera.id
 )
 @ruby = Course.create!(
   title: 'Learn Ruby',
@@ -157,7 +192,7 @@ puts 'Creating courses...'
   description: "Learn to program in Ruby, a ﬂexible and beginner-friendly language used to create sites like Codecademy.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 8,
+  expected_time_to_complete: 10,
   platform_id: @codecademy.id
 )
 
@@ -201,6 +236,23 @@ chapter_nine = Chapter.create!(
 chapter_ten = Chapter.create!(
     name: "10 - Object-Oriented Programming, Part 2",
     course_id: @ruby.id
+)
+
+chapter_one = Chapter.create!(
+    name: "1 - Intro to JavaScript",
+    course_id: @javascript_4.id
+)
+chapter_two = Chapter.create!(
+    name: "2 - Reacting to Your Audience",
+    course_id: @javascript_4.id
+)
+chapter_three = Chapter.create!(
+    name: "3 - Arrays and Looping",
+    course_id: @javascript_4.id
+)
+chapter_four = Chapter.create!(
+    name: "4 - Validating Form Data",
+    course_id: @javascript_4.id
 )
 
 chapter_one = Chapter.create!(
@@ -260,6 +312,102 @@ chapter_fourteen = Chapter.create!(
     course_id: @javascript.id
 )
 
+chapter_one = Chapter.create!(
+    name: "1 - Course Introduction",
+    course_id: @javascript_2.id
+)
+chapter_two = Chapter.create!(
+    name: "2 - JavaScript Language Basics",
+    course_id: @javascript_2.id
+)
+chapter_three = Chapter.create!(
+    name: "3 - How JavaScript Works Behind the Scenes",
+    course_id: @javascript_2.id
+)
+chapter_four = Chapter.create!(
+    name: "4 - JavaScript in the Browser",
+    course_id: @javascript_2.id
+)
+chapter_five = Chapter.create!(
+    name: "5 - Advanced JavaScript",
+    course_id: @javascript_2.id
+)
+chapter_six = Chapter.create!(
+    name: "6 - Putting It All Together",
+    course_id: @javascript_2.id
+)
+chapter_seven = Chapter.create!(
+    name: "7 - Next Generation JavaScript",
+    course_id: @javascript_2.id
+)
+chapter_eight = Chapter.create!(
+    name: "8 - Asynchronous JavaScript",
+    course_id: @javascript_2.id
+)
+chapter_nine = Chapter.create!(
+    name: "9 - Modern JavaScript",
+    course_id: @javascript_2.id
+)
+chapter_ten = Chapter.create!(
+    name: "10 - Final Course Exam",
+    course_id: @javascript_2.id
+)
+chapter_eleven = Chapter.create!(
+    name: "11 - Conclusion",
+    course_id: @javascript_2.id
+)
+chapter_twelve = Chapter.create!(
+    name: "12 - Bonus: A Node.js Crash Course",
+    course_id: @javascript_2.id
+)
+chapter_one = Chapter.create!(
+    name: "1 - Getting Started",
+    course_id: @javascript_3.id
+)
+chapter_two = Chapter.create!(
+    name: "2 - Execution Contexts and Lexical Environments",
+    course_id: @javascript_3.id
+)
+chapter_three = Chapter.create!(
+    name: "3 - Types and Operators",
+    course_id: @javascript_3.id
+)
+chapter_four = Chapter.create!(
+    name: "4 - Objects and Functions",
+    course_id: @javascript_3.id
+)
+chapter_five = Chapter.create!(
+    name: "5 - Object-Oriented JavaScript",
+    course_id: @javascript_3.id
+)
+chapter_six = Chapter.create!(
+    name: "6 - Building Objects",
+    course_id: @javascript_3.id
+)
+chapter_seven = Chapter.create!(
+    name: "7 - Odds and Ends",
+    course_id: @javascript_3.id
+)
+chapter_eight = Chapter.create!(
+    name: "8 - Examining Famous Frameworks and Libraries",
+    course_id: @javascript_3.id
+)
+chapter_nine = Chapter.create!(
+    name: "9 - Let's Build a Framework/Library!",
+    course_id: @javascript_3.id
+)
+chapter_ten = Chapter.create!(
+    name: "10 - Bonus Lectures",
+    course_id: @javascript_3.id
+)
+chapter_eleven = Chapter.create!(
+    name: "11 - Bonus: Getting Ready for ECMAScript 6",
+    course_id: @javascript_3.id
+)
+chapter_twelve = Chapter.create!(
+    name: "12 - Conclusion",
+    course_id: @javascript_3.id
+)
 puts 'Chapters have been created...'
 
 
@@ -324,22 +472,22 @@ puts 'Chapters have been created...'
   platform_id: @codecademy.id
 )
 
-puts 'Creating the enrollments..'
+# puts 'Creating the enrollments..'
 
-# How to create a date - https://stackoverflow.com/questions/12544552/how-can-i-create-a-new-date-instance-in-ruby
+# # How to create a date - https://stackoverflow.com/questions/12544552/how-can-i-create-a-new-date-instance-in-ruby
 
-@enrollment_ruby = Enrollment.create!(
-  start_date: Date.new(2020, 6, 8),
-  completed_at: nil,
-  duration: 14,
-  time_of_day: Time.new(2020, 6, 8, 21, 30),
-  completion_status: 30,
-  course_id: @ruby.id,
-  user_id: @user_julien.id
-)
+# @enrollment_ruby = Enrollment.create!(
+#   start_date: Date.new(2020, 6, 8),
+#   completed_at: nil,
+#   duration: 14,
+#   time_of_day: Time.new(2020, 6, 8, 21, 30),
+#   completion_status: 30,
+#   course_id: @ruby.id,
+#   user_id: @user_julien.id
+# )
 
 
-puts "Finished creating #{Enrollment.count} enrollments!"
+# puts "Finished creating #{Enrollment.count} enrollments!"
 
 
 # scraping example of Codecademy
@@ -363,23 +511,23 @@ puts "Finished creating #{Enrollment.count} enrollments!"
 
 # scraping example of Udemy
 
-@udemy = Platform.create!(
-  name: 'Udemy',
-  url: 'https://www.udemy.com'
-)
+# @udemy = Platform.create!(
+#   name: 'Udemy',
+#   url: 'https://www.udemy.com'
+# )
 
-url = "https://www.udemy.com/courses/search/?q=ruby"
-html_file = open(url).read
-html_doc = Nokogiri::HTML(html_file)
+# url = "https://www.udemy.com/courses/search/?q=ruby"
+# html_file = open(url).read
+# html_doc = Nokogiri::HTML(html_file)
 
-html_doc.search("div[class*='udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE']").each do |element|
-  Course.create!(
-    title: element.text.strip,
-    url: "https://www.udemy.com/course/#{element.text.strip}/",
-    platform_id: @udemy.id
-  )
-  puts element.text.strip
-end
+# html_doc.search("div[class*='udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE']").each do |element|
+#   Course.create!(
+#     title: element.text.strip,
+#     url: "https://www.udemy.com/course/#{element.text.strip}/",
+#     platform_id: @udemy.id
+#   )
+#   puts element.text.strip
+# end
 
 # .course-card--main-content--3xEIw > .udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE
 # description class, course-card--course-headline--yIrRk
