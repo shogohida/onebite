@@ -30,11 +30,13 @@
     <div class="dashboard-left">
         <div class="user-name-card">
             <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
-              <% if current_user.favorited?(@user) %>
+            <% if current_user.id == @user.id %>
+              <%= link_to "Edit profile", class: "unfollow-button" %> <!-- edit_user_path(@user) -->
+            <% elsif current_user.favorited?(@user) %>
               <%= link_to "Unfollow", unfollow_user_path(@user), class: "unfollow-button", method: :post, remote: true %>
-              <% else %>
+            <% else %>
               <%= link_to "Follow", follow_user_path(@user), class: "follow-button", method: :post, remote: true %>
-              <% end %>
+            <% end %>
             <!-- <a href="#" class="follow-button">follow</a> -->
         </div>
         <div class="mt-5">
