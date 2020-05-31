@@ -203,3 +203,12 @@
   margin: 16px;
   width: 480px;
 }
+
+.enrolled-in-link {
+  font-weight: bold;
+}
+
+.enrolled-in-link:hover {
+  text-decoration: none !important;
+  color: #FF9A76;
+}
