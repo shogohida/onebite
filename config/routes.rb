@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   resources :enrollments, only: [:index, :show]
   resources :users, only: :show
 
+  # routes for 'follow / unfollow a user' feature
   post 'users/:id/follow', to: 'users#follow', as: :follow_user
   post 'users/:id/unfollow', to: 'users#unfollow', as: :unfollow_user
+
+  # routes for 'search for a user' feature
+  get '/users', to: 'users#index', as: :users
 end
