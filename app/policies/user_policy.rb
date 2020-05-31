@@ -10,6 +10,10 @@ class UserPolicy < ApplicationPolicy
     # record.id == user.id
   end
 
+  # def index?
+  #   true
+  # end
+
   def follow?
     true
     # current_user can follow / anyone any user except himself / herself

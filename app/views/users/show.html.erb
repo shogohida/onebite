@@ -1,7 +1,13 @@
   <div>
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon gray-background">
     <%= link_to "OneBite", root_path, class: "onebite-home-orange"  %>
-
+    <!-- BEGINNING - search form to look for a friend  -->
+      <!-- form taken from the lecture on Search  -->
+      <%= form_tag users_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a friend" %>
+        <%= submit_tag "Search", class: "unfollow-button" %>
+      <% end %>
+    <!-- END - search form to look for a friend  -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,6 +31,7 @@
     </div>
   </div>
 </div>
+
 <%# raise %>
 <div class="dashboard-container">
     <div class="dashboard-left">
