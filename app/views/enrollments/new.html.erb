@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <%= link_to "", "#", class: "nav-link navbar-link-text-orange" %>
+          <a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange mx-3">Calendar</a>
         </li>
         <li class="nav-item">
           <%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text-orange mx-3" %>
@@ -39,7 +39,7 @@
 
 
 <div class="form-container row justify-content-center">
-  <div class="col-xs-6 d-flex">
+  <div class="col-xs-12">
 
       <div class="simple-form p-3 rounded-box py-4">
         <h2 class="form-title-font">Step 1 of 2: Schedule Your Lessons</h2>
@@ -53,7 +53,7 @@
       </div>
 
 
-      <div class="col-xs-6">
+      <div class="col-xs-12">
         <div class="simple-form form-step-2 rounded-box py-4">
           <h2 class="form-title-font">Step 2 of 2: Sign Up on <%= @course.platform.name %></h2>
 
