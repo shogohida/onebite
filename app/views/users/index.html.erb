@@ -1,17 +1,39 @@
 
-<!-- the list of friends from the search in show.html.erb -->
+<!-- TODO: insert navbar -->
+
+
+<!-- BEGINNING - search form to look for a friend  -->
+  <!-- form taken from the lecture on Search  -->
+  <%= form_tag users_path, method: :get do %>
+    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a friend" %>
+    <%= submit_tag "Search", class: "unfollow-button" %>
+  <% end %>
+<!-- END - search form to look for a friend  -->
+
+
+
+<!-- BEGINNING - the list of friends from the search in show.html.erb -->
 
 <div class="container">
+  <h1>Find your friends</h1>
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
-      <div id="users">
+      <div id="users  ">
         <% @users.each do |user| %>
-          <h4><%= user.name %></h4>
-          <p><%= user.email %></p>
+          <div class="card-user-index">
+            <div>
+              <img class="avatar-user-index-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+            </div>
+            <div class="card-user-index-infos">
+              <h2><%= link_to user.name.capitalize.to_s, user_path(user) %></h2>
+              <p><%= user.email %></p>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
 
+<!-- END - the list of friends from the search in show.html.erb -->
 
