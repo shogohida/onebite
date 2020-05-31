@@ -67,9 +67,15 @@
         <% end %>
 <!--
           <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" class="avatar logo-photo-round" /> -->
-
+          <% i = 0 %>
           <p class="dark-grey-font-p"><%= course.title %></p>
+          <p class="dark-grey-font-p"><%= course.chapters[i].name %></p>
           <%= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
+          <%#= simple_form_for [course, @chapter] do |f| %>
+            <%#= f.input :done %>
+          <%# end %>
+
+
           <!-- memo, this start lesson button links to the count of current streak -->
           <!-- <a href="#" class="follow-button">start lesson</a> -->
         </div>
