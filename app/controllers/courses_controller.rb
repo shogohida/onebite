@@ -15,5 +15,6 @@ class CoursesController < ApplicationController
     # scaper.perform_scraping
     @course = Course.find(params[:id])
     authorize @course
+    # raise
   end
 end

@@ -60,7 +60,14 @@
 				<h3 class="mb-3 course-font"><strong>What you'll learn.</strong></h3>
 			</div>
 		  <% @course.chapters.each do |chapter| %>
-  			<p><%= chapter.name %></p>
+  			<%# if chapter.done %>
+          <p><%= chapter.name %></p>
+        <%# else %>
+          <!-- <p><%#= chapter.name %> ☐</p> -->
+          <%#= simple_form_for chapter do |f| %>
+            <%#= f.input :done %>
+          <%# end %>
+        <%# end %>
 			<% end %>
 		</div>
 
