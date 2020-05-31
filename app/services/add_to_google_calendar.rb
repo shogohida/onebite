@@ -6,8 +6,8 @@ require "fileutils"
 
 class AddToGoogleCalendar
   OOB_URI = "urn:ietf:wg:oauth:2.0:oob".freeze
-  APPLICATION_NAME = "Onebite".freeze
-  CREDENTIALS_PATH = "credentials.json".freeze
+  APPLICATION_NAME = "OneBite".freeze
+  CREDENTIALS_PATH = "credentials1.json".freeze
   # The file token.yaml stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first
   # time.
@@ -103,12 +103,12 @@ class AddToGoogleCalendar
     #   event.recurrence =  "RRULE:FREQ=#{frequency[0]};COUNT=#{count}"
     # end
 
-    result = service.insert_event('shogo.hida@gmail.com', event)
+    result = service.insert_event('onebite.tokyo@gmail.com', event)
     # primary == my google calendar id
     # puts "Event created: #{result.html_link}"
 
     # Fetch the next 10 events for the user
-    calendar_id = "shogo.hida@gmail.com"
+    calendar_id = "onebite.tokyo@gmail.com"
     response = service.list_events(calendar_id,
                                    max_results:   10,
                                    single_events: true,
