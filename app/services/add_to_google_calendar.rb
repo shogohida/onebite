@@ -40,7 +40,7 @@ class AddToGoogleCalendar
   end
 
   # rewrite as self.add_events(some arguments), to pass arguments to create events
-  def self.add_events(summary, description, time, frequency, count)
+  def self.add_events(summary, description, date, start_time, end_time, frequency, count)
     # Initialize the API
     service = Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = APPLICATION_NAME
@@ -59,11 +59,11 @@ class AddToGoogleCalendar
       location: 'At home',
       description: description,
       start: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: "#{time[0]}T#{time[1]}+09:00",
+        date_time: "#{date}T#{start_time}+09:00",
         time_zone: 'Asia/Tokyo'
       ),
       end: Google::Apis::CalendarV3::EventDateTime.new(
-        date_time: "#{time[0]}T#{time[3]}+09:00",
+        date_time: "#{date}T#{end_time[3]}+09:00",
         time_zone: 'Asia/Tokyo'
       ),
       # if frequency[1]
