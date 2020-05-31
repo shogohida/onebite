@@ -21,7 +21,7 @@
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item active">
-	      	<a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange">Calendar</a>
+	      	<a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange" target="_blank">Calendar</a>
 	      </li>
 	      <li class="nav-item">
 
@@ -31,7 +31,7 @@
 				<%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text-orange mx-3" %>
 	      	<% end %>
 
-	        
+
 
 	      </li>
 	      <li class="nav-item dropdown">
@@ -67,8 +67,8 @@
 		<div>
 			<div class="show-info-right mx-3 rounded-box">
 				<h3 class="course-font"><strong><%= @course.title %></strong></h3>
-				<h6 class="platform-font"><%= @course.platform.name %></h6> 
-				<h6><%= @course.description %></h6> 
+				<h6 class="platform-font"><%= @course.platform.name %></h6>
+				<h6><%= @course.description %></h6>
 				<br>
 				 <h6 class="">Time to complete: <%= @course.expected_time_to_complete %> hours</h6>
 

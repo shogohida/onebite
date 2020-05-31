@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange mx-3">Calendar</a>
+          <a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange mx-3" target="_blank">Calendar</a>
         </li>
         <li class="nav-item">
           <%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text-orange mx-3" %>
@@ -49,7 +49,7 @@
           <%= f.input :time_of_day, label: "From what time would you like to study (each day)?", as: :string, required: false, input_html: {class: "timepicker"} %>
           <%= f.input :frequency, as: :select, collection: ['Daily', 'Weekend', 'Every Monday', 'Every Tuesday', 'Every Wednesday', 'Every Thursday', 'Every Friday', 'Every Saturday', 'Every Sunday'] %>
           <%= f.submit class: "mt-4 btn banner-enroll-roundbutton text-white", value: "Schedule this \"#{@course.title}\" course now" %>
-        <% end %>   
+        <% end %>
       </div>
 
 

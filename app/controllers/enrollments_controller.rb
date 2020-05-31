@@ -65,7 +65,7 @@ class EnrollmentsController < ApplicationController
 
     if @enrollment.save
       AddToGoogleCalendar.add_events(@enrollment.course.title, @enrollment.course.description, @enrollment.start_date, @start_time.join(":"), @end_time, @user_frequency, @count)
-      redirect_to user_path(current_user)
+      #redirect_to user_path(current_user)
     else
       render :new
     end
