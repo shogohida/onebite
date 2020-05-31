@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   resources :courses, only: [:index, :show] do
     resources :enrollments, only: [:new, :create]
   end
+  resources :courses, only: [:index, :show] do
+    resources :chapters, only: :update
+  end
+  # [:edit, ]
   resources :enrollments, only: [:index, :show]
   resources :users, only: :show
 

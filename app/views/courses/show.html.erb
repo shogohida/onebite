@@ -31,7 +31,7 @@
 				<%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text-orange mx-3" %>
 	      	<% end %>
 
-	        
+
 
 	      </li>
 	      <li class="nav-item dropdown">
@@ -60,15 +60,22 @@
 				<h3 class="mb-3 course-font"><strong>What you'll learn.</strong></h3>
 			</div>
 		  <% @course.chapters.each do |chapter| %>
-  			<p><%= chapter.name %></p>
+  			<%# if chapter.done %>
+          <p><%= chapter.name %></p>
+        <%# else %>
+          <!-- <p><%#= chapter.name %> ☐</p> -->
+          <%#= simple_form_for chapter do |f| %>
+            <%#= f.input :done %>
+          <%# end %>
+        <%# end %>
 			<% end %>
 		</div>
 
 		<div>
 			<div class="show-info-right mx-3 rounded-box">
 				<h3 class="course-font"><strong><%= @course.title %></strong></h3>
-				<h6 class="platform-font"><%= @course.platform.name %></h6> 
-				<h6><%= @course.description %></h6> 
+				<h6 class="platform-font"><%= @course.platform.name %></h6>
+				<h6><%= @course.description %></h6>
 				<br>
 				 <h6 class="">Time to complete: <%= @course.expected_time_to_complete %> hours</h6>
 
