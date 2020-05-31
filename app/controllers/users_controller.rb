@@ -19,7 +19,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     current_user.favorite(@user)
-    redirect_to user_path(@user)
+    #raise
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      redirect_to root_path
+    end
   end
 
   # method for current_user to unfollow another user
@@ -27,14 +32,21 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     current_user.unfavorite(@user)
-    redirect_to user_path(@user)
+    #raise
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      redirect_to root_path
+    end
   end
 
    # method for current_user to see the list of other users he/she is following
   def following
+    current_user.all_favorites
   end
 
   # method for current_user to see the list of other users he/she is being followed by
   def followers
+    current_user.all_favorited
   end
 end
