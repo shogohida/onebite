@@ -23,24 +23,34 @@ class EnrollmentsController < ApplicationController
     @enrollment.completion_status = 0
     @enrollment.user = current_user
     # creation of time
-    @time = @enrollment.time_of_day.to_s.split
-    @time_split = @time[1].split(":")
+    # @date = @enrollment.start_date.to_s.split("-")
+    @start_time = @enrollment.time_of_day.to_s.split[1].split(":")
+    # @time_split = @time.split(":")
+    # raise
+    @end_time = []
     if (@enrollment.duration / 60) >= 1
       @add_hour = (@enrollment.duration / 60).to_i
       @add_minutes = @enrollment.duration - (@add_hour * 60)
-      @time_split[0] = (@time_split[0].to_i + @add_hour).to_s
-      @time_split[1] = (@time_split[1].to_i + @add_minutes).to_s
-      @time << @time_split.join(":")
+      @end_time[0] = (@start_time[0].to_i + @add_hour).to_s
+      @end_time[1] = (@start_time[1].to_i + @add_minutes).to_s
+      @end_time[2] = "00"
+      @end_time << @end_time.join(":")
     else
       @add_minutes = @enrollment.duration
-      @time_split[1] = (@time_split[1].to_i + @add_minutes).to_s
-      @time << @time_split.join(":")
+      @end_time[0] = @start_time[0]
+      @end_time[1] = (@start_time[1].to_i + @add_minutes).to_s
+      @end_time[2] = "00"
+      @end_time << @end_time.join(":")
     end
 
     # creation of frequency
     @user_frequency = []
+    @count = @enrollment.course.chapters.count
     case @enrollment.frequency
     when "Daily" then @user_frequency = ["DAILY", ""]
+    when "Weekend"
+      @user_frequency = ["WEEKLY", ";BYDAY=SA,SU"]
+      @count = (@enrollment.course.chapters.count / 2)
     when "Every Monday" then @user_frequency = ["WEEKLY", ";BYDAY=MO"]
     when "Every Tuesday" then @user_frequency = ["WEEKLY", ";BYDAY=TU"]
     when "Every Wednesday" then @user_frequency = ["WEEKLY", ";BYDAY=WE"]
@@ -51,10 +61,10 @@ class EnrollmentsController < ApplicationController
     end
 
     authorize @enrollment
-    # raise
+    #raise
 
     if @enrollment.save
-      AddToGoogleCalendar.add_events(@enrollment.course.title, @enrollment.course.description, @time, @user_frequency, @enrollment.course.chapters.count)
+      AddToGoogleCalendar.add_events(@enrollment.course.title, @enrollment.course.description, @enrollment.start_date, @start_time.join(":"), @end_time, @user_frequency, @count)
       redirect_to user_path(current_user)
     else
       render :new

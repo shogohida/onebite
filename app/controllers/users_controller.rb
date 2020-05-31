@@ -4,6 +4,16 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def index
+    if params[:query].present?
+      @users = policy_scope(User).where(name: params[:query])
+    else
+      @users = policy_scope(User)
+    end
+    # authorisation error - https://github.com/varvet/pundit#ensuring-policies-and-scopes-are-used
+    # see example from courses_controller.rb
+  end
+
   # method for current_user to follow another user
   def follow
     @user = User.find(params[:id])
