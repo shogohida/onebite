@@ -39,19 +39,32 @@
 
 
 <div class="form-container row justify-content-center">
-  <div class="col-xs-12">
+  <div class="col-xs-6 d-flex">
+
       <div class="simple-form p-3 rounded-box py-4">
-        <h2 class="form-title-font">Schedule your lessons</h2>
+        <h2 class="form-title-font">Step 1 of 2: Schedule Your Lessons</h2>
         <%= simple_form_for [ @course, @enrollment ] do |f| %>
           <%= f.input :start_date, label: "When would you like to start this course?", as: :string, required: false, input_html: {class: "datepicker"} %>
           <%= f.input :duration, label: "How long do you want to study each day (in minutes)", placeholder: '60' %>
           <%= f.input :time_of_day, label: "From what time would you like to study (each day)?", as: :string, required: false, input_html: {class: "timepicker"} %>
           <%= f.input :frequency, as: :select, collection: ['Daily', 'Weekend', 'Every Monday', 'Every Tuesday', 'Every Wednesday', 'Every Thursday', 'Every Friday', 'Every Saturday', 'Every Sunday'] %>
           <%= f.submit class: "mt-4 btn banner-enroll-roundbutton text-white", value: "Schedule this \"#{@course.title}\" course now" %>
-        <% end %>
+        <% end %>   
       </div>
+
+
+      <div class="col-xs-6">
+        <div class="simple-form form-step-2 rounded-box py-4">
+          <h2 class="form-title-font">Step 2 of 2: Sign Up on <%= @course.platform.name %></h2>
+
+          <p class="text-center">Be sure to also register for this course on <%= @course.platform.name %>.</p>
+          <%= link_to "\"#{@course.title}\"", @course.url, target: :_blank, class: "mt-4 btn banner-enroll-roundbutton text-white" %>
+        </div>
+      </div>
+
       <!-- Need to change the style  -->
-      <%= link_to "Go to course", @course.url, target: :_blank %>
+
+
   </div>
 </div>
 
