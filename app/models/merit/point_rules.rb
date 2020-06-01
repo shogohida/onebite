@@ -26,8 +26,10 @@ module Merit
       # ]
       #
       # score -10, :on => 'comments#destroy'
+      score 20, to: :user, on: 'enrollments#create'
 
       score 10, :on => 'chapters#update'
+      # need to create chapters#create
     end
   end
 end

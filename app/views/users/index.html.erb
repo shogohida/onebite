@@ -27,6 +27,12 @@
             <div class="card-users-index-infos">
               <h2><%= link_to user.name.capitalize.to_s, user_path(user) %></h2>
               <p><%= user.email %></p>
+              <!-- test for Merit gem, badges and points -->
+              <% user.badges.each do |badge| %>
+                <p><<%= badge.name %></p>
+              <% end %>
+              <p><%= user.points %></p>
+              <!-- test ends -->
             </div>
             <div class="card-users-index-buttons">
               <% if current_user.favorited?(user) %>
