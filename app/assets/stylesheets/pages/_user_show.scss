@@ -165,15 +165,19 @@
   background-color: #FF9A76;
   border: none;
   padding: 8px;
-  padding-right: 300px;
+  // padding-right: 400px;
+  width: 60%;
   border-radius: 40px 0px 0px 40px;
+    margin: 0px;
 }
 
 .stats-button-remainder {
   background-color: #f4f4f4;
   border: none;
   padding: 8px;
-  padding-right: 120px;
+  // padding-right: 160px;
+  width: 30%;
+    margin: 0px;
   border: solid #FF9A76;
   font-size: 12px;
   border-radius: 0px 40px 40px 0px;
@@ -182,10 +186,12 @@
 .stats-button-remainder-font {
   font-size: 12px;
   color: #555555;
+  text-align: left;
+  margin: 0px;
   // opacity: .7;
   position: relative;
-  bottom: 20px;
-  left: 440px;
+  top: 14px;
+  // left: 440px;
 }
 
 .card-title-font {
@@ -220,7 +226,6 @@
 // End of Version 1:
 // Beginning of Version 2:
 .new-dashboard-left {
-  border: solid;
   width: 66%;
   font-family: helvetica;
 }
@@ -238,3 +243,22 @@
     border-radius: 8px;
 }
 
+.new-statbar {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px; 
+    margin: 0;
+}
+
+.followers-section {
+    padding: 8px 16px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px; 
+    margin: 0;
+}
+
+.card-body {
+  // width: 45%;
+}
