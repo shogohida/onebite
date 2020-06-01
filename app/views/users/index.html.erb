@@ -60,10 +60,19 @@
           <div class="card-courses-users-index m-3">
             <div>
               <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-            </div>
+            </div>       
+              
+
             <div class="card-courses-index-infos justify-content-around results-info-left">
               <h2 class="index-card-title-font user-index-card-name"><%= link_to user.name.capitalize.to_s, user_path(user), class: "user-index-card-name" %></h2>
               <p class="index-card-description-user-font">Current Streak: <%= rand(100) %> days</p>
+              <!-- test for Merit gem, badges and points -->
+              <% user.badges.each do |badge| %>
+                <p><<%= badge.name %></p>
+              <% end %>
+              <p><%= user.points %></p>
+              <!-- test ends -->
+
             </div>
             <div class="card-users-index-buttons mx-3">
               <% if current_user.favorited?(user) %>

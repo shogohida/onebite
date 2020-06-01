@@ -65,6 +65,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ambry (1.0.0)
     autoprefixer-rails (9.7.6)
       execjs
     bcrypt (3.1.13)
@@ -138,6 +139,8 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     memoist (0.16.2)
+    merit (3.0.3)
+      ambry (~> 1.0.0)
     method_source (1.0.0)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
@@ -294,6 +297,7 @@ DEPENDENCIES
   google-api-client
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  merit (~> 3.0.3)
   nokogiri
   pg (>= 0.18, < 2.0)
   pg_search (~> 2.3.0)

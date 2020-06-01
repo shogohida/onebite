@@ -71,6 +71,10 @@ class EnrollmentsController < ApplicationController
     end
   end
 
+  def update
+
+  end
+
   private
 
   def enrollment_params
