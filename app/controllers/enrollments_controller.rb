@@ -72,7 +72,9 @@ class EnrollmentsController < ApplicationController
   end
 
   def update
-
+    @enrollment = Enrollment.find(params[:id])
+    @enrollment.update(enrollment_params)
+    authorize @enrollment
   end
 
   private
