@@ -29,7 +29,12 @@ module Merit
       score 20, to: :user, on: 'enrollments#create'
 
       score 10, :on => 'chapters#update'
-      # need to create chapters#create
+      # need to create enrollments#update
+
+      # score 50, to: :user, on: 'enrollments#update' do |enrollment|
+      #   enrollment.completion_status > enrollment.completion_status
+      #   # need to compare with the previous one
+      # end
     end
   end
 end
