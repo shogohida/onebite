@@ -34,12 +34,19 @@ gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'nokogiri'
 gem 'google-api-client'
+
+gem "webdrivers"
+gem "watir"
+
 gem 'merit', '~> 3.0.3'
+
 
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 
 gem 'simple_calendar', '~> 2.0'
 
+# for scraping when website uses AJAX
+gem 'capybara', '>= 2.15'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
@@ -63,7 +70,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
