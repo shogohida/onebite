@@ -12,4 +12,5 @@ class User < ApplicationRecord
   acts_as_favoritable
   # - Specify which models can favorite other models by adding acts_as_favoritor:
   acts_as_favoritor
+  has_merit
 end

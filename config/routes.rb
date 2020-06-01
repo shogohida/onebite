@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # end
   resources :chapters, only: [:show, :update]
   # [:edit, ]
-  resources :enrollments, only: [:index, :show]
+  resources :enrollments, only: [:index, :show, :update]
   resources :users, only: :show
 
   # routes for 'follow / unfollow a user' feature
@@ -24,4 +24,7 @@ Rails.application.routes.draw do
 
   # routes for 'search for a user' feature
   get '/users', to: 'users#index', as: :users
+
+  # left as a memo for Merit gem
+  # devise_for :users, controllers: { registrations: 'users/registrations' }
 end

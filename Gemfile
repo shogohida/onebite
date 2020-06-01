@@ -34,8 +34,12 @@ gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'nokogiri'
 gem 'google-api-client'
+
 gem "webdrivers"
 gem "watir"
+
+gem 'merit', '~> 3.0.3'
+
 
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 

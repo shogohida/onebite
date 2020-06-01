@@ -1,146 +1,103 @@
-  <div>
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon gray-background">
-    <%= link_to "OneBite", root_path, class: "onebite-home-orange"  %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon gray-background">
+  <%= link_to "OneBite", root_path, class: "onebite-home-orange"  %>
 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- BEGINNING - search form to look for a friend  -->
-      <!-- form taken from the lecture on Search  -->
-      <%= form_tag users_path, class: "navbar-searchbar mx-3", method: :get do %>
-      <div class="d-flex">
-
-        <%= text_field_tag :query, params[:query], class: "form-control banner-searchbar-round", placeholder: "Find friends to follow" %>
-        <%= submit_tag "Search", class: "btn btn-primary banner-searchbar-roundbutton" %>
-      <% end %>
-      </div>
-    <!-- END - search form to look for a friend  -->
-
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange" target="_blank">Calendar</a>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Profile", "#", class: "nav-link navbar-link-text-orange mx-3" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Help", "#", class: "dropdown-item" %>
-            <%= link_to "Log Out", "#", class: "dropdown-item" %>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange" target="_blank">Calendar</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text-orange mx-3" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Help", "#", class: "dropdown-item" %>
+          <%= link_to "Log Out", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
 
-<%# raise %>
+
 <div class="dashboard-container">
-    <div class="dashboard-left">
-        <div class="user-name-card">
-            <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
-            <% if current_user.id == @user.id %>
-              <%= link_to "Edit profile", class: "unfollow-button" %> <!-- edit_user_path(@user) -->
-            <% elsif current_user.favorited?(@user) %>
-              <%= link_to "Unfollow", unfollow_user_path(@user), class: "unfollow-button", method: :post, remote: true %>
-            <% else %>
-              <%= link_to "Follow", follow_user_path(@user), class: "follow-button", method: :post, remote: true %>
+
+  <div class="new-dashboard-left mr-3">
+
+    <div class="new-user-name-card card-courses-users-index">
+      <div>
+        <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+      </div>
+      <div class="card-courses-index-infos justify-content-around results-info-left">
+        <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
+        <p class="index-card-description-user-font">Current Courses: <%= rand(100) %> blah blah blah</p>
+      </div>
+
+    <div>    <!--What happened to the code in this div??? -->
+             <% @user.courses.each do |course| %>
+              <% i = 0 %>
+              <p class="dark-grey-font-p"><%= course.title %></p>
+              <p class="dark-grey-font-p"><%= course.chapters[i].name %></p>
+              <%= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
+              <%= simple_form_for course.chapters[i] do |f| %>
+                <%= f.input :done, as: :boolean, checked_value: true %>
+                <%#= f.fields_for :chapters do |chapter| %>
+                  <%#= chapter.input :done, as: :boolean, checked_value: true %>
+                  <%#= chapter.submit %>
+                <%# end %>
+                <%= f.submit %>
+                <% i += 1 %>
+                <!-- Memo, is this update form connected to a certain user's chapter? -->
+              <% end %>
+              <!-- memo, this start lesson button links to the count of current streak -->
+              <!-- <a href="#" class="follow-button">start lesson</a> -->
             <% end %>
-            <%# raise %>
-            <!-- <a href="#" class="follow-button">follow</a> -->
-        </div>
-        <div class="mt-5">
-          <h4>Your courses:</h4>
-        </div>
+      </div>
 
-        <% @user.courses.each do |course| %>
-        <div class="user-course-card">
 
-        <% if course.platform.name == 'Codecademy' %>
-          <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" class="avatar logo-photo-round" />
-<!-- Beginning - CONFLICT - Julien to ask Yun -->
-<!--           <p class="dark-grey-font-p"><%#= @user.courses[0].title %></p> -->
-<!--           <a href="#" class="follow-button">start lesson</a> -->
-<!--         </div> -->
-<!-- End - CONFLICT - Julien to ask Yun -->
-        <% elsif course.platform.name == 'Udemy' %>
-          <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590646495/udemy_square_frdkbs.png" class="avatar logo-photo-round"  />
-        <% elsif course.platform.name == 'Coursera' %>
-          <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590722085/coursera-logo-square_y0yukg.webp" class="avatar logo-photo-round"  />
+      <div class="mx-3">
+        <% if current_user.id == @user.id %>
+          <%= link_to "Edit profile", "#", class: "unfollow-button" %> <!-- edit_user_path(@user) -->
+        <% elsif current_user.favorited?(@user) %>
+          <%= link_to "Unfollow", unfollow_user_path(@user), class: "unfollow-button", method: :post, remote: true %>
+        <% else %>
+          <%= link_to "Follow", follow_user_path(@user), class: "follow-button", method: :post, remote: true %>
         <% end %>
-<!--
-          <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" class="avatar logo-photo-round" /> -->
-          <% i = 0 %>
-          <p class="dark-grey-font-p"><%= course.title %></p>
-          <p class="dark-grey-font-p"><%= course.chapters[i].name %></p>
-          <%= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
-          <%= simple_form_for course.chapters[i] do |f| %>
-            <%= f.input :done, as: :boolean, checked_value: true %>
-            <%#= f.fields_for :chapters do |chapter| %>
-              <%#= chapter.input :done, as: :boolean, checked_value: true %>
-              <%#= chapter.submit %>
-            <%# end %>
-            <%= f.submit %>
-            <% i += 1 %>
-            <!-- Memo, is this update form connected to a certain user's chapter? -->
-          <% end %>
-
-
-          <!-- memo, this start lesson button links to the count of current streak -->
-          <!-- <a href="#" class="follow-button">start lesson</a> -->
-        </div>
-        <% end %>
-
-        <div class="user-course-card">
-          <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590646495/udemy_square_frdkbs.png" class="avatar logo-photo-round" />
-          <p class="dark-grey-font-p">Shaolin Kung Fu</p>
-          <a href="#" class="follow-button">start lesson</a>
-        </div>
+        <%# raise %>
+      </div>
 
     </div>
-    <div class="dashboard-right">
-      <div class="dashboard-right-top">
-        <p class="dark-grey-font-p text-center py-0 mb-3">Stats</p>
-        <div class="d-flex">
-          <div class="stats-left">
-            <div class="d-flex">
-              <div class="streak-bubble">
-                <p class="streak-text-font">current streak</p>
-                <p class="streak-number-font">24 days</p>
-              </div>
-              <div class="mx-3 streak-bubble">
-                <p class="streak-text-font">longest streak</p>
-                <p class="streak-number-font">71 days</p>
-              </div>
-            </div>
-          </div>
-          <div class="stats-right ml-3">
-            <ul class="list-inline tabs-underlined">
-              <li>
-                <a href="#" class="tab-underlined active">This Week</a>
-              </li>
-              <li>
-                <a href="#" class="tab-underlined">This Month</a>
-              </li>
-              <li>
-                <a href="#" class="tab-underlined">Total Time</a>
-              </li>
-            </ul>
-            <div class="d-flex">
-              <button type="button" class="mt-3 ml-3 stats-button"></button>
-              <button type="button" class="mt-3 stats-button-remainder"></button>
-            </div>
-              <p class="stats-button-remainder-font ml-4">300/420 minutes</p>
+
+      <div class="new-statbar my-3">
+        <div class="">
+          <ul class="list-inline tabs-underlined">
+            <li>
+              <a href="#" class="tab-underlined active">This Week</a>
+            </li>
+            <li>
+              <a href="#" class="tab-underlined">This Month</a>
+            </li>
+            <li>
+              <a href="#" class="tab-underlined">Total Time</a>
+            </li>
+          </ul>
+          <p class="stats-button-remainder-font ml-4">300/420 minutes</p>
+          <div class="d-flex">
+            <button type="button" class="mt-3 ml-3 stats-button"></button>
+            <button type="button" class="mt-3 stats-button-remainder"></button>
           </div>
         </div>
       </div>
-      <div class="dashboard-right-bottom">
-        <ul class="list-inline tabs-underlined">
+
+      <div class="followers-section my-3">
+
+
+        <ul class="list-inline tabs-underlined pt-3">
           <li>
             <a href="#" class="tab-underlined active">Following</a>
             <!-- current_user.all_favorites.each do |favorite| ? -->
@@ -155,107 +112,116 @@
           </li>
         </ul>
 
-<div class="row">
+        <%= form_tag users_path, class: "navbar-searchbar mx-3", method: :get do %>
+        <div class="d-flex mt-4">
+          <%= text_field_tag :query, params[:query], class: "form-control banner-searchbar-round", placeholder: "Find more friends to follow" %>
+          <%= submit_tag "Find Friends", class: "btn btn-primary banner-searchbar-roundbutton" %>
+        <% end %>
+        </div>
+
+      <div class="row">
+        
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title-font">Eugene</h5>
+            <p class="card-text-font my-1">Current Streak: 12 days</p>
+            <p class="card-text-font mt-1">Longest Streak: 28 days</p>
+            <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Hollywood Film School</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Fatherhood Mastery</a></p>
+            <a href="#" class="unfollow-button mt-3">unfollow</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title-font">Cliff</h5>
+            <p class="card-text-font my-1">Current Streak: 0 days</p>
+            <p class="card-text-font mt-1">Longest Streak: 16 days</p>
+            <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Basketball for Beginners</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Electrical Wiring</a></p>
+            <a href="#" class="unfollow-button mt-3">unfollow</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title-font">Nicole</h5>
+            <p class="card-text-font my-1">Current Streak: 786 days</p>
+            <p class="card-text-font mt-1">Longest Streak: 786 days</p>
+            <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Advanced Full Stack Web Development</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Japanese N1</a></p>
+            <a href="#" class="unfollow-button mt-3">unfollow</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title-font">Jason</h5>
+            <p class="card-text-font my-1">Current Streak: 123 days</p>
+            <p class="card-text-font mt-1">Longest Streak: 423 days</p>
+            <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Advanced Economic Theory</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Music Theory</a></p>
+            <a href="#" class="unfollow-button mt-3">unfollow</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title-font">Richard</h5>
+            <p class="card-text-font my-1">Current Streak: 4</p>
+            <p class="card-text-font mt-1">Longest Streak: 7</p>
+            <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Basketball for Beginners</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">WoW for Beginners</a></p>
+            <a href="#" class="unfollow-button mt-3">unfollow</a>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+
+    </div>
 
 
 
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title-font">Eugene</h5>
-        <p class="card-text-font my-1">Current Streak: 12 days</p>
-        <p class="card-text-font mt-1">Longest Streak: 28 days</p>
-        <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Hollywood Film School</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Fatherhood Mastery</a></p>
-        <a href="#" class="unfollow-button mt-3">unfollow</a>
+  <div class="new-dashboard-right">
+    <div class="new-right-top">
+      <div class="new-streak-section">
+        <h5 class="card-title-font">Streaks</h5>
+        <div class="d-flex justify-content-center">
+          <div class="streak-bubble">
+            <p class="streak-text-font">current streak</p>
+            <p class="streak-number-font">24 days</p>
+          </div>
+          <div class="mx-3 streak-bubble">
+            <p class="streak-text-font">longest streak</p>
+            <p class="streak-number-font">71 days</p>
+        </div>
+      </div>
+      </div>
+    </div>    
+
+    <div class="new-right-top my-3">
+      <div class="new-streak-section">
+        <h5 class="card-title-font">Points</h5>
+        <div class="d-flex justify-content-around">
+          <div class="streak-bubble">
+            <p class="streak-text-font">Today</p>
+            <p class="streak-number-font"><%= rand(0..15) %> pts</p>
+          </div>
+          <div class="streak-bubble">
+            <p class="streak-text-font">Best Day</p>
+            <p class="streak-number-font"><%= rand(16..50) %> pts</p>
+          </div> 
+          <div class="streak-bubble">
+            <p class="streak-text-font">Total</p>
+            <p class="streak-number-font"><%= rand(51..500) %> pts</p>
+          </div>
+      </div>
       </div>
     </div>
+
+    <div class="badges-section my-3">
+      <h5 class="card-title-font">Badges</h5>
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/torch_badge_f48cmr.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/thumbs_up_badge_l2wvac.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/running_badge_yb8rdk.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/moai_badge_hap9jl.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/1st_badge_jncrjl.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/smarty_badge_ybgvgd.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/flame_badge_tpjer3.png" alt="" class="onebite-badges">
+    </div>
+
   </div>
-
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title-font">Cliff</h5>
-        <p class="card-text-font my-1">Current Streak: 0 days</p>
-        <p class="card-text-font mt-1">Longest Streak: 16 days</p>
-        <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Basketball for Beginners</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Electrical Wiring</a></p>
-        <a href="#" class="unfollow-button mt-3">unfollow</a>
-      </div>
-    </div>
-  </div>
-
-    <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title-font">Nicole</h5>
-        <p class="card-text-font my-1">Current Streak: 786 days</p>
-        <p class="card-text-font mt-1">Longest Streak: 786 days</p>
-        <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Advanced Full Stack Web Development</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Japanese N1</a></p>
-        <a href="#" class="unfollow-button mt-3">unfollow</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title-font">Jason</h5>
-        <p class="card-text-font my-1">Current Streak: 123 days</p>
-        <p class="card-text-font mt-1">Longest Streak: 423 days</p>
-        <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Advanced Economic Theory</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Music Theory</a></p>
-        <a href="#" class="unfollow-button mt-3">unfollow</a>
-      </div>
-    </div>
-  </div>
-
-    <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title-font">Richard</h5>
-        <p class="card-text-font my-1">Current Streak: 4</p>
-        <p class="card-text-font mt-1">Longest Streak: 7</p>
-        <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Basketball for Beginners</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">WoW for Beginners</a></p>
-        <a href="#" class="unfollow-button mt-3">unfollow</a>
-      </div>
-    </div>
-  </div>
-
-      </div>
-
-    </div>
 </div>
-
-
-
-
-<!-- <h1>Test starts from here</h1>
-
-<%#= month_calendar events: @user.enrollments do |date, enrollments| %>
-  <%#= date.day %>
-
-  <%# enrollments.each do |enrollment| %>
-    <div>
-      <%#= enrollment.course.title %>
-    </div>
-  <%# end %>
-<%# end %> -->
-
-<!-- <h1>Welcome to your dashboard <%#= @user.name.capitalize %></h1>
-
-
-<%# @user.enrollments.each do |enrollment| %>
-  <div class="card-user-dashboard">
-    <img src="https://i1.wp.com/launcheers.com/wp-content/uploads/2018/03/323b146a54f4e6be71adf4fa2c056374.png?w=797&ssl=1" />
-    <div class="card-user-dashboard-infos">
-
-      <h2><%#= enrollment.course.title %></h2>
-      <p> Course started on: <strong><%#= enrollment.start_date.strftime("%A, %b %d") %></strong></p>
-      <p>Your chosen start time to do your lesson every day <strong><%#= enrollment.time_of_day.strftime("%l:%M %p") %></strong></p>
-      <p>How long you decided to study every day <strong><%#= enrollment.duration %> mins</strong></p>
-      <p>Completion status <strong><%#= enrollment.completion_status %> %</strong></p>
-    </div>
-  </div>
-<%# end %>
-
-
-<%#= link_to 'Homepage', root_path %> -->
-
