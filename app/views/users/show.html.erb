@@ -37,6 +37,29 @@
         <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
         <p class="index-card-description-user-font">Current Courses: <%= rand(100) %> blah blah blah</p>
       </div>
+
+    <div>    <!--What happened to the code in this div??? -->
+             <% @user.courses.each do |course| %>
+              <% i = 0 %>
+              <p class="dark-grey-font-p"><%= course.title %></p>
+              <p class="dark-grey-font-p"><%= course.chapters[i].name %></p>
+              <%= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
+              <%= simple_form_for course.chapters[i] do |f| %>
+                <%= f.input :done, as: :boolean, checked_value: true %>
+                <%#= f.fields_for :chapters do |chapter| %>
+                  <%#= chapter.input :done, as: :boolean, checked_value: true %>
+                  <%#= chapter.submit %>
+                <%# end %>
+                <%= f.submit %>
+                <% i += 1 %>
+                <!-- Memo, is this update form connected to a certain user's chapter? -->
+              <% end %>
+              <!-- memo, this start lesson button links to the count of current streak -->
+              <!-- <a href="#" class="follow-button">start lesson</a> -->
+            <% end %>
+      </div>
+
+
       <div class="mx-3">
         <% if current_user.id == @user.id %>
           <%= link_to "Edit profile", "#", class: "unfollow-button" %> <!-- edit_user_path(@user) -->
@@ -47,6 +70,7 @@
         <% end %>
         <%# raise %>
       </div>
+
     </div>
 
       <div class="new-statbar my-3">
@@ -71,12 +95,8 @@
       </div>
 
       <div class="followers-section my-3">
-        <%= form_tag users_path, class: "navbar-searchbar mx-3", method: :get do %>
-        <div class="d-flex my-3">
-          <%= text_field_tag :query, params[:query], class: "form-control banner-searchbar-round", placeholder: "Find friends to follow" %>
-          <%= submit_tag "Find Friends", class: "btn btn-primary banner-searchbar-roundbutton" %>
-        <% end %>
-        </div>
+
+
         <ul class="list-inline tabs-underlined pt-3">
           <li>
             <a href="#" class="tab-underlined active">Following</a>
@@ -91,6 +111,16 @@
             <!-- current_user.all_favorited.each do |favorited| ?-->
           </li>
         </ul>
+
+        <%= form_tag users_path, class: "navbar-searchbar mx-3", method: :get do %>
+        <div class="d-flex mt-4">
+          <%= text_field_tag :query, params[:query], class: "form-control banner-searchbar-round", placeholder: "Find more friends to follow" %>
+          <%= submit_tag "Find Friends", class: "btn btn-primary banner-searchbar-roundbutton" %>
+        <% end %>
+        </div>
+
+      <div class="row">
+        
         <div class="card">
           <div class="card-body">
             <h5 class="card-title-font">Eugene</h5>
@@ -138,13 +168,60 @@
         </div>
       </div>
 
+      </div>
+
+
     </div>
 
 
 
   <div class="new-dashboard-right">
-    <p>testright</p>
-    <p>testright</p>
-  </div>
+    <div class="new-right-top">
+      <div class="new-streak-section">
+        <h5 class="card-title-font">Streaks</h5>
+        <div class="d-flex justify-content-center">
+          <div class="streak-bubble">
+            <p class="streak-text-font">current streak</p>
+            <p class="streak-number-font">24 days</p>
+          </div>
+          <div class="mx-3 streak-bubble">
+            <p class="streak-text-font">longest streak</p>
+            <p class="streak-number-font">71 days</p>
+        </div>
+      </div>
+      </div>
+    </div>    
 
+    <div class="new-right-top my-3">
+      <div class="new-streak-section">
+        <h5 class="card-title-font">Points</h5>
+        <div class="d-flex justify-content-around">
+          <div class="streak-bubble">
+            <p class="streak-text-font">Today</p>
+            <p class="streak-number-font"><%= rand(0..15) %> pts</p>
+          </div>
+          <div class="streak-bubble">
+            <p class="streak-text-font">Best Day</p>
+            <p class="streak-number-font"><%= rand(16..50) %> pts</p>
+          </div> 
+          <div class="streak-bubble">
+            <p class="streak-text-font">Total</p>
+            <p class="streak-number-font"><%= rand(51..500) %> pts</p>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="badges-section my-3">
+      <h5 class="card-title-font">Badges</h5>
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/torch_badge_f48cmr.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/thumbs_up_badge_l2wvac.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/running_badge_yb8rdk.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/moai_badge_hap9jl.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/1st_badge_jncrjl.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/smarty_badge_ybgvgd.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/flame_badge_tpjer3.png" alt="" class="onebite-badges">
+    </div>
+
+  </div>
 </div>
