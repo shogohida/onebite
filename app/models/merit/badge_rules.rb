@@ -26,8 +26,33 @@ module Merit
       # Find badge by badge_id, badge_id takes presidence over badge
 
       # test this badge when I create a user on localhost
-      grant_on 'users#create', badge_id: 7, badge: 'just-registered', to: :itself
+      grant_on 'users#create', badge: 'just-registered', to: :itself
+      # model_name: 'User'
+      # there is no create action for user since it depends on Devise
 
+      # badge created when folloing a user
+      grant_on 'users#follow', badge: 'Followed one person', to: :itself
+
+      # enrollment create
+      grant_on 'enrollments#create', badge: 'Enrollment prize', to: :user
+
+      # first idea for level up
+      # grant_on 'chapters#update', badge: 'Level up',
+      #   to: :user do |chapter|
+      #   course.index(chapter) == course.index(chapter) + 1
+      #   # need to change
+      # end
+
+      # second idea
+      grant_on 'enrollments#update', badge: 'Course completed!',
+        to: :user do |enrollment|
+        enrollment.completion_status == 100
+        # user.enrollment.completion_status == 100 ?
+        # need to create enrollments#update route and controller
+        # scraping should be related to enrollments#update
+      end
+
+      # examples given automatically
       # If it has 10 comments, grant commenter-10 badge
       grant_on 'comments#create', badge: 'commenter', level: 10 do |comment|
         comment.user.comments.count == 10
@@ -37,20 +62,6 @@ module Merit
       # grant_on 'comments#vote', badge: 'relevant-commenter',
       #   comment.votes.count == 5
       # end
-
-      # first idea
-      grant_on 'chapters#update', badge: 'Level up',
-        to: :user do |chapter|
-        course.index(chapter) == course.index(chapter) + 1
-        # need to change
-      end
-
-      # second idea
-      grant_on 'enrollment#update', badge: 'Level up'
-        to: :user do |enrollment|
-        enrollment.completion_status == 100
-        # user.enrollment.completion_status == 100 ?
-      end
 
       # Changes his name by one wider than 4 chars (arbitrary ruby code case)
       # grant_on 'registrations#update', badge: 'autobiographer',

@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  has_merit
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :enrollments
@@ -14,4 +12,5 @@ class User < ApplicationRecord
   acts_as_favoritable
   # - Specify which models can favorite other models by adding acts_as_favoritor:
   acts_as_favoritor
+  has_merit
 end
