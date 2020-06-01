@@ -34,6 +34,7 @@ gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'nokogiri'
 gem 'google-api-client'
+gem 'merit'
 
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 
