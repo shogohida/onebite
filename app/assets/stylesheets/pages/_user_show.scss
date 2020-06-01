@@ -1,3 +1,5 @@
+// Beginning of Version 1:
+
 .dashboard-container {
     display: flex;
     margin: 16px;
@@ -49,6 +51,7 @@
     background-color: #FF9A76;
     color: white;
     text-align: center;
+    transition: 0.2s;
 }
 
 .follow-button:hover {
@@ -59,35 +62,36 @@
 // END - style for unfollow button on user show page
 
 // BEGINNING - style for unfollow button on user show page
-.unfollow-button {
-    padding: 8px 24px;
-    border-radius: 8px;
-    background-color: white;
-    color: #FF9A76;
-    text-align: center;
-}
+// .unfollow-button {
+//     padding: 8px 24px;
+//     border-radius: 8px;
+//     background-color: white;
+//     color: #FF9A76 !important;
+//     text-align: center;
+// }
 
-.unfollow-button:hover {
-  background-color: white !important;
-  text-decoration: none;
-  color: #fa855b;
-}
+// .unfollow-button:hover {
+//   background-color: white !important;
+//   text-decoration: none;
+//   color: #fa855b;
+// }
 // END - style for unfollow button on user show page
 
 
 .unfollow-button {
     padding: 8px 24px;
     border-radius: 8px;
-    background-color: white;
-    color: #FF9A76;
+    background-color: white !important;
+    color: #FF9A76 !important;
     text-align: center;
     border: solid #FF9A76 1px;
+    transition: 0.2s;
 }
 
 .unfollow-button:hover {
   background-color: #FF9A76 !important;
   text-decoration: none;
-  color: white;
+  color: white !important;
 }
 
 .logo-photo-round {
@@ -212,3 +216,25 @@
   text-decoration: none !important;
   color: #FF9A76;
 }
+
+// End of Version 1:
+// Beginning of Version 2:
+.new-dashboard-left {
+  border: solid;
+  width: 66%;
+  font-family: helvetica;
+}
+
+.new-dashboard-right {
+  border: solid;
+  width: 33%;
+  font-family: helvetica;
+}
+
+.new-user-name-card {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+

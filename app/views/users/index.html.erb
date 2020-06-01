@@ -1,44 +1,84 @@
-
 <!-- TODO: insert navbar -->
+  <div>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon gray-background">
+    <%= link_to "OneBite", root_path, class: "onebite-home-orange"  %>
 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange" target="_blank">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text-orange mx-3" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Help", "#", class: "dropdown-item" %>
+            <%= link_to "Log Out", "#", class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <!-- BEGINNING - search form to look for a friend  -->
+<%= form_tag users_path, class: "navbar-searchbar mt-4 mb-3 mx-auto", method: :get do %>
+<div class="d-flex index-searchbar">
+
+  <%= text_field_tag :query, params[:query], class: "form-control banner-searchbar-round index-searchbar", placeholder: "Find friends to follow" %>
+  <%= submit_tag "Find Friends", class: "btn btn-primary index-searchbar banner-searchbar-roundbutton" %>
+<% end %>
+</div>
   <!-- form taken from the lecture on Search  -->
-  <%= form_tag users_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a friend" %>
-    <%= submit_tag "Search", class: "unfollow-button" %>
-  <% end %>
+<!--   <%#= form_tag users_path, method: :get do %>
+    <%#= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a friend" %>
+    <%#= submit_tag "Search", class: "unfollow-button" %>
+  <%# end %> -->
 <!-- END - search form to look for a friend  -->
 
 
 
 <!-- BEGINNING - the list of friends from the search in show.html.erb -->
 
-<div class="container">
-  <h1>Find your friends</h1>
-  <div class="row">
+<div class="users-index-container container">
+<!--   <h1>Find your friends</h1>
+ -->  <div class="row">
     <div class="col-sm-8 offset-sm-2">
+
+
+
+
+
       <div id="users">
         <% @users.each do |user| %>
-          <div class="card-users-index">
+          <div class="card-courses-users-index m-3">
             <div>
-              <img class="avatar-users-index-bordered" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-            </div>
-            <div class="card-users-index-infos">
-              <h2><%= link_to user.name.capitalize.to_s, user_path(user) %></h2>
-              <p><%= user.email %></p>
+              <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+            </div>       
+              
+
+            <div class="card-courses-index-infos justify-content-around results-info-left">
+              <h2 class="index-card-title-font user-index-card-name"><%= link_to user.name.capitalize.to_s, user_path(user), class: "user-index-card-name" %></h2>
+              <p class="index-card-description-user-font">Current Streak: <%= rand(100) %> days</p>
               <!-- test for Merit gem, badges and points -->
               <% user.badges.each do |badge| %>
                 <p><<%= badge.name %></p>
               <% end %>
               <p><%= user.points %></p>
               <!-- test ends -->
+
             </div>
-            <div class="card-users-index-buttons">
+            <div class="card-users-index-buttons mx-3">
               <% if current_user.favorited?(user) %>
-                <%= link_to "Unfollow", unfollow_user_path(user), class: "button-follow", method: :post, remote: true %>
+                <%= link_to "Unfollow", unfollow_user_path(user), class: "button-follow index-card-goto-show-font btn unfollow-button", method: :post, remote: true %>
               <% else %>
-                <%= link_to "Follow", follow_user_path(user), class: "button-unfollow", method: :post, remote: true %>
+                <%= link_to "Follow", follow_user_path(user), class: "index-card-goto-show-font btn btn-onebite-orange button-unfollow", method: :post, remote: true %>
               <% end %>
               <%# raise %>
             </div>
