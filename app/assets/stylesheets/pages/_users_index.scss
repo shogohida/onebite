@@ -1,0 +1,68 @@
+.users-index-container {
+ font-family: helvetica;
+}
+
+.card-courses-users-index {
+  overflow: hidden;
+  height: 140px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-family: helvetica !important;
+}
+
+.card-courses-users-index img {
+  height: 100%;
+  width: 160px;
+  object-fit: cover;
+}
+
+.avatar-users-index-bordered-new {
+  width: 104px !important;
+  height: 100% !important;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: rgba(0,0,0,0.2) 1px solid;
+}
+
+.index-searchbar {
+  height: 48px;
+}
+
+.index-card-description-user-font {
+  font-size: 16px !important;
+  color: #212121 !important;
+  font-family: helvetica !important;
+}
+
+.user-index-card-name {
+  color: #252525 !important;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.user-index-card-name:hover {
+  text-decoration: none;
+  color: #FF9A76 !important;
+  font-weight: bold;
+}
+
+      // <% @courses.each do |course| %>
+      //   <div class="card-courses-index m-3">
+      //     <% if course.platform.name == 'Codecademy' %>
+      //       <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" />
+      //     <% elsif course.platform.name == 'Udemy' %>
+      //       <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590646495/udemy_square_frdkbs.png" />
+      //     <% elsif course.platform.name == 'Coursera' %>
+      //       <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590722085/coursera-logo-square_y0yukg.webp" />
+      //     <% end %>
+      //     <div class="card-courses-index-infos justify-content-around results-info-left">
+      //       <h2 class="index-card-title-font"><%= course.title %></h2>
+      //       <p class="index-card-description-font"><%= course.description %></p>
+      //       <p class="index-card-time-font">Time to complete: <%= course.expected_time_to_complete %> hours</p>
+      //       <%= link_to "See details", course_path(course), class: "index-card-goto-show-font btn btn-onebite-orange" %>
+      //       <p class="index-card-rating-font"><%= course.rating %></p>
+      //       <p class="index-card-diff-font"><%= course.difficulty %></p>
+      //     </div>
