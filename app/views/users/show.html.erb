@@ -38,12 +38,12 @@
         <p class="index-card-description-user-font">Current Courses: <%= rand(100) %> blah blah blah</p>
       </div>
 
-    <div>    <!--What happened to the code in this div??? -->
-             <% @user.courses.each do |course| %>
+   <!--  <div>    What happened to the code in this div??? -->
+             <%# @user.courses.each do |course| %>
               <%# i = 0 %>
-              <p class="dark-grey-font-p"><%= course.title %></p>
-              <p class="dark-grey-font-p"><%#= course.chapters[i].name %></p>
-              <%= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
+              <!-- <p class="dark-grey-font-p"><%#= course.title %></p> -->
+              <!-- <p class="dark-grey-font-p"><%#= course.chapters[i].name %></p> -->
+              <%#= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
               <%#= simple_form_for course.chapters[i] do |f| %>
                 <%#= f.input :done, as: :boolean, checked_value: true %>
                 <%#= f.fields_for :chapters do |chapter| %>
@@ -56,13 +56,13 @@
               <%# end %>
               <!-- memo, this start lesson button links to the count of current streak -->
               <!-- <a href="#" class="follow-button">start lesson</a> -->
-            <% end %>
-      </div>
+            <%#end %>
+      <!-- </div> -->
 
 
       <div class="mx-3">
         <% if current_user.id == @user.id %>
-          <%= link_to "Edit profile", "#", class: "unfollow-button" %> <!-- edit_user_path(@user) -->
+          <%= link_to "My stats", "#", class: "unfollow-button" %> <!-- edit_user_path(@user) -->
         <% elsif current_user.favorited?(@user) %>
           <%= link_to "Unfollow", unfollow_user_path(@user), class: "unfollow-button", method: :post, remote: true %>
         <% else %>
@@ -120,6 +120,31 @@
         </div>
 
       <div class="row">
+
+<!-- User.find(@user.favorites[0].favoritable_id).name
+ -->   <% if @user.favorites %>
+          <% @user.favorites.each do |favorite| %>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title-font"><%= User.find(favorite.favoritable_id).name %></h5>
+                <p class="card-text-font my-1">Current Streak: <%= rand(0..20)  %> days</p>
+                <p class="card-text-font mt-1">Longest Streak: <%= rand(21..75) %> days</p>
+
+                    <% if favorite.favoritable.courses.any? %>
+                  <% User.find(favorite.favoritable_id).courses.each do |course| %>
+                    <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1 mr-3"><%= course.title %></a></p>
+                    <% end %>
+                <% else %>
+                <p class="mr-3 new-course-title">Currently not enrolled in any courses.</p>  
+                  <% end %>
+
+
+                <a href="#" class="unfollow-button mt-3">unfollow</a>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
 
         <div class="card">
           <div class="card-body">
