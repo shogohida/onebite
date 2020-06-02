@@ -155,16 +155,24 @@ puts "Finished creating #{Platform.count} platforms!"
 
 puts 'Creating courses...'
 
+
 # list of Duolingo available languages for English learners as of 31 May 2020
-# latin American Spanish
-# French
-# German
+
+
+# seeds NOT created for the following languages
+# Spanish
 # Japanese
-# Italian
 # Korean
-# Mandarin Chinese
+# German
+# Ukrainian
+# Italian
+# Portuguese for Brazilian Portuguese
+
+# Seeds created for the following languages
+
+# French
+
 # Russian
-# Brazilian Portuguese
 # Arabic
 # Turkish
 # Hindi
@@ -174,9 +182,7 @@ puts 'Creating courses...'
 # Greek
 # Irish
 # Polish
-# Norwegian Bokmal
 # Hebrew
-# High Valyrian
 # Vietnamese
 # Hawaiian
 # Danish
@@ -185,9 +191,137 @@ puts 'Creating courses...'
 # Welsh
 # Czech
 # Swahili
-# Scottish Gaelic
-# Ukrainian
+
 # Esperanto
+
+# DO NOT seed with this languages
+# High Valyrian
+# Norwegian Bokmal
+# Brazilian Portuguese
+# Mandarin Chinese
+# Scottish Gaelic
+# latin American Spanish
+
+
+# Duolingo courses
+
+@duolingo_spanish = Course.create!(
+  title: 'Spanish',
+  url: 'https://www.duolingo.com/course/es/en/Learn-Spanish',
+  description: "Learn Spanish in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+@duolingo_japanese = Course.create!(
+  title: 'Japanese',
+  url: 'https://www.duolingo.com/course/ja/en/Learn-Japanese',
+  description: "Learn Japanese in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+@duolingo_korean = Course.create!(
+  title: 'Korean',
+  url: 'https://www.duolingo.com/course/ko/en/Learn-Korean',
+  description: "Learn Korean in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+
+@duolingo_german = Course.create!(
+  title: 'German',
+  url: 'https://www.duolingo.com/course/de/en/Learn-German',
+  description: "Learn German in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+@duolingo_ukrainian = Course.create!(
+  title: 'Ukrainian',
+  url: 'https://www.duolingo.com/course/uk/en/Learn-Ukrainian',
+  description: "Learn Ukrainian in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+
+@duolingo_italian = Course.create!(
+  title: 'Italian',
+  url: 'https://www.duolingo.com/course/it/en/Learn-Italian',
+  description: "Learn Italian in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+
+@duolingo_french = Course.create!(
+  title: 'French',
+  url: 'https://www.duolingo.com/course/fr/en/Learn-French',
+  description: "Learn French in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+
+@duolingo_portuguese = Course.create!(
+  title: 'Portuguese',
+  url: 'https://www.duolingo.com/course/pt/en/Learn-Portuguese',
+  description: "Learn Portuguese in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+@duolingo_portuguese = Course.create!(
+  title: 'Portuguese',
+  url: 'https://www.duolingo.com/course/pt/en/Learn-Portuguese',
+  description: "Learn Portuguese in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+@duolingo_esperanto = Course.create!(
+  title: 'Esperanto',
+  url: 'https://en.duolingo.com/course/eo/en/Learn-Esperanto',
+  description: "Learn Esperanto in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+
+@duolingo_chinese = Course.create!(
+  title: 'Chinese',
+  url: 'https://en.duolingo.com/course/zh/en/Learn-Chinese',
+  description: "Learn Chinese in just 5 minutes a day. For free.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: nil,
+  platform_id: @duolingo.id
+)
+
+
+# Codecademy courses
 
 @javascript = Course.create!(
   title: 'Learn JavaScript',
