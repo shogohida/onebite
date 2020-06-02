@@ -31,7 +31,7 @@ module Merit
       # there is no create action for user since it depends on Devise
 
       # badge created when folloing a user
-      grant_on 'users#follow', badge: 'Followed one person', to: :itself
+      # grant_on 'users#follow', badge: 'Followed one person', to: :itself
 
       # enrollment create
       grant_on 'enrollments#create', badge: 'Enrollment prize', to: :user
