@@ -19,12 +19,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     current_user.favorite(@user)
-    #raise
-    if @user.save
-      redirect_to user_path(@user)
-    else
-      redirect_to root_path
-    end
+    redirect_to request.referrer
   end
 
   # method for current_user to unfollow another user
@@ -33,11 +28,8 @@ class UsersController < ApplicationController
     authorize @user
     current_user.unfavorite(@user)
     #raise
-    if @user.save
-      redirect_to user_path(@user)
-    else
-      redirect_to root_path
-    end
+
+    redirect_to request.referrer
   end
 
    # method for current_user to see the list of other users he/she is following

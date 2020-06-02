@@ -45,15 +45,11 @@
 
 
 <!-- BEGINNING - the list of friends from the search in show.html.erb -->
-
+<%# raise %>
 <div class="users-index-container container">
 <!--   <h1>Find your friends</h1>
  -->  <div class="row">
     <div class="col-sm-8 offset-sm-2">
-
-
-
-
 
       <div id="users">
         <% @users.each do |user| %>
@@ -62,15 +58,33 @@
               <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
             </div>
 
-
             <div class="card-courses-index-infos justify-content-around results-info-left">
               <h2 class="index-card-title-font user-index-card-name"><%= link_to user.name.capitalize.to_s, user_path(user), class: "user-index-card-name" %></h2>
-              <p class="index-card-description-user-font">Current Streak: <%= rand(100) %> days</p>
-              <!-- test for Merit gem, badges and points -->
+
+              <div class="d-flex">
+                <p class="index-card-description-user-font"><%= rand(100) %>-day streak  |</p>
               <% user.badges.each do |badge| %>
                 <p><<%= badge.name %></p>
               <% end %>
-              <p><%= user.points %> points</p>
+              <p>| <%= user.points + rand(1..15) %> points</p>
+              </div>
+
+              <!-- test for Merit gem, badges and points -->
+              
+              <div class="d-flex">
+                <% if user.courses == [] %>
+                  <p class="mr-3 new-course-title">Currently not enrolled in any courses.</p>
+                <% elsif user.courses %>
+                  <% user.courses.each do |course|  %>
+                    <%= link_to course.title, course_path(course), class: "mr-3 new-class-url-link", target: :_blank %>
+                  <% end %>
+                <% end %>
+              </div>
+<!-- 
+<a href="<%#= course_path %>" class="new-class-url-link" target="blank"><p class="mr-3 new-course-title"><%#= course.title %></p></a> -->
+
+
+
               <!-- test ends -->
 
             </div>
