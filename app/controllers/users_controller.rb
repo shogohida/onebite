@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    get_enrollment_stats
     authorize @user
   end
 
@@ -13,6 +12,12 @@ class UsersController < ApplicationController
     end
     # authorisation error - https://github.com/varvet/pundit#ensuring-policies-and-scopes-are-used
     # see example from courses_controller.rb
+  end
+
+  def mystats
+    @user = User.find(params[:id])
+    get_enrollment_stats
+    authorize @user
   end
 
   # method for current_user to follow another user
@@ -47,6 +52,7 @@ class UsersController < ApplicationController
 
   # this method loads stats for all the enrollments inside of @stats
   def get_enrollment_stats
+    @stats = []
     # get all the enrollments with current_user.enrollments
     current_user_enrollments = current_user.enrollments  # returns an array of enrollment instances
     # iterate over that array of enrollments
@@ -57,7 +63,7 @@ class UsersController < ApplicationController
       case enrollment.course.platform.name
       # julien = User.find(7)
       # julien.enrollments.first.course.platform.name returns "Codecademy"
-      when 'duolingo'
+      when 'Duolingo'
         # julien.enrollments.first.completion_status returns 30
         # duolingo_scraped_data is an array of hashes like  [{:language=>"Spanish", :xp_points=>"7037"}, {:language=>"Korean", :xp_points=>"4770"}, ...]
         duolingo_scraped_data = DuolingoScraper.new(enrollment.platform_username).scrape
