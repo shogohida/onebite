@@ -1,11 +1,177 @@
-<h1>my stats</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon gray-background">
+  <%= link_to "OneBite", root_path, class: "onebite-home-orange"  %>
 
-<!-- TODO: iterate over the array @stats -->
-<!-- @stats.each do |stat| -->
-  <!-- conditional statement to display stat depending on the platform -->
-  <!-- render the relevant partial card for each stat (depending on the platform) -->
-<!-- end -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<% @stats.first.each do |stat| %>
-  <%= "#{stat[:language]} - #{stat[:xp_points]} XP" %>
-<% end %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a href="https://calendar.google.com/calendar/" class="nav-link navbar-link-text-orange" target="_blank">Calendar</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text-orange mx-3" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Help", "#", class: "dropdown-item" %>
+          <%= link_to "Log Out", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="dashboard-container">
+
+  <div class="new-dashboard-left mr-3">
+
+    <div class="new-user-name-card card-courses-users-index">
+      <div>
+        <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+      </div>
+      <div class="card-courses-index-infos justify-content-around results-info-left">
+        <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
+        <p class="index-card-description-user-font">Current Courses: <%= rand(100) %> blah blah blah</p>
+      </div>
+
+   <!--  <div>    What happened to the code in this div??? -->
+             <%# @user.courses.each do |course| %>
+              <%# i = 0 %>
+              <!-- <p class="dark-grey-font-p"><%#= course.title %></p> -->
+              <!-- <p class="dark-grey-font-p"><%#= course.chapters[i].name %></p> -->
+              <%#= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
+              <%#= simple_form_for course.chapters[i] do |f| %>
+                <%#= f.input :done, as: :boolean, checked_value: true %>
+                <%#= f.fields_for :chapters do |chapter| %>
+                  <%#= chapter.input :done, as: :boolean, checked_value: true %>
+                  <%#= chapter.submit %>
+                <%# end %>
+                <%#= f.submit %>
+                <%# i += 1 %>
+                <!-- Memo, is this update form connected to a certain user's chapter? -->
+              <%# end %>
+              <!-- memo, this start lesson button links to the count of current streak -->
+              <!-- <a href="#" class="follow-button">start lesson</a> -->
+            <%#end %>
+      <!-- </div> -->
+
+
+      <div class="mx-3">
+        <%= link_to "My stats", user_mystats(@user), class: "unfollow-button" %> <!-- edit_user_path(@user) -->
+        <% if current_user.id == @user.id %>
+          <%= link_to "My stats", user_mystats(@user), class: "unfollow-button" %> <!-- edit_user_path(@user) -->
+        <% elsif current_user.favorited?(@user) %>
+          <%= link_to "Unfollow", unfollow_user_path(@user), class: "unfollow-button", method: :post, remote: true %>
+        <% else %>
+          <%= link_to "Follow", follow_user_path(@user), class: "follow-button", method: :post, remote: true %>
+        <% end %>
+        <%# raise %>
+      </div>
+
+    </div>
+
+      <div class="new-statbar my-3">
+        <div class="">
+          <ul class="list-inline tabs-underlined">
+            <li>
+              <a href="#" class="tab-underlined active">This Week</a>
+            </li>
+            <li>
+              <a href="#" class="tab-underlined">This Month</a>
+            </li>
+            <li>
+              <a href="#" class="tab-underlined">Total Time</a>
+            </li>
+          </ul>
+          <p class="stats-button-remainder-font ml-4">300/420 minutes</p>
+          <div class="d-flex">
+            <button type="button" class="mt-3 ml-3 stats-button"></button>
+            <button type="button" class="mt-3 stats-button-remainder"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="followers-section my-3">
+
+
+        <ul class="list-inline tabs-underlined pt-3">
+          <li>
+            <a href="#" class="tab-underlined active">Following</a>
+            <!-- current_user.all_favorites.each do |favorite| ? -->
+            <%# @user = User.find(favorite.user_id) %>
+              <%#= @user.name %>
+              <%#= @user.streak %>
+            <%# end %>
+          </li>
+          <li>
+            <a href="#" class="tab-underlined">Followers</a>
+            <!-- current_user.all_favorited.each do |favorited| ?-->
+          </li>
+        </ul>
+
+        <%= form_tag users_path, class: "navbar-searchbar mx-3", method: :get do %>
+        <div class="d-flex mt-4">
+          <%= text_field_tag :query, params[:query], class: "form-control banner-searchbar-round", placeholder: "Find more friends to follow" %>
+          <%= submit_tag "Find Friends", class: "btn btn-primary banner-searchbar-roundbutton" %>
+        <% end %>
+        </div>
+
+
+    </div>
+
+
+
+  <div class="new-dashboard-right">
+    <div class="new-right-top">
+      <div class="new-streak-section">
+        <h5 class="card-title-font">Streaks</h5>
+        <div class="d-flex justify-content-center">
+          <div class="streak-bubble">
+            <p class="streak-text-font">current streak</p>
+            <p class="streak-number-font">24 days</p>
+          </div>
+          <div class="mx-3 streak-bubble">
+            <p class="streak-text-font">longest streak</p>
+            <p class="streak-number-font">71 days</p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="new-right-top my-3">
+      <div class="new-streak-section">
+        <h5 class="card-title-font">Points</h5>
+        <div class="d-flex justify-content-around">
+          <div class="streak-bubble">
+            <p class="streak-text-font">Today</p>
+            <p class="streak-number-font"><%= rand(0..15) %> pts</p>
+          </div>
+          <div class="streak-bubble">
+            <p class="streak-text-font">Best Day</p>
+            <p class="streak-number-font"><%= rand(16..50) %> pts</p>
+          </div>
+          <div class="streak-bubble">
+            <p class="streak-text-font">Total</p>
+            <p class="streak-number-font"><%= rand(51..500) %> pts</p>
+          </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="badges-section my-3">
+      <h5 class="card-title-font">Badges</h5>
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/torch_badge_f48cmr.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/thumbs_up_badge_l2wvac.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/running_badge_yb8rdk.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/moai_badge_hap9jl.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/1st_badge_jncrjl.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/smarty_badge_ybgvgd.png" alt="" class="onebite-badges">
+      <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/flame_badge_tpjer3.png" alt="" class="onebite-badges">
+    </div>
+
+  </div>
+</div>

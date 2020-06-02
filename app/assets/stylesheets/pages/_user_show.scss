@@ -129,7 +129,7 @@
 }
 
 .streak-number-font {
-    color: #555555;    
+    color: #555555;
         font-weight: bolder;
 
     font-size: 24px;
@@ -251,7 +251,7 @@
     padding: 16px;
     background-color: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 8px; 
+    border-radius: 8px;
     margin: 0;
     height: 140px;
 }
@@ -260,7 +260,7 @@
     padding: 8px 16px;
     background-color: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 8px; 
+    border-radius: 8px;
     margin: 0;
 }
 
@@ -272,7 +272,7 @@
     padding: 8px 16px;
     background-color: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 8px; 
+    border-radius: 8px;
     margin: 0;
     height: 140px;
 }
@@ -286,4 +286,17 @@
 
 .onebite-badges {
   width: 80px !important;
+}
+
+.leaderboard-duolingo-japanese-section {
+  padding: 16px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.leaderboard-duolingo-japanese-section p {
+  margin-bottom: 0px;
+  margin-left: 8px;
+  margin-right: 16px;
 }
