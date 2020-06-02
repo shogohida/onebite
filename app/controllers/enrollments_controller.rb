@@ -80,6 +80,6 @@ class EnrollmentsController < ApplicationController
   private
 
   def enrollment_params
-    params.require(:enrollment).permit(:course_id, :user_id, :start_date, :completed_at, :duration, :time_of_day, :completion_status, :frequency)
+    params.require(:enrollment).permit(:course_id, :user_id, :start_date, :completed_at, :duration, :time_of_day, :completion_status, :frequency, :platform_username)
   end
 end
