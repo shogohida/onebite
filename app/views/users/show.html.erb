@@ -40,20 +40,20 @@
 
     <div>    <!--What happened to the code in this div??? -->
              <% @user.courses.each do |course| %>
-              <% i = 0 %>
+              <%# i = 0 %>
               <p class="dark-grey-font-p"><%= course.title %></p>
-              <p class="dark-grey-font-p"><%= course.chapters[i].name %></p>
+              <p class="dark-grey-font-p"><%#= course.chapters[i].name %></p>
               <%= link_to "start lesson", course.url, target: :_blank, class: "follow-button" %>
-              <%= simple_form_for course.chapters[i] do |f| %>
-                <%= f.input :done, as: :boolean, checked_value: true %>
+              <%#= simple_form_for course.chapters[i] do |f| %>
+                <%#= f.input :done, as: :boolean, checked_value: true %>
                 <%#= f.fields_for :chapters do |chapter| %>
                   <%#= chapter.input :done, as: :boolean, checked_value: true %>
                   <%#= chapter.submit %>
                 <%# end %>
-                <%= f.submit %>
-                <% i += 1 %>
+                <%#= f.submit %>
+                <%# i += 1 %>
                 <!-- Memo, is this update form connected to a certain user's chapter? -->
-              <% end %>
+              <%# end %>
               <!-- memo, this start lesson button links to the count of current streak -->
               <!-- <a href="#" class="follow-button">start lesson</a> -->
             <% end %>
@@ -120,7 +120,7 @@
         </div>
 
       <div class="row">
-        
+
         <div class="card">
           <div class="card-body">
             <h5 class="card-title-font">Eugene</h5>
@@ -190,7 +190,7 @@
         </div>
       </div>
       </div>
-    </div>    
+    </div>
 
     <div class="new-right-top my-3">
       <div class="new-streak-section">
@@ -203,7 +203,7 @@
           <div class="streak-bubble">
             <p class="streak-text-font">Best Day</p>
             <p class="streak-number-font"><%= rand(16..50) %> pts</p>
-          </div> 
+          </div>
           <div class="streak-bubble">
             <p class="streak-text-font">Total</p>
             <p class="streak-number-font"><%= rand(51..500) %> pts</p>
