@@ -128,6 +128,12 @@ puts 'Cleaning up the platforms...'
 Platform.destroy_all
 
 puts 'Creating the platforms..'
+
+@duolingo = Platform.create!(
+  name: 'Duolingo',
+  url: 'https://www.duolingo.com'
+)
+
 @codecademy = Platform.create!(
   name: 'Codecademy',
   url: 'https://www.codecademy.com'
@@ -149,6 +155,39 @@ puts "Finished creating #{Platform.count} platforms!"
 
 puts 'Creating courses...'
 
+# list of Duolingo available languages for English learners as of 31 May 2020
+# latin American Spanish
+# French
+# German
+# Japanese
+# Italian
+# Korean
+# Mandarin Chinese
+# Russian
+# Brazilian Portuguese
+# Arabic
+# Turkish
+# Hindi
+# Dutch
+# Swedish
+# Latin
+# Greek
+# Irish
+# Polish
+# Norwegian Bokmal
+# Hebrew
+# High Valyrian
+# Vietnamese
+# Hawaiian
+# Danish
+# Romanian
+# Indonesian
+# Welsh
+# Czech
+# Swahili
+# Scottish Gaelic
+# Ukrainian
+# Esperanto
 
 @javascript = Course.create!(
   title: 'Learn JavaScript',

@@ -1,5 +1,15 @@
 class DuolingoScraper
 
+# duolingo_users = [
+#   'rory678',
+#   'trouni',
+#   'Algarve11',
+#   'r0ventura',
+#   'Rundmaus',
+#   'moonsunalphas099'
+    # 'dberks'
+# ]
+
   def initialize(username)
     @user_profile_url = "https://www.duolingo.com/profile/#{username}"
   end
@@ -31,3 +41,5 @@ class DuolingoScraper
     return array
   end
 end
+
+
