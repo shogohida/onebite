@@ -49,6 +49,24 @@
   font-weight: bold;
 }
 
+.new-course-title {
+  font-family: helvetica;
+  font-weight: bold !important;
+  font-size: 16px;
+}
+
+.new-class-url-link {
+  transition: 0.2s;
+  color: #252525 !important;
+  font-weight: bolder;
+  font-family: helvetica;
+}
+
+.new-class-url-link:hover {
+  color: #FF9A76 !important;
+  text-decoration: none;
+}
+
       // <% @courses.each do |course| %>
       //   <div class="card-courses-index m-3">
       //     <% if course.platform.name == 'Codecademy' %>
