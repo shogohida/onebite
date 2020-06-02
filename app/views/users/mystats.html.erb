@@ -1,0 +1,11 @@
+<h1>my stats</h1>
+
+<!-- TODO: iterate over the array @stats -->
+<!-- @stats.each do |stat| -->
+  <!-- conditional statement to display stat depending on the platform -->
+  <!-- render the relevant partial card for each stat (depending on the platform) -->
+<!-- end -->
+
+<% @stats.first.each do |stat| %>
+  <%= "#{stat[:language]} - #{stat[:xp_points]} XP" %>
+<% end %>
