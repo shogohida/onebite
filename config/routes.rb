@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   # routes for 'search for a user' feature
   get '/users', to: 'users#index', as: :users
 
+  # route for showing user stats page
+  get 'users/:id/mystats', to: 'users#mystats', as: :user_mystats
+
   # left as a memo for Merit gem
   # devise_for :users, controllers: { registrations: 'users/registrations' }
 end

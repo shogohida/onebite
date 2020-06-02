@@ -14,6 +14,10 @@ class UserPolicy < ApplicationPolicy
   #   true
   # end
 
+  def mystats?
+    true
+  end
+
   def follow?
     true
     # current_user can follow / anyone any user except himself / herself
