@@ -174,3 +174,16 @@
   flex-grow: 1;
 }
 // END - cards for user dashboard
+
+.index-card-description-user-font-link-new {
+  font-size: 16px !important;
+  color: #252525 !important;
+  font-family: helvetica !important;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.index-card-description-user-font-link-new:hover {
+  text-decoration: none !important;
+  color: #FF9A76 !important;
+}

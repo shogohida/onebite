@@ -79,12 +79,12 @@
 
 
 .unfollow-button {
-    padding: 8px 24px;
+    padding: 8px 8px;
     border-radius: 8px;
     background-color: white !important;
-    color: #FF9A76 !important;
+    color: #a7a7a7 !important;
     text-align: center;
-    border: solid #FF9A76 1px;
+    border: solid #a7a7a7 1px;
     transition: 0.2s;
 }
 
@@ -92,6 +92,8 @@
   background-color: #FF9A76 !important;
   text-decoration: none;
   color: white !important;
+  border: solid #FF9A76 1px;
+
 }
 
 .logo-photo-round {
@@ -209,7 +211,7 @@
 .card-text-font {
   color: #555555;
   font-family: helvetica;
-  font-size: 20 px;
+  transition: .02s;
 }
 
 .card {
