@@ -25,13 +25,17 @@
 </div>
 
 
-<div class="dashboard-container">
+<div class="dashboard-container justify-content-center mt-3">
 
   <div class="new-dashboard-left mr-3">
 
     <div class="new-user-name-card card-courses-users-index">
       <div>
-        <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
+        <% if @user.name == "Yun" %>
+          <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1589709320/Yun_Chung_Profile_Photo_2_rlfgi5.jpg" />
+        <% else %>
+          <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591165384/WooChaHee_satbqe.jpg" />
+        <% end %>
       </div>
       <div class="card-courses-index-infos justify-content-around results-info-left">
         <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
@@ -78,7 +82,7 @@
 
     </div>
 
-      <div class="new-statbar my-3">
+ <!--      <div class="new-statbar my-3">
         <div class="">
           <ul class="list-inline tabs-underlined">
             <li>
@@ -97,7 +101,7 @@
             <button type="button" class="mt-3 stats-button-remainder"></button>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="followers-section my-3">
 
@@ -131,7 +135,17 @@
           <% @user.favorites.each do |favorite| %>
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title-font"><%= User.find(favorite.favoritable_id).name %></h5>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center justify-content-between">  
+                  <img class="avatar mr-3" src="<%= ['https://res.cloudinary.com/deyqjsowe/image/upload/v1591165384/WooChaHee_satbqe.jpg', 'https://kitt.lewagon.com/placeholder/users/sarahlafer', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/pjoe_esm4oc.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/bennifer_keahqo.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/jonoh_glkc4f.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/julie_l5se6x.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166444/janet_qmt3wf.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166613/mickles_ax06yk.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166730/virginia_ucqyxr.jpg'].sample %>" />
+                  <h5 class="card-title-font"><%= User.find(favorite.favoritable_id).name %></h5>
+                  </div>
+                  <div>
+                                    <a href="#" class="unfollow-button mt-3">unfollow</a>
+
+
+                  </div>
+                </div>
                 <p class="card-text-font my-1">Current Streak: <%= rand(0..20)  %> days</p>
                 <p class="card-text-font mt-1">Longest Streak: <%= rand(21..75) %> days</p>
 
@@ -143,9 +157,12 @@
                 <p class="mr-3 new-course-title">Currently not enrolled in any courses.</p>
                   <% end %>
 
+          <p class="card-text-font mt-1 mb-o bold-this">Completed: 39% of enrolled courses</p>
+          <div class="progress mt-0">
+            <div class="progress-bar mt-0" role="progressbar" style="width: 39%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
 
-
-                <a href="#" class="unfollow-button mt-3">unfollow</a>
               </div>
             </div>
           <% end %>
@@ -154,64 +171,129 @@
 
         <div class="card">
           <div class="card-body">
-            <div class="d-flex align-items-center">
-              <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Eugene_wwiqr9.jpg" class="avatar mr-3" alt="">
-              <h5 class="card-title-font">Eugene</h5>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Eugene_wwiqr9.jpg" class="avatar mr-3" alt="">            
+                <h5 class="card-title-font">Eugene</h5>
+              </div>
+              <div>            
+                <a href="#" class="unfollow-button mt-3">unfollow</a>
+              </div>
+
             </div>
             <p class="card-text-font my-1">Current Streak: 12 days</p>
             <p class="card-text-font mt-1">Longest Streak: 28 days</p>
             <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Hollywood Film School</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Japanese</a></p>
-            <a href="#" class="unfollow-button mt-3">unfollow</a>
+
+          <p class="card-text-font mt-1 mb-o bold-this">Completed: 22% of enrolled courses</p>
+          <div class="progress mt-0">
+            <div class="progress-bar mt-0" role="progressbar" style="width: 22%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+
           </div>
         </div>
 
+
         <div class="card">
           <div class="card-body">
-            <div class="d-flex align-items-center">
-              <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Sylvain_hqkyp8.jpg" class="avatar mr-3" alt="">
-              <h5 class="card-title-font">Sylvain</h5>
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Sylvain_hqkyp8.jpg" class="avatar mr-3" alt="">            
+                <h5 class="card-title-font">Sylvain</h5>
+              </div>
+              <div>
+                <a href="#" class="unfollow-button mt-3">unfollow</a>
+              </div>
+
             </div>
             <p class="card-text-font my-1">Current Streak: 786 days</p>
             <p class="card-text-font mt-1">Longest Streak: 786 days</p>
             <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Leadership & Management</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Kanji</a></p>
-            <a href="#" class="unfollow-button mt-3">unfollow</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex align-items-center">
-              <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Cliff_pscoxm.jpg" class="avatar mr-3" alt="">
-              <h5 class="card-title-font">Cliff</h5>
+
+          <p class="card-text-font mt-1 mb-o bold-this">Completed: 85% of enrolled courses</p>
+          <div class="progress mt-0">
+            <div class="progress-bar mt-0" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             </div>
-            <p class="card-text-font my-1">Current Streak: 0 days</p>
-            <p class="card-text-font mt-1">Longest Streak: 16 days</p>
-            <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Basketball for Beginners</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Electrical Wiring</a></p>
-            <a href="#" class="unfollow-button mt-3">unfollow</a>
+          </div>
+
           </div>
         </div>
 
         <div class="card">
           <div class="card-body">
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center">
+                <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Cliff_pscoxm.jpg" class="avatar mr-3" alt="">            
+                <h5 class="card-title-font">Cliff</h5>            
+              </div>
+              <div>            
+                <a href="#" class="unfollow-button mt-3">unfollow</a>
+              </div>
+
+            </div>
+            <p class="card-text-font my-1">Current Streak: 0 days</p>
+            <p class="card-text-font mt-1">Longest Streak: 16 days</p>
+            <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Basketball for Beginners</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Electrical Wiring</a></p>
+
+          <p class="card-text-font mt-1 mb-o bold-this">Completed: 7% of enrolled courses</p>
+          <div class="progress mt-0">
+            <div class="progress-bar mt-0" role="progressbar" style="width: 7%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
               <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Jason_fmfw9q.jpg" class="avatar mr-3" alt="">
               <h5 class="card-title-font">Jason</h5>
+              </div>
+              <div>            
+                <a href="#" class="unfollow-button mt-3">unfollow</a>
+              </div>
             </div>
             <p class="card-text-font my-1">Current Streak: 123 days</p>
             <p class="card-text-font mt-1">Longest Streak: 423 days</p>
             <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Advanced Economic Theory</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Music Theory</a></p>
-            <a href="#" class="unfollow-button mt-3">unfollow</a>
+
+          <p class="card-text-font mt-1 mb-o bold-this">Completed: 92% of enrolled courses</p>
+          <div class="progress mt-0">
+            <div class="progress-bar mt-0" role="progressbar" style="width: 92%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+
           </div>
         </div>
         <div class="card">
           <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-              <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162462/Richard_y6bhtw.jpg" class="avatar mr-3" alt="">
-              <h5 class="card-title-font">Richard</h5>
+
+                <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162462/Richard_y6bhtw.jpg" class="avatar mr-3" alt="">            
+                <h5 class="card-title-font">Richard</h5>
+              </div>
+              <div>
+                <a href="#" class="unfollow-button mt-3">unfollow</a>
+              </div>
+
             </div>
             <p class="card-text-font my-1">Current Streak: 4</p>
             <p class="card-text-font mt-1">Longest Streak: 7</p>
             <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Basketball for Beginners</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">WoW for Beginners</a></p>
-            <a href="#" class="unfollow-button mt-3">unfollow</a>
+
+          <p class="card-text-font mt-1 mb-o bold-this">Completed: 5% of enrolled courses</p>
+          <div class="progress mt-0">
+            <div class="progress-bar mt-0" role="progressbar" style="width: 5%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+
           </div>
         </div>
       </div>

@@ -2,7 +2,8 @@
 
 .dashboard-container {
     display: flex;
-    margin: 16px;
+    margin: auto;
+    margin
     font-family: helvetica;
     justify-content: center !important;
     width: 90vw;
@@ -311,3 +312,23 @@
 .duo-opaque {
   opacity: 0.85;
 }
+
+.progress {
+  border-radius: 8px;
+  margin-top: 0px !important;
+}
+
+.progress-bar {
+  background-color: #FF9A76 !important;
+  border-radius: 8px;
+    margin-top: 0px !important;
+}
+
+.bold-this {
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 32px !important;
+}
+// <a href="#" class="enrolled-in-link card-text-font mt-1">Hollywood Film School</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Japanese</a>
+
+
