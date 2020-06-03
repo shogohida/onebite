@@ -1,0 +1,14 @@
+<!-- TODO: display a card for each enrollment of a user -->
+  <!-- iterate over each platform -->
+  <!-- for each platform iterate over each course -->
+  <!-- for each course iterate over each enrollment -->
+  <!-- display the card associated with enrollment -->
+  <!-- find all the friends from current_user who are taking the same course -->
+
+<% user.platforms.each do |platform| %>
+  <% case platform.name %>
+  <% when 'Duolingo' %>
+    <%= render 'platforms/duolingo_leaderboard', enrollments: user.enrollments_for(platform) %>
+  <% end %>
+<% end %>
+

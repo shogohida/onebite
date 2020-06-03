@@ -4,6 +4,14 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def scrape_duolingo
+    # define routes to that controller action
+    # need a button on view which will trigger that route
+    # run the scraping inside of that controller action
+    # first use redirect to view
+    # lastly try to render to the view using AJAX (tricky part)
+  end
+
   def index
     if params[:query].present?
       @users = policy_scope(User).where(name: params[:query])
@@ -13,12 +21,6 @@ class UsersController < ApplicationController
     # authorisation error - https://github.com/varvet/pundit#ensuring-policies-and-scopes-are-used
     # see example from courses_controller.rb
   end
-
-  # def mystats
-  #   @user = User.find(params[:id])
-  #   get_enrollment_stats
-  #   authorize @user
-  # end
 
   # method for current_user to follow another user
   def follow
@@ -50,9 +52,10 @@ class UsersController < ApplicationController
 
   private
 
-  # this method loads stats for all the enrollments inside of @stats
+  # WARNING - DO NOT USE this commented out code please - I wish to keep it purely for future reference (Julien)
   # def get_enrollment_stats
-  #   @stats = []
+  #   # this method loads stats for all the enrollments inside of @stats
+  #   @stats = {}
   #   # get all the enrollments with current_user.enrollments
   #   current_user_enrollments = current_user.enrollments  # returns an array of enrollment instances
   #   # iterate over that array of enrollments
@@ -66,9 +69,9 @@ class UsersController < ApplicationController
   #     when 'Duolingo'
   #       # julien.enrollments.first.completion_status returns 30
   #       # duolingo_scraped_data is an array of hashes like  [{:language=>"Spanish", :xp_points=>"7037"}, {:language=>"Korean", :xp_points=>"4770"}, ...]
-  #       duolingo_scraped_data = DuolingoScraper.new(enrollment.platform_username).scrape
+  #       @stats[:duolingo] = DuolingoScraper.new(@user).scrape
+  #       # { duolingo:[{:language=>"Spanish", :xp_points=>"7037"}, {:language=>"Korean", :xp_points=>"4770"}, ...] }
   #     end
-  #     @stats << duolingo_scraped_data
   #   end
   #   # 3 - push that data into @stats
   #   return @stats
