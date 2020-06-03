@@ -320,6 +320,57 @@ puts 'Creating courses...'
 )
 
 
+# Wanikani courses
+@wanikani_level1 = Course.create!(
+  title: 'Level 1 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/1',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
+@wanikani_level2 = Course.create!(
+  title: 'Level 2 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/2',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
+@wanikani_level3 = Course.create!(
+  title: 'Level 3 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/3',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
+@wanikani_level4 = Course.create!(
+  title: 'Level 4 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/4',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
+@wanikani_level5 = Course.create!(
+  title: 'Level 5 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/5',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
 # Codecademy courses
 
 @javascript = Course.create!(

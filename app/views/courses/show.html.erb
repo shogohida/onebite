@@ -77,8 +77,11 @@
 				<h6 class="platform-font"><%= @course.platform.name %></h6>
 				<h6><%= @course.description %></h6>
 				<br>
-				 <h6 class="">Time to complete: <%= @course.expected_time_to_complete %></h6>
-
+        <%# if @course.expected_time_to_complete == "Not Applicable" %>
+				<h6 class="">Time to complete: <%= @course.expected_time_to_complete %></h6>
+        <%# else %>
+          <!-- <h6 class="">Time to complete: <%#= @course.expected_time_to_complete %> hours</h6> -->
+        <%# end %>
 			</div>
 				<%= link_to 'Back to results', courses_path, class: "navbar-link-text-orange m-5 back-to-results" %>
 			</div>
