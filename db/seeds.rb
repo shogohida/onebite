@@ -210,7 +210,7 @@ puts 'Creating courses...'
   description: "Learn Spanish in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -220,7 +220,7 @@ puts 'Creating courses...'
   description: "Learn Japanese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -230,7 +230,7 @@ puts 'Creating courses...'
   description: "Learn Korean in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -241,7 +241,7 @@ puts 'Creating courses...'
   description: "Learn German in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -251,7 +251,7 @@ puts 'Creating courses...'
   description: "Learn Ukrainian in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -262,7 +262,7 @@ puts 'Creating courses...'
   description: "Learn Italian in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -273,7 +273,7 @@ puts 'Creating courses...'
   description: "Learn French in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -284,7 +284,7 @@ puts 'Creating courses...'
   description: "Learn Portuguese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -294,7 +294,7 @@ puts 'Creating courses...'
   description: "Learn Portuguese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -304,7 +304,7 @@ puts 'Creating courses...'
   description: "Learn Esperanto in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -315,7 +315,7 @@ puts 'Creating courses...'
   description: "Learn Chinese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: Not Applicable,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -371,75 +371,32 @@ puts 'Creating courses...'
 puts 'Chapters being created...'
 chapter_one = Chapter.create!(
     name: "1 - Introduction and Basics",
-    course_id: @duolingo.id
+    course_id: @duolingo_japanese.id
 )
 chapter_two = Chapter.create!(
     name: "2 - Daily Vocabulary",
-    course_id: @duolingo.id
+    course_id: @duolingo_japanese.id
 )
 chapter_three = Chapter.create!(
     name: "3 - Common Activities",
-    course_id: @duolingo.id
+    course_id: @duolingo_japanese.id
 )
 chapter_four = Chapter.create!(
     name: "4 - Activities Advanced",
-    course_id: @duolingo.id
+    course_id: @duolingo_japanese.id
 )
 chapter_five = Chapter.create!(
     name: "5 - Special Events",
-    course_id: @duolingo.id
+    course_id: @duolingo_japanese.id
 )
 chapter_6 = Chapter.create!(
     name: "6 - Activities Advanced",
-    course_id: @duolingo.id
+    course_id: @duolingo_japanese.id
 )
 chapter_seven = Chapter.create!(
     name: "7 - Specialized Vocabulary",
-    course_id: @duolingo.id
-)
-
-
-chapter_one = Chapter.create!(
-    name: "1 - Learn Hiragana 1",
     course_id: @duolingo_japanese.id
 )
-chapter_two = Chapter.create!(
-    name: "2 - Learn Hiragana 2",
-    course_id: @duolingo_japanese.id
-)
-chapter_three = Chapter.create!(
-    name: "3 - Learn Katakana 1",
-    course_id: @duolingo_japanese.id
-)
-chapter_four = Chapter.create!(
-    name: "4 - Learn Katakana 2",
-    course_id: @duolingo_japanese.id
-)
-chapter_five = Chapter.create!(
-    name: "5 - Basic greetings",
-    course_id: @duolingo_japanese.id
-)
-chapter_six = Chapter.create!(
-    name: "6 - Basic conversation",
-    course_id: @duolingo_japanese.id
-)
-chapter_seven = Chapter.create!(
-    name: "7 - Learn Keigo",
-    course_id: @duolingo_japanese.id
-)
-chapter_eight = Chapter.create!(
-    name: "8 - Basic Kanji 1",
-    course_id: @duolingo_japanese.id
-)
-chapter_nine = Chapter.create!(
-    name: "9 - Basic Kanji 2",
-    course_id: @duolingo_japanese.id
-)
-chapter_ten = Chapter.create!(
-    name: "10 - Advanced Kanji",
-    course_id: @duolingo_japanese.id
-)
-
 
 chapter_one = Chapter.create!(
     name: "1 - Introduction to Ruby",
