@@ -3,20 +3,12 @@
   <!-- for each platform iterate over each course -->
   <!-- for each course iterate over each enrollment -->
   <!-- display the card associated with enrollment -->
-
-<% @user.enrollments.each do |enrollment| %>
   <!-- find all the friends from current_user who are taking the same course -->
-    <!-- sort completion_status for each user by descending order -->
-    <!-- display users' (current user and each friend of current_user) mini-card includng avatar, name and stats (here XP) by completion_status descending order -->
-  <% @user.favorites.each do |favorite| %>
-    <% leaderboard_friends = User.find("favorite.favoritable WHERE @user.enrollment.course.platform.name = favorite.favoritable.enrollment.course.platform.name AND @user.enrollment.course.title = favorite.favoritable.enrollment.course.title") %>
-  <% end %>
 
-  <% when enrollment.course.platform.name %>
-  <% case 'Duolingo' %>
-    <% when enrollment.course.title %>
-    <% case 'Japanese' %>
-      <!-- Duolingo Japanese Leaderboard card -->
-    <% end %>
+<% user.platforms.each do |platform| %>
+  <% case platform.name %>
+  <% when 'Duolingo' %>
+    <%= render 'platforms/duolingo_leaderboard', enrollments: user.enrollments_for(platform) %>
   <% end %>
 <% end %>
+
