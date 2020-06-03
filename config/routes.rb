@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   # routes for 'search for a user' feature
   get '/users', to: 'users#index', as: :users
 
+  # route to scrape Duolingo
+  get '/user/:id', to: 'users#scrape_duolingo', as: :user_scrape_duolingo
+
   # left as a memo for Merit gem
   # devise_for :users, controllers: { registrations: 'users/registrations' }
 end

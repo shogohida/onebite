@@ -14,7 +14,7 @@ class UserPolicy < ApplicationPolicy
   #   true
   # end
 
-  def mystats?
+  def scrape_duolingo?
     true
   end
 
