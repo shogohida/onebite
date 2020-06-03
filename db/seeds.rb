@@ -133,7 +133,6 @@ puts 'Creating the platforms..'
   name: 'Duolingo',
   url: 'https://www.duolingo.com'
 )
-
 @codecademy = Platform.create!(
   name: 'Codecademy',
   url: 'https://www.codecademy.com'
@@ -211,17 +210,17 @@ puts 'Creating courses...'
   description: "Learn Spanish in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
 @duolingo_japanese = Course.create!(
   title: 'Japanese',
-  url: 'https://www.duolingo.com/course/ja/en/Learn-Japanese',
+  url: 'https://www.duolingo.com/',
   description: "Learn Japanese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -231,7 +230,7 @@ puts 'Creating courses...'
   description: "Learn Korean in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -242,7 +241,7 @@ puts 'Creating courses...'
   description: "Learn German in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -252,7 +251,7 @@ puts 'Creating courses...'
   description: "Learn Ukrainian in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -263,7 +262,7 @@ puts 'Creating courses...'
   description: "Learn Italian in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -274,7 +273,7 @@ puts 'Creating courses...'
   description: "Learn French in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -285,7 +284,7 @@ puts 'Creating courses...'
   description: "Learn Portuguese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -295,7 +294,7 @@ puts 'Creating courses...'
   description: "Learn Portuguese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -305,7 +304,7 @@ puts 'Creating courses...'
   description: "Learn Esperanto in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
@@ -316,10 +315,61 @@ puts 'Creating courses...'
   description: "Learn Chinese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "Not Applicable",
   platform_id: @duolingo.id
 )
 
+
+# Wanikani courses
+@wanikani_level1 = Course.create!(
+  title: 'Level 1 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/1',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
+@wanikani_level2 = Course.create!(
+  title: 'Level 2 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/2',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
+@wanikani_level3 = Course.create!(
+  title: 'Level 3 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/3',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
+@wanikani_level4 = Course.create!(
+  title: 'Level 4 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/4',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
+
+@wanikani_level5 = Course.create!(
+  title: 'Level 5 Radicals, Kanji and Vocabulary',
+  url: 'https://www.wanikani.com/level/5',
+  description: 'Learn basic kanjis in just 10 minutes a day.',
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "Not Applicable",
+  platform_id: @wanikani.id
+)
 
 # Codecademy courses
 
@@ -329,7 +379,7 @@ puts 'Creating courses...'
   description: "Learn the JavaScript fundamentals you'll need for front-end or back-end development.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 30,
+  expected_time_to_complete: "30 Hours",
   platform_id: @codecademy.id
 )
 @javascript_2 = Course.create!(
@@ -338,7 +388,7 @@ puts 'Creating courses...'
   description: "Master JavaScript with the most complete course! Projects, challenges, quizzes, JavaScript ES6+, OOP, AJAX, Webpack",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 28,
+  expected_time_to_complete: "28 Hours",
   platform_id: @udemy.id
 )
 @javascript_3 = Course.create!(
@@ -347,7 +397,7 @@ puts 'Creating courses...'
   description: "An advanced JavaScript course for everyone! Scope, closures, prototypes, 'this', build your own framework, and more.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 12,
+  expected_time_to_complete: "12 Hours",
   platform_id: @udemy.id
 )
 @javascript_4 = Course.create!(
@@ -356,7 +406,7 @@ puts 'Creating courses...'
   description: "This course will introduce you to the basics of the JavaScript language.  We will cover concepts such as variables, looping, functions, and even a little bit about debugging tools.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 11,
+  expected_time_to_complete: "11 Hours",
   platform_id: @coursera.id
 )
 @ruby = Course.create!(
@@ -365,52 +415,39 @@ puts 'Creating courses...'
   description: "Learn to program in Ruby, a ﬂexible and beginner-friendly language used to create sites like Codecademy.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 10,
+  expected_time_to_complete: "10 Hours",
   platform_id: @codecademy.id
 )
 
 puts 'Chapters being created...'
 chapter_one = Chapter.create!(
-    name: "1 - Learn Hiragana 1",
+    name: "1 - Introduction and Basics",
     course_id: @duolingo_japanese.id
 )
 chapter_two = Chapter.create!(
-    name: "2 - Learn Hiragana 2",
+    name: "2 - Daily Vocabulary",
     course_id: @duolingo_japanese.id
 )
 chapter_three = Chapter.create!(
-    name: "3 - Learn Katakana 1",
+    name: "3 - Common Activities",
     course_id: @duolingo_japanese.id
 )
 chapter_four = Chapter.create!(
-    name: "4 - Learn Katakana 2",
+    name: "4 - Activities Advanced",
     course_id: @duolingo_japanese.id
 )
 chapter_five = Chapter.create!(
-    name: "5 - Basic greetings",
+    name: "5 - Special Events",
     course_id: @duolingo_japanese.id
 )
-chapter_six = Chapter.create!(
-    name: "6 - Basic conversation",
+chapter_6 = Chapter.create!(
+    name: "6 - Activities Advanced",
     course_id: @duolingo_japanese.id
 )
 chapter_seven = Chapter.create!(
-    name: "7 - Learn Keigo",
+    name: "7 - Specialized Vocabulary",
     course_id: @duolingo_japanese.id
 )
-chapter_eight = Chapter.create!(
-    name: "8 - Basic Kanji 1",
-    course_id: @duolingo_japanese.id
-)
-chapter_nine = Chapter.create!(
-    name: "9 - Basic Kanji 2",
-    course_id: @duolingo_japanese.id
-)
-chapter_ten = Chapter.create!(
-    name: "10 - Advanced Kanji",
-    course_id: @duolingo_japanese.id
-)
-
 
 chapter_one = Chapter.create!(
     name: "1 - Introduction to Ruby",
@@ -632,7 +669,7 @@ puts 'Chapters have been created...'
   description: "Learn the basics of HMTL5 and start building & editing web pages",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 10,
+  expected_time_to_complete:  "10 Hours",
   platform_id: @codecademy.id
 )
 
@@ -642,7 +679,7 @@ puts 'Chapters have been created...'
   description: "Learn the basics of the world's fastest growing and most popular programming language used by software engineers, analysts, data scientists, and machine learning engineers alike.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 25,
+  expected_time_to_complete: "25 Hours",
   platform_id: @codecademy.id
 )
 
@@ -652,7 +689,7 @@ puts 'Chapters have been created...'
   description: "Learn to communicate with databases using SQL, the standard data management language.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 7,
+  expected_time_to_complete: "7 Hours",
   platform_id: @codecademy.id
 )
 
@@ -663,7 +700,7 @@ puts 'Chapters have been created...'
   description: "Learn one of the most powerful programming languages in the world and become a rockstar developer.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 20,
+  expected_time_to_complete: "20 Hours",
   platform_id: @codecademy.id
 )
 
@@ -673,7 +710,7 @@ puts 'Chapters have been created...'
   description: "Learn how to use Go (Golang), an open-source programming language supported by Google!",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 9,
+  expected_time_to_complete: "9 Hours",
   platform_id: @codecademy.id
 )
 
@@ -683,7 +720,7 @@ puts 'Chapters have been created...'
   description: "Give your website a clear layout and polished style—fast! Learn how to use one of the most popular front-end frameworks, Bootstrap 4!",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "3 Hours",
   platform_id: @codecademy.id
 )
 

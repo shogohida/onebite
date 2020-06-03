@@ -1,18 +1,24 @@
 
 .footer {
+  font-family: helvetica;
+  margin-top: 112px;
   background: #F4F4F4;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0px 50px;
+  padding: 0px 48px;
   color: rgba(0,0,0,0.3);
   border-top: 1px solid rgba(230,230,230,0.7);
+  text-align: center;
 }
 
 .footer-links {
+  margin-top: 32px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  transition: 0.2s;
 }
 
 .footer p {
@@ -28,6 +34,7 @@
 }
 
 .footer-links a:hover {
+  color: #FF9A76;
   opacity: 1;
 }
 

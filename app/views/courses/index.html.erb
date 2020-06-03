@@ -26,10 +26,10 @@
           <%= link_to "Profile", user_path(current_user), class: "nav-link navbar-link-text-orange mx-3" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1590485005/default-avatar_snqmu9.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1589709320/Yun_Chung_Profile_Photo_2_rlfgi5.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Help", "#", class: "dropdown-item" %>
-            <%= link_to "Log Out", "#", class: "dropdown-item" %>
+            <%= link_to "Log Out", destroy_user_session_path(current_user), method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       </ul>
@@ -51,12 +51,14 @@
         <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590722085/coursera-logo-square_y0yukg.webp" />
       <% elsif course.platform.name == 'Duolingo' %>
         <img src="https://i.pcmag.com/imagery/reviews/00MFRjnTbz8iv8USK3YZd7T-7.fit_scale.size_1028x578.v_1569475584.png" />
+      <% elsif course.platform.name == 'Wanikani' %>
+        <img src="https://pbs.twimg.com/profile_images/1213575248911552512/WP11ESTy_400x400.jpg" />
       <% end %>
 
       <div class="card-courses-index-infos justify-content-around results-info-left">
         <h2 class="index-card-title-font"><%= course.title %></h2>
         <p class="index-card-description-font"><%= course.description %></p>
-        <p class="index-card-time-font">Time to complete: <%= course.expected_time_to_complete %> hours</p>
+        <p class="index-card-time-font">Time to complete: <%= course.expected_time_to_complete %></p>
         <%= link_to "See details", course_path(course), class: "index-card-goto-show-font btn btn-onebite-orange" %>
         <p class="index-card-rating-font"><%= course.rating %></p>
         <p class="index-card-diff-font"><%= course.difficulty %></p>

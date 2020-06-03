@@ -1,0 +1,5 @@
+meta_product_name: "OneBite"
+meta_title: "OneBite - More than you can chew. One bite at a time."
+meta_description: "This is an app which helps users to keep learning on external platforms."
+meta_image: "onebite_logo_with_text.png" # should exist in `app/assets/images/`
+twitter_account: "@OneBiteTokyo"   # required for Twitter Cards
