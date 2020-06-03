@@ -133,7 +133,6 @@ puts 'Creating the platforms..'
   name: 'Duolingo',
   url: 'https://www.duolingo.com'
 )
-
 @codecademy = Platform.create!(
   name: 'Codecademy',
   url: 'https://www.codecademy.com'
@@ -211,17 +210,17 @@ puts 'Creating courses...'
   description: "Learn Spanish in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
 @duolingo_japanese = Course.create!(
   title: 'Japanese',
-  url: 'https://www.duolingo.com/course/ja/en/Learn-Japanese',
+  url: 'https://www.duolingo.com/',
   description: "Learn Japanese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -231,7 +230,7 @@ puts 'Creating courses...'
   description: "Learn Korean in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -242,7 +241,7 @@ puts 'Creating courses...'
   description: "Learn German in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -252,7 +251,7 @@ puts 'Creating courses...'
   description: "Learn Ukrainian in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -263,7 +262,7 @@ puts 'Creating courses...'
   description: "Learn Italian in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -274,7 +273,7 @@ puts 'Creating courses...'
   description: "Learn French in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -285,7 +284,7 @@ puts 'Creating courses...'
   description: "Learn Portuguese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -295,7 +294,7 @@ puts 'Creating courses...'
   description: "Learn Portuguese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -305,7 +304,7 @@ puts 'Creating courses...'
   description: "Learn Esperanto in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -316,7 +315,7 @@ puts 'Creating courses...'
   description: "Learn Chinese in just 5 minutes a day. For free.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: Not Applicable,
   platform_id: @duolingo.id
 )
 
@@ -370,6 +369,36 @@ puts 'Creating courses...'
 )
 
 puts 'Chapters being created...'
+chapter_one = Chapter.create!(
+    name: "1 - Introduction and Basics",
+    course_id: @duolingo.id
+)
+chapter_two = Chapter.create!(
+    name: "2 - Daily Vocabulary",
+    course_id: @duolingo.id
+)
+chapter_three = Chapter.create!(
+    name: "3 - Common Activities",
+    course_id: @duolingo.id
+)
+chapter_four = Chapter.create!(
+    name: "4 - Activities Advanced",
+    course_id: @duolingo.id
+)
+chapter_five = Chapter.create!(
+    name: "5 - Special Events",
+    course_id: @duolingo.id
+)
+chapter_6 = Chapter.create!(
+    name: "6 - Activities Advanced",
+    course_id: @duolingo.id
+)
+chapter_seven = Chapter.create!(
+    name: "7 - Specialized Vocabulary",
+    course_id: @duolingo.id
+)
+
+
 chapter_one = Chapter.create!(
     name: "1 - Learn Hiragana 1",
     course_id: @duolingo_japanese.id
