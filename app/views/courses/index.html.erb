@@ -56,7 +56,7 @@
       <div class="card-courses-index-infos justify-content-around results-info-left">
         <h2 class="index-card-title-font"><%= course.title %></h2>
         <p class="index-card-description-font"><%= course.description %></p>
-        <p class="index-card-time-font">Time to complete: <%= course.expected_time_to_complete %> hours</p>
+        <p class="index-card-time-font">Time to complete: <%= course.expected_time_to_complete %></p>
         <%= link_to "See details", course_path(course), class: "index-card-goto-show-font btn btn-onebite-orange" %>
         <p class="index-card-rating-font"><%= course.rating %></p>
         <p class="index-card-diff-font"><%= course.difficulty %></p>

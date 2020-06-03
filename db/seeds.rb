@@ -328,7 +328,7 @@ puts 'Creating courses...'
   description: "Learn the JavaScript fundamentals you'll need for front-end or back-end development.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 30,
+  expected_time_to_complete: "30 Hours",
   platform_id: @codecademy.id
 )
 @javascript_2 = Course.create!(
@@ -337,7 +337,7 @@ puts 'Creating courses...'
   description: "Master JavaScript with the most complete course! Projects, challenges, quizzes, JavaScript ES6+, OOP, AJAX, Webpack",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 28,
+  expected_time_to_complete: "28 Hours",
   platform_id: @udemy.id
 )
 @javascript_3 = Course.create!(
@@ -346,7 +346,7 @@ puts 'Creating courses...'
   description: "An advanced JavaScript course for everyone! Scope, closures, prototypes, 'this', build your own framework, and more.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 12,
+  expected_time_to_complete: "12 Hours",
   platform_id: @udemy.id
 )
 @javascript_4 = Course.create!(
@@ -355,7 +355,7 @@ puts 'Creating courses...'
   description: "This course will introduce you to the basics of the JavaScript language.  We will cover concepts such as variables, looping, functions, and even a little bit about debugging tools.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 11,
+  expected_time_to_complete: "11 Hours",
   platform_id: @coursera.id
 )
 @ruby = Course.create!(
@@ -364,7 +364,7 @@ puts 'Creating courses...'
   description: "Learn to program in Ruby, a ﬂexible and beginner-friendly language used to create sites like Codecademy.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 10,
+  expected_time_to_complete: "10 Hours",
   platform_id: @codecademy.id
 )
 
@@ -618,7 +618,7 @@ puts 'Chapters have been created...'
   description: "Learn the basics of HMTL5 and start building & editing web pages",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 10,
+  expected_time_to_complete:  "10 Hours",
   platform_id: @codecademy.id
 )
 
@@ -628,7 +628,7 @@ puts 'Chapters have been created...'
   description: "Learn the basics of the world's fastest growing and most popular programming language used by software engineers, analysts, data scientists, and machine learning engineers alike.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 25,
+  expected_time_to_complete: "25 Hours",
   platform_id: @codecademy.id
 )
 
@@ -638,7 +638,7 @@ puts 'Chapters have been created...'
   description: "Learn to communicate with databases using SQL, the standard data management language.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 7,
+  expected_time_to_complete: "7 Hours",
   platform_id: @codecademy.id
 )
 
@@ -649,7 +649,7 @@ puts 'Chapters have been created...'
   description: "Learn one of the most powerful programming languages in the world and become a rockstar developer.",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 20,
+  expected_time_to_complete: "20 Hours",
   platform_id: @codecademy.id
 )
 
@@ -659,7 +659,7 @@ puts 'Chapters have been created...'
   description: "Learn how to use Go (Golang), an open-source programming language supported by Google!",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 9,
+  expected_time_to_complete: "9 Hours",
   platform_id: @codecademy.id
 )
 
@@ -669,7 +669,7 @@ puts 'Chapters have been created...'
   description: "Give your website a clear layout and polished style—fast! Learn how to use one of the most popular front-end frameworks, Bootstrap 4!",
   rating: nil,
   difficulty: nil,
-  expected_time_to_complete: 3,
+  expected_time_to_complete: "3 Hours",
   platform_id: @codecademy.id
 )
 
