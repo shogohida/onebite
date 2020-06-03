@@ -248,6 +248,15 @@
       <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002744/flame_badge_tpjer3.png" alt="" class="onebite-badges">
     </div>
 
+
+    <!-- TODO: iterate over the array @stats -->
+
+      <!-- @stats.each do |stat| -->
+        <!-- conditional statement to display stat depending on the platform -->
+        <!-- render the relevant partial card for each stat (depending on the platform) -->
+      <!-- end -->
+
+
     <div class="leaderboard-duolingo-japanese-section my-3">
       <div class="d-flex justify-content-start align-items-center mb-3">
         <img class="leaderboard-duolingo-japanese-avatar-square" alt="avatar-square" src="https://i.pcmag.com/imagery/reviews/00MFRjnTbz8iv8USK3YZd7T-7.fit_scale.size_1028x578.v_1569475584.png" />
@@ -277,7 +286,9 @@
         <div class="d-flex justify-content-start align-items-center border-top border-bottom border-white mt-2">
           <img class="leaderboard-duolingo-japanese-user-avatar" alt="avatar" src="https://duolingo-images.s3.amazonaws.com/avatars/634584060/QwX3O9TbQn/xlarge" />
           <p>Julien</p>
-          <p class="ml-auto font-weight-bold">153 XP</p>
+          <% if  %>
+            <p class="ml-auto font-weight-bold"><%= @stats[:duolingo].first[:xp_points] %> XP</p>
+          <% end %>
         </div>
       </div>
     </div>
