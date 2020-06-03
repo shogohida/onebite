@@ -140,11 +140,11 @@
 }
 
 .streak-bubble {
-    background-color: rgba(240, 240, 240, 0.95);
-    border-radius: 10px;
+    // background-color: rgba(240, 240, 240, 0.95);
+    // border-radius: 10px;
     padding: 10px;
     text-align: center;
-    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    // box-shadow: 0 0 4px rgba(0,0,0,0.1);
     // border: solid #FF9A76;
 }
 
@@ -273,7 +273,7 @@
 .new-streak-section {
     padding: 8px 16px;
     background-color: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    // box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 8px;
     margin: 0;
     height: 140px;
@@ -288,6 +288,7 @@
 
 .onebite-badges {
   width: 80px !important;
+  opacity: 0.85;
 }
 
 .leaderboard-duolingo-japanese-section {
@@ -301,4 +302,12 @@
   margin-bottom: 0px;
   margin-left: 8px;
   margin-right: 16px;
+}
+
+.fa-fire-alt-big {
+  font-size: 64px;
+}
+
+.duo-opaque {
+  opacity: 0.85;
 }
