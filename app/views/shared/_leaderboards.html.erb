@@ -8,7 +8,9 @@
 <% user.platforms.each do |platform| %>
   <% case platform.name %>
   <% when 'Duolingo' %>
+  <div class="leaderboard-duolingo">
     <%= render 'platforms/duolingo_leaderboard', enrollments: user.enrollments_for(platform) %>
+  </div>
   <% end %>
 <% end %>
 

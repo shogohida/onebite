@@ -5,11 +5,22 @@ class UsersController < ApplicationController
   end
 
   def scrape_duolingo
-    # define routes to that controller action
-    # need a button on view which will trigger that route
-    # run the scraping inside of that controller action
-    # first use redirect to view
-    # lastly try to render to the view using AJAX (tricky part)
+    @platform = Platform.find_by(name: "Duolingo")
+    @user = User.find(params[:id])
+    authorize @user
+    # scraping all leaderboard friends
+    # users = @user.enrollments_for(@platform).map do |enrollment|
+    #   @user.leaderboard_friends_for(enrollment.course)
+    # end
+    # users.flatten.map(&:user).uniq.each do |user|
+    #   puts "scraping data for #{user.name}"
+    #   p stats = DuolingoScraper.new(user).scrape
+    # end
+    p DuolingoScraper.new(@user).scrape
+    respond_to do |format|
+      format.html { redirect_to request.referrer }
+      format.js
+    end
   end
 
   def index

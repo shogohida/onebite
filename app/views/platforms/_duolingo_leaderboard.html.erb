@@ -9,6 +9,8 @@
   <div class="d-flex justify-content-start align-items-center mb-3">
     <img class="leaderboard-duolingo-avatar-square" alt="avatar-square" src="https://i.pcmag.com/imagery/reviews/00MFRjnTbz8iv8USK3YZd7T-7.fit_scale.size_1028x578.v_1569475584.png" />
     <h5 class="card-title-font">Duolingo Leaderboard</h5>
+    <!--  method: :post, remote: true -->
+    <%= link_to "Refresh", user_scrape_duolingo_path, class: "btn btn-ghost", remote: true %>
   </div>
   <% enrollments.each do |enrollment| %>
     <div class="d-flex justify-content-around align-items-center border-bottom border-light pb-3">
