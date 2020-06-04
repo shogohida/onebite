@@ -29,7 +29,9 @@
 
   <div class="new-dashboard-left mr-3">
 
-    <div class="new-user-name-card card-courses-users-index">
+    <div class="new-user-name-card card-courses-users-index demo-hover">
+
+
       <div>
         <% if @user.name == "Yun" %>
           <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1589709320/Yun_Chung_Profile_Photo_2_rlfgi5.jpg" />
@@ -37,8 +39,23 @@
           <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591165384/WooChaHee_satbqe.jpg" />
         <% end %>
       </div>
+
+      <div>
+
+      </div>
+
       <div class="card-courses-index-infos justify-content-around results-info-left">
-        <p class="dark-grey-font-p"><%= @user.name.capitalize %></p>
+
+
+          <p class="dark-grey-font-p my-0"><%= @user.name.capitalize %></p>
+          <p class="card-text-font bold-this-new mb-0 mt-1">Completed: 39% of enrolled courses</p>
+          <div class="progress mt-0 mb-3">
+            <div class="progress-bar my-0" role="progressbar" style="width: 39%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            </div>
+          </div>
+
+
+
         <div class="d-flex">
           <p class="index-card-description-user-font">Current Courses:</p>  <%# raise %>
           <% @user.courses.each do |course| %>
@@ -71,7 +88,7 @@
 
       <div class="mx-3">
         <% if current_user.id == @user.id %>
-          <%= link_to "My stats", "#", class: "unfollow-button" %> <!-- edit_user_path(@user) -->
+          <%= link_to "Edit Profile", "#", class: "unfollow-button" %> <!-- edit_user_path(@user) -->
         <% elsif current_user.favorited?(@user) %>
           <%= link_to "Unfollow", unfollow_user_path(@user), class: "unfollow-button", method: :post, remote: true %>
         <% else %>
@@ -103,7 +120,7 @@
         </div>
       </div> -->
 
-      <div class="followers-section my-3">
+      <div class="followers-section demo-hover my-3">
 
 
         <ul class="list-inline tabs-underlined pt-3">
@@ -134,7 +151,7 @@
  -->   <% if @user.favorites %>
           <% @user.favorites.each do |favorite| %>
             <div class="card">
-              <div class="card-body">
+              <div class="card-body demo-hover-card">
                 <div class="d-flex align-items-center justify-content-between">
                   <div class="d-flex align-items-center justify-content-between">
                   <img class="avatar mr-3" src="<%= ['https://res.cloudinary.com/deyqjsowe/image/upload/v1591165384/WooChaHee_satbqe.jpg', 'https://kitt.lewagon.com/placeholder/users/sarahlafer', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/pjoe_esm4oc.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/bennifer_keahqo.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/jonoh_glkc4f.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/julie_l5se6x.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166444/janet_qmt3wf.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166613/mickles_ax06yk.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166730/virginia_ucqyxr.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591171439/sunmi_xg1mwc.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591171439/uncle_zqr4sn.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591171439/yura_ueelw4.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591171439/borrah_zrkopm.jpg'].sample %>" />
@@ -157,9 +174,9 @@
                 <p class="mr-3 new-course-title">Currently not enrolled in any courses.</p>
                   <% end %>
 
-          <p class="card-text-font mt-1 mb-o bold-this">Completed: 39% of enrolled courses</p>
+          <p class="card-text-font mt-1 mb-o bold-this">Completed: 17% of enrolled courses</p>
           <div class="progress mt-0">
-            <div class="progress-bar mt-0" role="progressbar" style="width: 39%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar mt-0" role="progressbar" style="width: 17%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             </div>
           </div>
 
@@ -170,7 +187,7 @@
 
 
         <div class="card">
-          <div class="card-body">
+          <div class="card-body demo-hover-card">
 
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center">
@@ -197,7 +214,7 @@
 
 
         <div class="card">
-          <div class="card-body">
+          <div class="card-body demo-hover-card">
 
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center">
@@ -209,13 +226,13 @@
               </div>
 
             </div>
-            <p class="card-text-font my-1">Current Streak: 786 days</p>
-            <p class="card-text-font mt-1">Longest Streak: 786 days</p>
+            <p class="card-text-font my-1">Current Streak: 718 days</p>
+            <p class="card-text-font mt-1">Longest Streak: 718 days</p>
             <p class="card-text-font mt-1">Enrolled In: <a href="#" class="enrolled-in-link card-text-font mt-1">Leadership & Management</a> & <a href="#" class="enrolled-in-link card-text-font mt-1">Kanji</a></p>
 
-          <p class="card-text-font mt-1 mb-o bold-this">Completed: 85% of enrolled courses</p>
+          <p class="card-text-font mt-1 mb-o bold-this">Completed: 62% of enrolled courses</p>
           <div class="progress mt-0">
-            <div class="progress-bar mt-0" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar mt-0" role="progressbar" style="width: 62%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             </div>
           </div>
 
@@ -223,7 +240,7 @@
         </div>
 
         <div class="card">
-          <div class="card-body">
+          <div class="card-body demo-hover-card">
 
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center">
@@ -249,7 +266,7 @@
         </div>
 
         <div class="card">
-          <div class="card-body">
+          <div class="card-body demo-hover-card">
             <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
               <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Jason_fmfw9q.jpg" class="avatar mr-3" alt="">
@@ -274,7 +291,7 @@
 
 
         <div class="card">
-          <div class="card-body">
+          <div class="card-body demo-hover-card">
 
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center">
@@ -300,7 +317,7 @@
         </div>
 
         <div class="card">
-          <div class="card-body">
+          <div class="card-body demo-hover-card">
 
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center">
@@ -326,7 +343,7 @@
         </div>
 
         <div class="card">
-          <div class="card-body">
+          <div class="card-body demo-hover-card">
 
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center">
@@ -357,7 +374,7 @@
 
 
         <div class="card">
-          <div class="card-body">
+          <div class="card-body demo-hover-card">
             <div class="d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
 
@@ -392,7 +409,7 @@
 
   <div class="new-dashboard-right">
     <div class="new-right-top">
-      <div class="new-streak-section">
+      <div class="new-streak-section demo-hover">
         <h5 class="card-title-font">Streaks</h5>
         <div class="d-flex justify-content-center align-items-center">
           <i class="fas fa-fire-alt fa-fire-alt-big mx-0"></i>
@@ -410,7 +427,7 @@
     </div>
 
     <div class="new-right-top my-3">
-      <div class="new-streak-section">
+      <div class="new-streak-section demo-hover">
         <h5 class="card-title-font">Points</h5>
         <div class="d-flex justify-content-around">
           <div class="streak-bubble">
@@ -429,7 +446,7 @@
       </div>
     </div>
 
-    <div class="badges-section my-3">
+    <div class="badges-section demo-hover my-3">
       <h5 class="card-title-font">Badges</h5>
       <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/torch_badge_f48cmr.png" alt="" class="onebite-badges">
       <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591002745/thumbs_up_badge_l2wvac.png" alt="" class="onebite-badges">
