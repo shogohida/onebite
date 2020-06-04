@@ -749,15 +749,15 @@ puts 'Creating the enrollments..'
   platform_username: "yunshine"
 )
 
-# DuolingoScraper.new(@user_yun).scrape
-# @enrollment_yun_japanese.reload
+DuolingoScraper.new(@user_yun).scrape
+@enrollment_yun_japanese.reload
 
 @enrollment_eugene_japanese = Enrollment.create!(
   start_date: Date.new(2020, 6, 8),
   completed_at: nil,
   duration: 14,
   time_of_day: Time.new(2020, 6, 8, 21, 30),
-  completion_status: 50000,
+  completion_status: @enrollment_yun_japanese.completion_status + 3,
   course: @duolingo_japanese,
   user: @user_eugene
 )
