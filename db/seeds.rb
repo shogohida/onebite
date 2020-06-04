@@ -736,7 +736,7 @@ puts 'Chapters have been created...'
 
 
 
-puts 'Creating the enrollments..'
+puts 'Creating the enrollments for the Duolingo Leaderboard...'
 
 @enrollment_yun_japanese = Enrollment.create!(
   start_date: Date.new(2020, 6, 8),
@@ -749,8 +749,9 @@ puts 'Creating the enrollments..'
   platform_username: "yunshine"
 )
 
-DuolingoScraper.new(@user_yun).scrape
-@enrollment_yun_japanese.reload
+p DuolingoScraper.new(@user_yun).scrape
+
+p @enrollment_yun_japanese.reload
 
 @enrollment_eugene_japanese = Enrollment.create!(
   start_date: Date.new(2020, 6, 8),
