@@ -38,6 +38,7 @@ class DuolingoScraper
       enrollment.save
     end
     # raise
+    p stats
     return stats
   end
 end
