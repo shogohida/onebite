@@ -266,6 +266,14 @@
     margin: 0;
 }
 
+.smaller-card {
+  width: 45%;
+}
+
+.center-these-contents {
+
+}
+
 .card-body {
   // width: 50%;
 }
@@ -351,6 +359,11 @@
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
 }
 
+
+ .leaderboard-larger-font {
+  font-size: 20px;
+  color: #555555;
+ }
 // .move-bar {
 //   margin-left: 80px;
 // }
