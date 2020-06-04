@@ -150,6 +150,8 @@
 <!-- User.find(@user.favorites[0].favoritable_id).name
  -->   <% if @user.favorites %>
           <% @user.favorites.each do |favorite| %>
+            <% if favorite.favoritable.name == "Eugene" || favorite.favoritable.name == "Douglas" %>
+            <% else %>
             <div class="card">
               <div class="card-body demo-hover-card">
                 <div class="d-flex align-items-center justify-content-between">
@@ -182,6 +184,7 @@
 
               </div>
             </div>
+            <% end %>
           <% end %>
         <% end %>
 
