@@ -37,9 +37,9 @@
   <div class="container">
 
     <h1 class="banner-h1 mb-0"><strong>Complete your online learning</strong></h1>
-    <h1 class="banner-h1 mt-0"><strong>OneBite at a time</strong></h1>
-    <p class="banner-p home-page-p">Find the best courses, schedule your learning, track your progress, and stay motivated!</p>
-
+    <h1 class="banner-h1 mt-0"><strong>...OneBite at a time!</strong></h1>
+    <p class="banner-p home-page-p mb-0">Find the best courses, schedule your learning, track your</p>
+    <p class="banner-p home-page-p">progress, and stay motivated!</p>
 		<%= form_tag courses_path, class: "banner-searchbar", method: :get do %>
 			<div class="d-flex">
 			  <%= text_field_tag :query,
@@ -72,7 +72,7 @@
 </div>
 
 <div class="container justify-content-center mt-5">
-  <h3>Find courses from the best online learning platforms</h3>
+  <h3 class="title-incroporated-platforms">Incorporated with the best online learning platforms</h3>
 </div>
 
 <div class="container mt-3">
@@ -95,7 +95,7 @@
       <%= image_tag "wanikani_logo.png", alt: "wanikani_logo", width: 200 %>
     </div>
     <div class="col-sm">
-      <%= image_tag "codecademy_logo.png", alt: "codecademy_logo", width: 200 %>
+      <%#= image_tag "codecademy_logo.png", alt: "codecademy_logo", width: 200 %>
     </div>
   </div>
 </div>
