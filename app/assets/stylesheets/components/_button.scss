@@ -23,7 +23,7 @@
 
 // BEGINNING - refresh button for Duolingo Leaderboard on user show page
 .btn-ghost {
-  color: #4A4A4A;
+  color: #FF9A76;
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
   border-radius: 50px;
@@ -34,6 +34,19 @@
 
 .btn-ghost:hover {
   opacity: 1;
+}
+
+.move-refresh {
+    margin-left: 104px;
+}
+
+.fa-sync {
+    font-size: 24px;
+    color: #a7a7a7;
+}
+
+.fa-sync:hover {
+  color: white;
 }
 
 // END - refresh button for Duolingo Leaderboard on user show page
