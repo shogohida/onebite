@@ -18,13 +18,13 @@ class UsersController < ApplicationController
     # end
 
     # TODO: Uncomment below when working on Heroku
-    # p DuolingoScraper.new(@user).scrape
+    p DuolingoScraper.new(@user).scrape
 
     # TODO: Delete these 3 lines when working on Heroku
     # Shogo added these 3 lines from line 36-38 of duolingo_scraper.rb
-    enrollment = @user.enrollments.joins(:platform, :course).find_by("courses.title = :title AND platforms.name = :platform", title: "Japanese", platform: "Duolingo")
-    enrollment.completion_status += 5
-    enrollment.save
+    # enrollment = @user.enrollments.joins(:platform, :course).find_by("courses.title = :title AND platforms.name = :platform", title: "Japanese", platform: "Duolingo")
+    # enrollment.completion_status += 5
+    # enrollment.save
 
     respond_to do |format|
       format.html { redirect_to request.referrer }
