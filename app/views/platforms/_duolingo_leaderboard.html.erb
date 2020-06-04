@@ -10,7 +10,7 @@
     <img class="leaderboard-duolingo-avatar-square" alt="avatar-square" src="https://i.pcmag.com/imagery/reviews/00MFRjnTbz8iv8USK3YZd7T-7.fit_scale.size_1028x578.v_1569475584.png" />
     <h5 class="card-title-font">Duolingo Leaderboard</h5>
     <!--  method: :post, remote: true -->
-    <%= link_to "Refresh", user_scrape_duolingo_path, class: "btn btn-ghost", remote: true %>
+    <%= link_to "Refresh", user_scrape_duolingo_path, class: "btn btn-ghost btn-sync", remote: true %>
   </div>
   <% enrollments.each do |enrollment| %>
     <div class="d-flex justify-content-around align-items-center border-bottom border-light pb-3">
@@ -30,10 +30,19 @@
         <a href="#" class="tab-underlined">This Month</a>
       </li>
     </ul>
-    <div class="container">
+    <div class="container loading-container">
+      <div class="loader">
+      </div>
+      <div class="loader-container"></div>
       <% enrollment.user.leaderboard_friends_for(enrollment.course).each do |enrollment| %>
         <div class="d-flex justify-content-start align-items-center border-top border-bottom border-white mt-2">
-          <img class="leaderboard-duolingo-user-avatar" alt="avatar" src="https://duolingo-images.s3.amazonaws.com/avatars/445437689/OdOxf9QLBJ/xlarge" />
+          <% if enrollment.user.name == "Eugene" %>
+            <img class="leaderboard-duolingo-user-avatar" alt="avatar" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591162461/Eugene_wwiqr9.jpg" />
+          <% elsif enrollment.user.name == "Douglas" %>
+            <img class="leaderboard-duolingo-user-avatar" alt="avatar" src="https://ca.slack-edge.com/T02NE0241-U4APKLFLM-da0b004a3774-48" />
+          <% else %>
+            <img class="leaderboard-duolingo-user-avatar" alt="avatar" src="https://duolingo-images.s3.amazonaws.com/avatars/445437689/OdOxf9QLBJ/xlarge" />
+          <% end %>
           <p><%= enrollment.user.name %></p>
           <p class="ml-auto font-weight-bold"> <%= enrollment.completion_status %> XP</p>
         </div>

@@ -28,20 +28,26 @@ puts 'Creating users...'
 )
 
 @user_yun = User.create!(
-  name: 'yun',
+  name: 'Yun',
   email: "yunshine@gmail.com",
+  password: 'secret'
+)
+
+@user_eugene = User.create!(
+  name: 'Eugene',
+  email: "eugene@gmail.com",
+  password: 'secret'
+)
+
+@user_douglas = User.create!(
+  name: 'Douglas',
+  email: "doug.hida@gmail.com",
   password: 'secret'
 )
 
 @user_shogo = User.create!(
   name: 'shogo',
   email: "shogo.hida@gmail.com",
-  password: 'secret'
-)
-
-@user_doug = User.create!(
-  name: 'doug',
-  email: "doug.hida@gmail.com",
   password: 'secret'
 )
 
@@ -419,7 +425,72 @@ puts 'Creating courses...'
   platform_id: @codecademy.id
 )
 
+@learn_html = Course.create!(
+  title: 'Learn HTML',
+  url: 'https://www.codecademy.com/learn/learn-html',
+  description: "Learn the basics of HMTL5 and start building & editing web pages",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete:  "10 Hours",
+  platform_id: @codecademy.id
+)
+
+@learn_python = Course.create!(
+  title: 'Learn Python 2',
+  url: 'https://www.codecademy.com/learn/learn-python',
+  description: "Learn the basics of the world's fastest growing and most popular programming language used by software engineers, analysts, data scientists, and machine learning engineers alike.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "25 Hours",
+  platform_id: @codecademy.id
+)
+
+@learn_sql = Course.create!(
+  title: 'Learn SQL',
+  url: 'https://www.codecademy.com/learn/learn-sql',
+  description: "Learn to communicate with databases using SQL, the standard data management language.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "7 Hours",
+  platform_id: @codecademy.id
+)
+
+
+@learn_c_plus_plus = Course.create!(
+  title: 'Learn C++',
+  url: 'https://www.codecademy.com/learn/learn-c-plus-plus',
+  description: "Learn one of the most powerful programming languages in the world and become a rockstar developer.",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "20 Hours",
+  platform_id: @codecademy.id
+)
+
+@learn_go = Course.create!(
+  title: 'Learn Go',
+  url: 'https://www.codecademy.com/learn/learn-go',
+  description: "Learn how to use Go (Golang), an open-source programming language supported by Google!",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "9 Hours",
+  platform_id: @codecademy.id
+)
+
+@learn_bootstrap = Course.create!(
+  title: 'Learn Bootstrap',
+  url: 'https://www.codecademy.com/learn/learn-bootstrap',
+  description: "Give your website a clear layout and polished style—fast! Learn how to use one of the most popular front-end frameworks, Bootstrap 4!",
+  rating: nil,
+  difficulty: nil,
+  expected_time_to_complete: "3 Hours",
+  platform_id: @codecademy.id
+)
+
+puts "Finished creating #{Course.count} courses!"
+
+
 puts 'Chapters being created...'
+
 chapter_one = Chapter.create!(
     name: "1 - Introduction and Basics",
     course_id: @duolingo_japanese.id
@@ -663,146 +734,51 @@ chapter_twelve = Chapter.create!(
 puts 'Chapters have been created...'
 
 
-@learn_html = Course.create!(
-  title: 'Learn HTML',
-  url: 'https://www.codecademy.com/learn/learn-html',
-  description: "Learn the basics of HMTL5 and start building & editing web pages",
-  rating: nil,
-  difficulty: nil,
-  expected_time_to_complete:  "10 Hours",
-  platform_id: @codecademy.id
+
+
+puts 'Creating the enrollments..'
+
+@enrollment_yun_japanese = Enrollment.create!(
+  start_date: Date.new(2020, 6, 8),
+  completed_at: nil,
+  duration: 14,
+  time_of_day: Time.new(2020, 6, 8, 21, 30),
+  completion_status: 0,
+  course: @duolingo_japanese,
+  user: @user_yun,
+  platform_username: "yunshine"
 )
 
-@learn_python = Course.create!(
-  title: 'Learn Python 2',
-  url: 'https://www.codecademy.com/learn/learn-python',
-  description: "Learn the basics of the world's fastest growing and most popular programming language used by software engineers, analysts, data scientists, and machine learning engineers alike.",
-  rating: nil,
-  difficulty: nil,
-  expected_time_to_complete: "25 Hours",
-  platform_id: @codecademy.id
+DuolingoScraper.new(@user_yun).scrape
+@enrollment_yun_japanese.reload
+
+@enrollment_eugene_japanese = Enrollment.create!(
+  start_date: Date.new(2020, 6, 8),
+  completed_at: nil,
+  duration: 14,
+  time_of_day: Time.new(2020, 6, 8, 21, 30),
+  completion_status: @enrollment_yun_japanese.completion_status + 3,
+  course: @duolingo_japanese,
+  user: @user_eugene
 )
 
-@learn_sql = Course.create!(
-  title: 'Learn SQL',
-  url: 'https://www.codecademy.com/learn/learn-sql',
-  description: "Learn to communicate with databases using SQL, the standard data management language.",
-  rating: nil,
-  difficulty: nil,
-  expected_time_to_complete: "7 Hours",
-  platform_id: @codecademy.id
+@enrollment_douglas_japanese = Enrollment.create!(
+  start_date: Date.new(2020, 6, 8),
+  completed_at: nil,
+  duration: 14,
+  time_of_day: Time.new(2020, 6, 8, 21, 30),
+  completion_status: 30214,
+  course: @duolingo_japanese,
+  user: @user_douglas
 )
 
 
-@learn_c_plus_plus = Course.create!(
-  title: 'Learn C++',
-  url: 'https://www.codecademy.com/learn/learn-c-plus-plus',
-  description: "Learn one of the most powerful programming languages in the world and become a rockstar developer.",
-  rating: nil,
-  difficulty: nil,
-  expected_time_to_complete: "20 Hours",
-  platform_id: @codecademy.id
-)
-
-@learn_go = Course.create!(
-  title: 'Learn Go',
-  url: 'https://www.codecademy.com/learn/learn-go',
-  description: "Learn how to use Go (Golang), an open-source programming language supported by Google!",
-  rating: nil,
-  difficulty: nil,
-  expected_time_to_complete: "9 Hours",
-  platform_id: @codecademy.id
-)
-
-@learn_bootstrap = Course.create!(
-  title: 'Learn Bootstrap',
-  url: 'https://www.codecademy.com/learn/learn-bootstrap',
-  description: "Give your website a clear layout and polished style—fast! Learn how to use one of the most popular front-end frameworks, Bootstrap 4!",
-  rating: nil,
-  difficulty: nil,
-  expected_time_to_complete: "3 Hours",
-  platform_id: @codecademy.id
-)
-
-# puts 'Creating the enrollments..'
-
-# # How to create a date - https://stackoverflow.com/questions/12544552/how-can-i-create-a-new-date-instance-in-ruby
-
-# @enrollment_ruby = Enrollment.create!(
-#   start_date: Date.new(2020, 6, 8),
-#   completed_at: nil,
-#   duration: 14,
-#   time_of_day: Time.new(2020, 6, 8, 21, 30),
-#   completion_status: 30,
-#   course_id: @ruby.id,
-#   user_id: @user_julien.id
-# )
+puts "Finished creating #{Enrollment.count} enrollments!"
 
 
-# puts "Finished creating #{Enrollment.count} enrollments!"
+puts 'Creating favorites for Yun...'
 
+@user_yun.favorite(@user_eugene)
+@user_yun.favorite(@user_douglas)
 
-# scraping example of Codecademy
-# url = "https://www.codecademy.com/catalog/subject/all"
-# html_file = open(url).read
-# html_doc = Nokogiri::HTML(html_file)
-
-# html_doc.search('.wrapper__3fzpm0z50tenx2fYXBGSMJ').each do |section|
- # section.search('.header__dZgqyr9p7zUaFIBL72Yhb').each do |element|
-  #  Course.create!(
-   #   title: element.text.strip,
-    #  url: "https://www.codecademy.com/learn/#{element.text.strip}",
-     # platform_id: @codecademy.id
-   # )
-   # puts element.text.strip
-    # puts element.attribute('href').value
- # end
-# end
-# puts "Finished creating #{Course.count} courses!"
-
-
-# scraping example of Udemy
-
-# @udemy = Platform.create!(
-#   name: 'Udemy',
-#   url: 'https://www.udemy.com'
-# )
-
-# url = "https://www.udemy.com/courses/search/?q=ruby"
-# html_file = open(url).read
-# html_doc = Nokogiri::HTML(html_file)
-
-# html_doc.search("div[class*='udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE']").each do |element|
-#   Course.create!(
-#     title: element.text.strip,
-#     url: "https://www.udemy.com/course/#{element.text.strip}/",
-#     platform_id: @udemy.id
-#   )
-#   puts element.text.strip
-# end
-
-# .course-card--main-content--3xEIw > .udlite-heading-sm udlite-focus-visible-target course-card--course-title--2f7tE
-# description class, course-card--course-headline--yIrRk
-
-
-# Scraping example of Coursera
-
-# @coursera = Platform.create!(
-#   name: 'Coursera',
-#   url: 'https://www.cousera.org'
-# )
-
-# url = "https://ja.coursera.org/browse/computer-science/software-development"
-# html_file = open(url).read
-# html_doc = Nokogiri::HTML(html_file)
-
-# html_doc.search("div[data-reactid]").each do |element|
-#   Course.create!(
-#     title: element.text.strip,
-#     url: "https://ja.coursera.org/learn/#{element.text.strip}",
-#     platform_id: @coursera.id
-#   )
-#   puts element.text.strip
-# end
-
-puts "Finished creating #{Course.count} courses!"
+puts "Finished creating favorites!"
