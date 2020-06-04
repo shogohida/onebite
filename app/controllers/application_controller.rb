@@ -3,10 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit
 
-  def after_sign_out_path_for(resource)
-    new_user_session_path
-  end
-
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
@@ -36,4 +32,16 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
+
+  def after_sign_out_path_for(resource_or_scope)
+    if resource_or_scope == :user
+      new_user_session_path
+    else
+      root_path
+    end
+  end
+
+  # def signed_out_and_redirect(resource_or_scope)
+  #   new_user_session_path
+  # end
 end
