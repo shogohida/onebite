@@ -58,8 +58,8 @@
 		<div class="show-info-left mx-3  rounded-box demo-hover">
 			<div>
 
-        <p class="index-card-diff-font friends-font-how mt-3"><%= @course.cost %> people are enrolled in this class.</p>        
-        <p class="index-card-diff-font friends-font-show">Your friends, <%= @course.difficulty %>, are enrolled in this course.</p>
+        <p class="index-card-diff-font friends-font-show mt-3"><strong class="demo-hover-font"><%= @course.cost %></strong> people are enrolled in this class.</p>        
+        <p class="index-card-diff-font friends-font-show">Your friends, <strong class="demo-hover-font"><%= @course.difficulty %></strong>, are enrolled in this course.</p>
         <br>
 
 				<h3 class="mb-3 course-font"><strong>What you'll learn.</strong></h3>
@@ -83,7 +83,7 @@
 				<h6><%= @course.description %></h6>
 				<br>
         <%# if @course.expected_time_to_complete == "Not Applicable" %>
-				<h6 class="">Time to complete: <%= @course.expected_time_to_complete %></h6>
+				<h6>Time to complete: <strong class="demo-hover-font"><%= @course.expected_time_to_complete %></strong></h6>
         <%# else %>
           <!-- <h6 class="">Time to complete: <%#= @course.expected_time_to_complete %> hours</h6> -->
         <%# end %>

@@ -39,7 +39,7 @@
 
 <%# raise %>
 
-<div class="container my-5 ">
+<div class="container my-3 ">
   <h2 class="results-h2 text-center">Recommended Courses</h2>
   <% @courses.each do |course| %>
     <div class="card-courses-index m-3 demo-hover">
@@ -59,9 +59,9 @@
         <h2 class="index-card-title-font"><%= course.title %></h2>
         <p class="index-card-description-font"><%= course.description %></p>
 <!--         <p class="index-card-time-font">Time to complete: <%#= course.expected_time_to_complete %></p> -->
-        <p class="index-card-diff-font friends-font mt-3"><%= course.cost %> people are enrolled in this class.</p>        
-        <p class="index-card-diff-font friends-font">Your friends, <%= course.difficulty %>, are enrolled in this course.</p>
-        <%= link_to "See details", course_path(course), class: "index-card-goto-show-font btn btn-onebite-orange" %>
+        <p class="index-card-diff-font friends-font mt-3"><strong class="demo-hover-font"><%= course.cost %></strong> people are enrolled in this class.</p>        
+        <p class="index-card-diff-font friends-font">Your friends, <strong class="demo-hover-font"><%= course.difficulty %></strong>, are enrolled in this course.</p>
+        <%= link_to "See details", course_path(course), class: "index-card-goto-show-font btn btn-onebite-orange mt-2" %>
         <p class="index-card-rating-font"><%= course.rating %></p>
       </div>
       <div class="results-info-right">
