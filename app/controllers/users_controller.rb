@@ -16,10 +16,16 @@ class UsersController < ApplicationController
     #   puts "scraping data for #{user.name}"
     #   p stats = DuolingoScraper.new(user).scrape
     # end
-
+    previous_xp = @user.enrollments_for(@platform).sum(:completion_status)
     # TODO: Uncomment below when working on Heroku
     p DuolingoScraper.new(@user).scrape
-
+    @user.reload
+    new_xp = @user.enrollments_for(@platform).sum(:completion_status)
+    # add one streak
+    if previous_xp != new_xp
+      @user.streak += 1
+      @user.save
+    end
     # TODO: Delete these 3 lines when working on Heroku
     # Shogo added these 3 lines from line 36-38 of duolingo_scraper.rb
     # enrollment = @user.enrollments.joins(:platform, :course).find_by("courses.title = :title AND platforms.name = :platform", title: "Japanese", platform: "Duolingo")

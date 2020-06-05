@@ -30,7 +30,8 @@ puts 'Creating users...'
 @user_yun = User.create!(
   name: 'Yun',
   email: "yunshine@gmail.com",
-  password: 'secret'
+  password: 'secret',
+  streak: 31
 )
 
 @user_eugene = User.create!(
