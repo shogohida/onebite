@@ -430,21 +430,8 @@
 
 
   <div class="new-dashboard-right">
-    <div class="new-right-top">
-      <div class="new-streak-section demo-hover">
-        <h5 class="card-title-font">Streaks</h5>
-        <div class="d-flex justify-content-center align-items-center">
-          <i class="fas fa-fire-alt fa-fire-alt-big mx-0"></i>
-          <div class="streak-bubble mr-5">
-            <p class="streak-text-font">Current Streak</p>
-            <p class="streak-number-font"><%= current_user.streak %> days</p>
-          </div>
-          <i class="fas fa-fire-alt fa-fire-alt-big fire-yellow ml-3"></i>
-          <div class="streak-bubble">
-            <p class="streak-text-font">Longest Streak</p>
-            <p class="streak-number-font">77 days</p>
-        </div>
-      </div>
+    <div id="streaks" class="new-right-top">
+      <%= render "users/streaks", user: current_user %>
       </div>
     </div>
 

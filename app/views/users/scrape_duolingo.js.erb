@@ -1,4 +1,5 @@
 document.querySelector(".leaderboard-duolingo").innerHTML = "<%=j render 'platforms/duolingo_leaderboard', enrollments: @user.enrollments_for(@platform) %>"
+document.querySelector("#streaks").innerHTML = "<%=j render 'users/streaks', user: @user %>"
 document.querySelector(".btn-sync").addEventListener("click", () => {
   document.querySelector(".loading-container").classList.add("loading")
   document.querySelector(".btn-sync").remove()
