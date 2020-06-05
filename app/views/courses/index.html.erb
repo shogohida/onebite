@@ -42,7 +42,7 @@
 <div class="container my-5 ">
   <h2 class="results-h2 text-center">Recommended Courses</h2>
   <% @courses.each do |course| %>
-    <div class="card-courses-index m-3">
+    <div class="card-courses-index m-3 demo-hover">
       <% if course.platform.name == 'Codecademy' %>
         <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" />
       <% elsif course.platform.name == 'Udemy' %>
@@ -58,10 +58,11 @@
       <div class="card-courses-index-infos justify-content-around results-info-left">
         <h2 class="index-card-title-font"><%= course.title %></h2>
         <p class="index-card-description-font"><%= course.description %></p>
-        <p class="index-card-time-font">Time to complete: <%= course.expected_time_to_complete %></p>
+<!--         <p class="index-card-time-font">Time to complete: <%#= course.expected_time_to_complete %></p> -->
+        <p class="index-card-diff-font friends-font mt-3"><%= course.cost %> people are enrolled in this class.</p>        
+        <p class="index-card-diff-font friends-font">Your friends, <%= course.difficulty %>, are enrolled in this course.</p>
         <%= link_to "See details", course_path(course), class: "index-card-goto-show-font btn btn-onebite-orange" %>
         <p class="index-card-rating-font"><%= course.rating %></p>
-        <p class="index-card-diff-font"><%= course.difficulty %></p>
       </div>
       <div class="results-info-right">
         <%#= link_to "#{course.platform.name}", course.url, class: "btn btn-outline-dark" %>
