@@ -384,7 +384,8 @@ puts 'Creating courses...'
   url: 'https://www.codecademy.com/learn/introduction-to-javascript',
   description: "Learn the JavaScript fundamentals you'll need for front-end or back-end development.",
   rating: nil,
-  difficulty: nil,
+  difficulty: "Richard and John",
+  cost: "1,686,370",
   expected_time_to_complete: "30 Hours",
   platform_id: @codecademy.id
 )
@@ -393,7 +394,8 @@ puts 'Creating courses...'
   url: 'https://www.udemy.com/course/the-complete-javascript-course/',
   description: "Master JavaScript with the most complete course! Projects, challenges, quizzes, JavaScript ES6+, OOP, AJAX, Webpack",
   rating: nil,
-  difficulty: nil,
+  difficulty: "Mark and Matt",
+  cost: "315,908",
   expected_time_to_complete: "28 Hours",
   platform_id: @udemy.id
 )
@@ -402,7 +404,8 @@ puts 'Creating courses...'
   url: 'https://www.udemy.com/course/understand-javascript/',
   description: "An advanced JavaScript course for everyone! Scope, closures, prototypes, 'this', build your own framework, and more.",
   rating: nil,
-  difficulty: nil,
+  difficulty: "Paul and Peter",
+  cost: "145,715",
   expected_time_to_complete: "12 Hours",
   platform_id: @udemy.id
 )
@@ -411,7 +414,8 @@ puts 'Creating courses...'
   url: 'https://www.coursera.org/learn/javascript?specialization=web-design#syllabus',
   description: "This course will introduce you to the basics of the JavaScript language.  We will cover concepts such as variables, looping, functions, and even a little bit about debugging tools.",
   rating: nil,
-  difficulty: nil,
+  difficulty: "James and David",
+  cost: "92,684",
   expected_time_to_complete: "11 Hours",
   platform_id: @coursera.id
 )
