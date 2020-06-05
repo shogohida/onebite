@@ -294,15 +294,6 @@ puts 'Creating courses...'
   platform_id: @duolingo.id
 )
 
-@duolingo_portuguese = Course.create!(
-  title: 'Portuguese',
-  url: 'https://www.duolingo.com/course/pt/en/Learn-Portuguese',
-  description: "Learn Portuguese in just 5 minutes a day. For free.",
-  rating: nil,
-  difficulty: nil,
-  expected_time_to_complete: "Not Applicable",
-  platform_id: @duolingo.id
-)
 
 @duolingo_esperanto = Course.create!(
   title: 'Esperanto',
