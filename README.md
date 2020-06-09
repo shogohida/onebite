@@ -1,4 +1,5 @@
 # About
+OneBite is an app which provides courses from e-learning platforms like Duolingo and Udemy. Users can also schedule their lessons with Google Calendar.OneBite has follow function so users can compete with friends after following each other.
 
 # Future features
 1 The number of courses is limited at the moment so I will try to add more
