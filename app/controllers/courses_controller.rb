@@ -1,6 +1,5 @@
 class CoursesController < ApplicationController
   def index
-    # @enrollment = Enrollment.new
     if params[:query].present?
       @courses = policy_scope(Course).search_by_title(params[:query])
     else
@@ -15,6 +14,5 @@ class CoursesController < ApplicationController
     # scaper.perform_scraping
     @course = Course.find(params[:id])
     authorize @course
-    # raise
   end
 end
