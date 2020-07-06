@@ -1,7 +1,6 @@
 class EnrollmentsController < ApplicationController
   def index
     @enrollments = policy_scope(Enrollment)
-    # policy scope with Pundit installed
   end
 
   def show
