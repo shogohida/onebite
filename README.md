@@ -4,8 +4,9 @@
 # About
 OneBite is an app which provides courses from e-learning platforms like Duolingo and Udemy. Users can also schedule their lessons with Google Calendar. OneBite has follow function so users can compete with friends after following each other.
 
-# Technoligies used
--Ruby on Rails  
+# Technologies used
+-Ruby 2.6.6  
+-Rails 6.0.0  
 -JavaScript  
 -HTML/CSS  
 -Heroku  
