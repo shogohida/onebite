@@ -7,7 +7,7 @@ require "fileutils"
 class AddToGoogleCalendar
   OOB_URI = "urn:ietf:wg:oauth:2.0:oob".freeze
   APPLICATION_NAME = "OneBite".freeze
-  CREDENTIALS_PATH = "credentials1.json".freeze
+  CREDENTIALS_PATH = "credentials.json".freeze
   # The file token.yaml stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first
   # time.
@@ -30,7 +30,7 @@ class AddToGoogleCalendar
     if credentials.nil?
       url = authorizer.get_authorization_url base_url: OOB_URI
       puts "Open the following URL in the browser and enter the " \
-           "resulting code after authorization:\n" + url
+        "resulting code after authorization:\n" + url
       code = gets
       credentials = authorizer.get_and_store_credentials_from_code(
         user_id: user_id, code: code, base_url: OOB_URI
@@ -39,20 +39,11 @@ class AddToGoogleCalendar
     credentials
   end
 
-  # rewrite as self.add_events(some arguments), to pass arguments to create events
   def self.add_events(summary, description, date, start_time, end_time, frequency, count)
     # Initialize the API
     service = Google::Apis::CalendarV3::CalendarService.new
     service.client_options.application_name = APPLICATION_NAME
     service.authorization = authorize
-
-    # 1 button to click add a calendar, (connect)  with click RUNS THIS CODE, shows the page of calendar
-    # 2 it gives url to click of calendar BUTTON
-    # 3 retrive the number from the user to Google calendar
-    # 4
-
-    # pass to hash
-    # click
 
     event = Google::Apis::CalendarV3::Event.new(
       summary: summary,
@@ -67,22 +58,9 @@ class AddToGoogleCalendar
         time_zone: 'Asia/Tokyo'
       ),
       # if frequency[1]
-        recurrence: [
-          "RRULE:FREQ=#{frequency[0]};COUNT=#{count}#{frequency[1]}"
-        ],
-      # else
-      #   recurrence: [
-      #     "RRULE:FREQ=#{frequency[0]};COUNT=#{count}"
-      #   ],
-      # end
-      # attendees: [
-      #   Google::Apis::CalendarV3::EventAttendee.new(
-      #     email: 'lpage@example.com'
-      #   ),
-      #   Google::Apis::CalendarV3::EventAttendee.new(
-      #     email: 'sbrin@example.com'
-      #   )
-      # ],
+      recurrence: [
+        "RRULE:FREQ=#{frequency[0]};COUNT=#{count}#{frequency[1]}"
+      ],
       reminders: Google::Apis::CalendarV3::Event::Reminders.new(
         use_default: false,
         overrides: [
