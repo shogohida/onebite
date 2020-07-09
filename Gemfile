@@ -37,6 +37,13 @@ gem 'google-api-client'
 gem 'merit', '~> 3.0.3'
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 4.0.0'
+end
+
+group :development, :test do
+  gem 'factory_bot_rails'
+end
 
 # for scraping when website uses AJAX
 gem 'capybara', '>= 2.15'
