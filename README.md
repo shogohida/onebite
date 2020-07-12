@@ -9,6 +9,7 @@ OneBite is an app which provides courses from e-learning platforms like Duolingo
 -Rails 6.0.0  
 -JavaScript  
 -HTML/CSS  
+-PostgreSQL  
 -Heroku  
 
 # Future features
