@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :platforms, -> { distinct }, through: :courses
   validates :name, presence: true
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :validatable, :omniauthable
 
   # SETUP for gem acts_as_favoritor https://github.com/jonhue/acts_as_favoritor#setup
   # -  Add acts_as_favoritable to the models you want to be able to get favorited:
