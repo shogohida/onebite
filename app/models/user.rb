@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :platforms, -> { distinct }, through: :courses
   validates :name, presence: true
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :validatable
 
   # SETUP for gem acts_as_favoritor https://github.com/jonhue/acts_as_favoritor#setup
   # -  Add acts_as_favoritable to the models you want to be able to get favorited:
@@ -24,5 +24,19 @@ class User < ApplicationRecord
 
   def enrollments_for(platform)
     enrollments.joins(:course).where(courses: { platform: platform })
+  end
+
+  # omniauth
+  def self.find_for_oauth(auth)
+    user = User.where(uid: auth.uid, provider: auth.provider).first
+    unless user
+      user = User.create(
+        uid:      auth.uid,
+        provider: auth.provider,
+        # email:    User.dummy_email(auth),
+        # password: Devise.friendly_token[0, 20]
+      )
+    end
+    user
   end
 end

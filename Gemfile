@@ -37,6 +37,12 @@ gem 'google-api-client'
 gem 'merit', '~> 3.0.3'
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin-oauth2'
+
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
 end
