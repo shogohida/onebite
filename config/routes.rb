@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
 
+  # log in as a test user
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+
   resources :courses, only: [:index, :show] do
     resources :enrollments, only: [:new, :create]
   end
