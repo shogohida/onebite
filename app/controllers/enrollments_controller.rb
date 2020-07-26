@@ -1,4 +1,5 @@
 class EnrollmentsController < ApplicationController
+  skip_before_action :authenticate_user!,
   def index
     @enrollments = policy_scope(Enrollment)
   end
