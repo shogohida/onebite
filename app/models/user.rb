@@ -26,6 +26,11 @@ class User < ApplicationRecord
     enrollments.joins(:course).where(courses: { platform: platform })
   end
 
+  # test user
+  def self.guest
+    find_by(email: 'test@gmail.com')
+  end
+
   # omniauth
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
