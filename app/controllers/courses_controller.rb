@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  skip_before_action :authenticate_user!,
   def index
     if params[:query].present?
       @courses = policy_scope(Course).search_by_title(params[:query])
