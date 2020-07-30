@@ -28,7 +28,7 @@ class User < ApplicationRecord
 
   # test user
   def self.guest
-    find_by(email: 'test@gmail.com')
+    find_by(email: 'test@example.com')
   end
 
   # omniauth
