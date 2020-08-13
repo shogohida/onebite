@@ -23,4 +23,5 @@ OneBite is an app which provides courses from e-learning platforms like Duolingo
 1 The number of courses is limited at the moment so I will try to add more  
 2 Google Calendar does not allow th users to add events so I am going to add simple calendar form to create an enrollment  
 3 I will add mobile responsiveness  
+4 Incorporate Ansible, AWS, Docker and Circle CI
 
