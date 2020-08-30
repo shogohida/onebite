@@ -26,7 +26,6 @@ class EnrollmentsController < ApplicationController
     # @date = @enrollment.start_date.to_s.split("-")
     @start_time = @enrollment.time_of_day.to_s.split[1].split(":")
     # @time_split = @time.split(":")
-    # raise
     @end_time = []
     if (@enrollment.duration / 60) >= 1
       @add_hour = (@enrollment.duration / 60).to_i
