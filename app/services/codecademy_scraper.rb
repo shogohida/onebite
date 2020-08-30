@@ -4,9 +4,6 @@ class CodecademyScraper
     @course_id = course_id
   end
 
-  # require 'open-uri'
-  # require 'nokogiri'
-
   def fetch_courses_urls
     full_catalog_url = "https://www.codecademy.com/catalog/subject/all"
     doc = Nokogiri::HTML(open(full_catalog_url).read)
