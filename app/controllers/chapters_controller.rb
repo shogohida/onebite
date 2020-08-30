@@ -7,7 +7,6 @@ class ChaptersController < ApplicationController
     @chapter.update(chapter_params)
     #@chapter.save
     authorize @chapter
-    # raise
     # if @chapter.save
     #   redirect_to root_path
     #   current_user.streak += 1 (@user?)
