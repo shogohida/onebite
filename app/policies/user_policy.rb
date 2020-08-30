@@ -10,10 +10,6 @@ class UserPolicy < ApplicationPolicy
     # record.id == user.id
   end
 
-  # def index?
-  #   true
-  # end
-
   def scrape_duolingo?
     true
   end
