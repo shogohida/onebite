@@ -61,7 +61,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     current_user.unfavorite(@user)
-    #raise
 
     redirect_to request.referrer
   end
