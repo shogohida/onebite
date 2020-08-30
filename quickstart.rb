@@ -49,10 +49,6 @@ require "fileutils"
     # 1 button to click add a calendar, (connect)  with click RUNS THIS CODE, shows the page of calendar
     # 2 it gives url to click of calendar BUTTON
     # 3 retrive the number from the user to Google calendar
-    # 4
-
-    # pass to hash
-    # click
 
     # event = Google::Apis::CalendarV3::Event.new(
     #   summary: summary,
