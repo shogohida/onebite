@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
-# require 'nokogiri'
 
 
 puts 'Cleaning up the chapters...'
@@ -163,16 +162,6 @@ puts 'Creating courses...'
 
 
 # list of Duolingo available languages for English learners as of 31 May 2020
-
-
-# seeds NOT created for the following languages
-# Spanish
-# Japanese
-# Korean
-# German
-# Ukrainian
-# Italian
-# Portuguese for Brazilian Portuguese
 
 # Seeds created for the following languages
 
