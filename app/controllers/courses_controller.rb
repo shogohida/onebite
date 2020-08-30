@@ -10,7 +10,6 @@ class CoursesController < ApplicationController
 
 
   def show
-    # update the completion and syllabus structure
     # scraper = CodecademyScraper.new(@course.platform_id)
     # scaper.perform_scraping
     @course = Course.find(params[:id])
