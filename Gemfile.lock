@@ -72,6 +72,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.7)
       msgpack (~> 1.0)
+    brakeman (4.9.1)
     builder (3.2.4)
     bundle_outdated_formatter (0.7.0)
       psych (>= 2.2)
@@ -365,6 +366,7 @@ DEPENDENCIES
   acts_as_favoritor!
   autoprefixer-rails
   bootsnap (>= 1.4.2)
+  brakeman
   bundle_outdated_formatter
   byebug
   capybara (>= 2.15)
