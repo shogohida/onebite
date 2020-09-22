@@ -17,6 +17,7 @@ OneBite is an app which provides courses from e-learning platforms like Duolingo
 -Git/GitHub  
 -Heroku  
 -Rubocop  
+-Rspec  
 -Omniauth log in function with Twitter, GitHub, Facebook and LinkedIn
 
 # Future features
