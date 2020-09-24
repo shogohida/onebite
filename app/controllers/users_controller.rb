@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     authorize @user
+    # added by recommendation of rails_best_practices
+    @favorite = User.find(favorite.favoritable_id)
+    authorize @favorite
   end
 
   def scrape_duolingo

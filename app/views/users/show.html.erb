@@ -157,7 +157,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                   <div class="d-flex align-items-center justify-content-between">
                   <img class="avatar mr-3" src="<%= ['https://res.cloudinary.com/deyqjsowe/image/upload/v1591165384/WooChaHee_satbqe.jpg', 'https://kitt.lewagon.com/placeholder/users/sarahlafer', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/pjoe_esm4oc.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/bennifer_keahqo.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/jonoh_glkc4f.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166442/julie_l5se6x.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166444/janet_qmt3wf.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166613/mickles_ax06yk.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591166730/virginia_ucqyxr.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591171439/sunmi_xg1mwc.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591171439/uncle_zqr4sn.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591171439/yura_ueelw4.jpg', 'https://res.cloudinary.com/deyqjsowe/image/upload/v1591171439/borrah_zrkopm.jpg'].sample %>" />
-                  <h5 class="card-title-font"><%= User.find(favorite.favoritable_id).name %></h5>
+                  <h5 class="card-title-font"><%= @favorite.name %></h5>
                   </div>
                   <div>
                                     <a href="#" class="unfollow-button mt-3">unfollow</a>
@@ -169,7 +169,7 @@
                 <p class="card-text-font mt-1">Longest Streak: <%= rand(21..75) %> days</p>
 
                     <% if favorite.favoritable.courses.any? %>
-                  <% User.find(favorite.favoritable_id).courses.each do |course| %>
+                  <% @favorite.courses.each do |course| %>
                     <p class="card-text-font mt-1">Enrolled In: <%= link_to course.title, course_path(course.id), class: "enrolled-in-link card-text-font mt-1 mr-3" %></p>
                     <% end %>
                 <% else %>
