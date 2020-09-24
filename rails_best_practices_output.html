@@ -60,7 +60,7 @@
       to see more useful Rails Best Practices.
     </p>
     <p>
-        Found 14 warnings.
+        Found 12 warnings.
     </p>
     <table>
           <tr>
@@ -69,12 +69,12 @@
                 />&nbsp;<label for="AlwaysAddDbIndexReview">Always Add Db Index</label>
               </td>
               <td>
-                <input type="checkbox" class="error-type" id="MoveCodeIntoControllerReview" value="MoveCodeIntoControllerReview"
-                />&nbsp;<label for="MoveCodeIntoControllerReview">Move Code Into Controller</label>
+                <input type="checkbox" class="error-type" id="MoveModelLogicIntoModelReview" value="MoveModelLogicIntoModelReview"
+                />&nbsp;<label for="MoveModelLogicIntoModelReview">Move Model Logic Into Model</label>
               </td>
               <td>
-                <input type="checkbox" class="error-type" id="RemoveUnusedMethodsInModelsReview" value="RemoveUnusedMethodsInModelsReview"
-                />&nbsp;<label for="RemoveUnusedMethodsInModelsReview">Remove Unused Methods In Models</label>
+                <input type="checkbox" class="error-type" id="ReplaceComplexCreationWithFactoryMethodReview" value="ReplaceComplexCreationWithFactoryMethodReview"
+                />&nbsp;<label for="ReplaceComplexCreationWithFactoryMethodReview">Replace Complex Creation With Factory Method</label>
               </td>
           </tr>
           <tr>
@@ -83,12 +83,8 @@
                 />&nbsp;<label for="LawOfDemeterReview">Law Of Demeter</label>
               </td>
               <td>
-                <input type="checkbox" class="error-type" id="MoveModelLogicIntoModelReview" value="MoveModelLogicIntoModelReview"
-                />&nbsp;<label for="MoveModelLogicIntoModelReview">Move Model Logic Into Model</label>
-              </td>
-              <td>
-                <input type="checkbox" class="error-type" id="ReplaceComplexCreationWithFactoryMethodReview" value="ReplaceComplexCreationWithFactoryMethodReview"
-                />&nbsp;<label for="ReplaceComplexCreationWithFactoryMethodReview">Replace Complex Creation With Factory Method</label>
+                <input type="checkbox" class="error-type" id="RemoveUnusedMethodsInModelsReview" value="RemoveUnusedMethodsInModelsReview"
+                />&nbsp;<label for="RemoveUnusedMethodsInModelsReview">Remove Unused Methods In Models</label>
               </td>
           </tr>
         <tr>
@@ -161,24 +157,6 @@
               <a href='https://rails-bestpractices.com/posts/2010/07/24/the-law-of-demeter/' target='_blank'>law of demeter</a>
             </td>
           </tr>
-          <tr class="MoveCodeIntoControllerReview">
-            <td class='filename'>
-                app/views/users/show.html.erb
-            </td>
-            <td class='line'>161</td>
-            <td class='message'>
-              <a href='https://rails-bestpractices.com/posts/2010/07/24/move-code-into-controller/' target='_blank'>move code into controller</a>
-            </td>
-          </tr>
-          <tr class="MoveCodeIntoControllerReview">
-            <td class='filename'>
-                app/views/users/show.html.erb
-            </td>
-            <td class='line'>173</td>
-            <td class='message'>
-              <a href='https://rails-bestpractices.com/posts/2010/07/24/move-code-into-controller/' target='_blank'>move code into controller</a>
-            </td>
-          </tr>
           <tr class="MoveModelLogicIntoModelReview">
             <td class='filename'>
                 app/controllers/enrollments_controller.rb
@@ -210,7 +188,7 @@
             <td class='filename'>
                 app/controllers/users_controller.rb
             </td>
-            <td class='line'>7</td>
+            <td class='line'>10</td>
             <td class='message'>
               <a href='https://rails-bestpractices.com/posts/2010/07/21/move-model-logic-into-the-model/' target='_blank'>move model logic into model (@user use_count > 4)</a>
             </td>
