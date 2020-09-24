@@ -43,15 +43,15 @@
   <h2 class="results-h2 text-center">Recommended Courses</h2>
   <% @courses.each do |course| %>
     <div class="card-courses-index m-3 demo-hover">
-      <% if course.platform.name == 'Codecademy' %>
+      <% if course.platform_name == 'Codecademy' %>
         <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590563366/squarecodecademylog_kxokkd.png" />
-      <% elsif course.platform.name == 'Udemy' %>
+      <% elsif course.platform_name == 'Udemy' %>
         <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590646495/udemy_square_frdkbs.png" />
-      <% elsif course.platform.name == 'Coursera' %>
+      <% elsif course.platform_name == 'Coursera' %>
         <img src="https://res.cloudinary.com/deyqjsowe/image/upload/v1590722085/coursera-logo-square_y0yukg.webp" />
-      <% elsif course.platform.name == 'Duolingo' %>
+      <% elsif course.platform_name == 'Duolingo' %>
         <img src="https://i.pcmag.com/imagery/reviews/00MFRjnTbz8iv8USK3YZd7T-7.fit_scale.size_1028x578.v_1569475584.png" />
-      <% elsif course.platform.name == 'Wanikani' %>
+      <% elsif course.platform_name == 'Wanikani' %>
         <img src="https://pbs.twimg.com/profile_images/1213575248911552512/WP11ESTy_400x400.jpg" />
       <% end %>
 
