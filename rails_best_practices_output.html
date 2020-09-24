@@ -60,7 +60,7 @@
       to see more useful Rails Best Practices.
     </p>
     <p>
-        Found 12 warnings.
+        Found 9 warnings.
     </p>
     <table>
           <tr>
@@ -69,22 +69,18 @@
                 />&nbsp;<label for="AlwaysAddDbIndexReview">Always Add Db Index</label>
               </td>
               <td>
+                <input type="checkbox" class="error-type" id="RemoveUnusedMethodsInModelsReview" value="RemoveUnusedMethodsInModelsReview"
+                />&nbsp;<label for="RemoveUnusedMethodsInModelsReview">Remove Unused Methods In Models</label>
+              </td>
+          </tr>
+          <tr>
+              <td>
                 <input type="checkbox" class="error-type" id="MoveModelLogicIntoModelReview" value="MoveModelLogicIntoModelReview"
                 />&nbsp;<label for="MoveModelLogicIntoModelReview">Move Model Logic Into Model</label>
               </td>
               <td>
                 <input type="checkbox" class="error-type" id="ReplaceComplexCreationWithFactoryMethodReview" value="ReplaceComplexCreationWithFactoryMethodReview"
                 />&nbsp;<label for="ReplaceComplexCreationWithFactoryMethodReview">Replace Complex Creation With Factory Method</label>
-              </td>
-          </tr>
-          <tr>
-              <td>
-                <input type="checkbox" class="error-type" id="LawOfDemeterReview" value="LawOfDemeterReview"
-                />&nbsp;<label for="LawOfDemeterReview">Law Of Demeter</label>
-              </td>
-              <td>
-                <input type="checkbox" class="error-type" id="RemoveUnusedMethodsInModelsReview" value="RemoveUnusedMethodsInModelsReview"
-                />&nbsp;<label for="RemoveUnusedMethodsInModelsReview">Remove Unused Methods In Models</label>
               </td>
           </tr>
         <tr>
@@ -128,33 +124,6 @@
             <td class='line'>139</td>
             <td class='message'>
               <a href='https://rails-bestpractices.com/posts/2010/07/24/always-add-db-index/' target='_blank'>always add db index (users => [sash_id])</a>
-            </td>
-          </tr>
-          <tr class="LawOfDemeterReview">
-            <td class='filename'>
-                app/views/users/show.html.erb
-            </td>
-            <td class='line'>154</td>
-            <td class='message'>
-              <a href='https://rails-bestpractices.com/posts/2010/07/24/the-law-of-demeter/' target='_blank'>law of demeter</a>
-            </td>
-          </tr>
-          <tr class="LawOfDemeterReview">
-            <td class='filename'>
-                app/views/users/show.html.erb
-            </td>
-            <td class='line'>154</td>
-            <td class='message'>
-              <a href='https://rails-bestpractices.com/posts/2010/07/24/the-law-of-demeter/' target='_blank'>law of demeter</a>
-            </td>
-          </tr>
-          <tr class="LawOfDemeterReview">
-            <td class='filename'>
-                app/views/users/show.html.erb
-            </td>
-            <td class='line'>172</td>
-            <td class='message'>
-              <a href='https://rails-bestpractices.com/posts/2010/07/24/the-law-of-demeter/' target='_blank'>law of demeter</a>
             </td>
           </tr>
           <tr class="MoveModelLogicIntoModelReview">
