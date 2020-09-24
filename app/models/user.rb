@@ -27,9 +27,9 @@ class User < ApplicationRecord
   end
 
   # test user
-  def self.guest
-    find_by(email: 'test@example.com')
-  end
+  # def self.guest
+  #   find_by(email: 'test@example.com')
+  # end
 
   # omniauth
   def self.find_for_oauth(auth)
