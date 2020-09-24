@@ -56,9 +56,9 @@
 
       <div class="col-xs-12">
         <div class="simple-form form-step-2 rounded-box py-4">
-          <h2 class="form-title-font">Step 2 of 2: Sign Up on <%= @course.platform.name %></h2>
+          <h2 class="form-title-font">Step 2 of 2: Sign Up on <%= @course.platform_name %></h2>
 
-          <p class="text-center">Be sure to also register for this course on <%= @course.platform.name %>.</p>
+          <p class="text-center">Be sure to also register for this course on <%= @course.platform_name %>.</p>
           <%= link_to "\"#{@course.title}\"", @course.url, target: :_blank, class: "mt-4 btn banner-enroll-roundbutton text-white" %>
         </div>
       </div>
