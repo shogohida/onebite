@@ -47,7 +47,7 @@
 
   <div class="container banner-text-container">
     <h1 class="banner-h1"><strong><%= @course.title %></strong></h1>
-    <p class="banner-p"><%= @course.platform.name %></p>
+    <p class="banner-p"><%= @course.platform_name %></p>
     <!-- <a class="btn banner-enroll-roundbutton text-white" href="#">Enroll now</a>  -->
     <%= link_to "Enroll now", new_course_enrollment_path(@course), class: "btn banner-enroll-roundbutton text-white"  %>
   </div>
@@ -79,7 +79,7 @@
 		<div>
 			<div class="show-info-right mx-3 rounded-box demo-hover">
 				<h3 class="course-font"><strong><%= @course.title %></strong></h3>
-				<h6 class="platform-font"><%= @course.platform.name %></h6>
+				<h6 class="platform-font"><%= @course.platform_name %></h6>
 				<h6><%= @course.description %></h6>
 				<br>
         <%# if @course.expected_time_to_complete == "Not Applicable" %>
