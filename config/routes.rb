@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :enrollments, only: [:new, :create]
   end
 
-  resources :chapters, only: [:show, :update]
+  resources :chapters, only: [:update]
   resources :enrollments, only: [:index, :show, :update]
   resources :users, only: :show
 
