@@ -45,6 +45,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-linkedin-oauth2'
 gem 'rails_best_practices'
 gem 'fasterer'
+gem "rubycritic", require: false
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
