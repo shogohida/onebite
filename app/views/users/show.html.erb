@@ -150,7 +150,7 @@
 <!-- User.find(@user.favorites[0].favoritable_id).name
  -->   <% if @user.favorites %>
           <% @user.favorites.each do |favorite| %>
-            <% if favorite.favoritable.name == "Eugene" || favorite.favoritable.name == "Douglas" %>
+            <% if favorite.favoritable_name == "Eugene" || favorite.favoritable_name == "Douglas" %>
             <% else %>
             <div class="card  smaller-card">
               <div class="smaller-card demo-hover-card">
@@ -168,7 +168,7 @@
                 <p class="card-text-font my-1">Current Streak: <%= rand(0..20)  %> days</p>
                 <p class="card-text-font mt-1">Longest Streak: <%= rand(21..75) %> days</p>
 
-                    <% if favorite.favoritable.courses.any? %>
+                    <% if favorite.favoritable_courses.any? %>
                   <% @favorite.courses.each do |course| %>
                     <p class="card-text-font mt-1">Enrolled In: <%= link_to course.title, course_path(course.id), class: "enrolled-in-link card-text-font mt-1 mr-3" %></p>
                     <% end %>
