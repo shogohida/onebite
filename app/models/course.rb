@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
   belongs_to :platform
+  delegate :name, :to => :platform, :prefix => true
   has_many :enrollments
   has_many :chapters
   has_many :lessons, through: :chapters
