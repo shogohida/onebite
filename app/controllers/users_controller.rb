@@ -66,14 +66,14 @@ class UsersController < ApplicationController
   end
 
    # method for current_user to see the list of other users he/she is following
-  def following
-    current_user.all_favorites
-  end
+  # def following
+  #   current_user.all_favorites
+  # end
 
-  # method for current_user to see the list of other users he/she is being followed by
-  def followers
-    current_user.all_favorited
-  end
+  # # method for current_user to see the list of other users he/she is being followed by
+  # def followers
+  #   current_user.all_favorited
+  # end
 
   private
 
