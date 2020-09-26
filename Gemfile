@@ -48,6 +48,7 @@ gem 'fasterer'
 gem "rubycritic", require: false
 gem 'rack-mini-profiler', require: false
 gem 'bullet', group: 'development'
+gem 'draper'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
