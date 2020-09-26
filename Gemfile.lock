@@ -79,6 +79,9 @@ GEM
       msgpack (~> 1.0)
     brakeman (4.9.1)
     builder (3.2.4)
+    bullet (6.1.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     bundle_outdated_formatter (0.7.0)
       psych (>= 2.2)
       rexml (~> 3.2)
@@ -251,6 +254,8 @@ GEM
     pundit (2.1.0)
       activesupport (>= 3.0.0)
     rack (2.2.3)
+    rack-mini-profiler (2.1.0)
+      rack (>= 1.2.0)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -403,6 +408,7 @@ GEM
     uber (0.1.0)
     unicode-display_width (1.7.0)
     unicode_utils (1.4.0)
+    uniform_notifier (1.13.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -438,6 +444,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   brakeman
+  bullet
   bundle_outdated_formatter
   byebug
   capybara (>= 2.15)
@@ -462,6 +469,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 4.1)
   pundit
+  rack-mini-profiler
   rails (~> 6.0.3)
   rails_best_practices
   redis (~> 4.0)

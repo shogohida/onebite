@@ -46,6 +46,8 @@ gem 'omniauth-linkedin-oauth2'
 gem 'rails_best_practices'
 gem 'fasterer'
 gem "rubycritic", require: false
+gem 'rack-mini-profiler', require: false
+gem 'bullet', group: 'development'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
