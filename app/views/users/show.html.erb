@@ -33,11 +33,12 @@
 
 
       <div>
-        <% if @user.name == "Yun" %>
-          <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1589709320/Yun_Chung_Profile_Photo_2_rlfgi5.jpg" />
-        <% else %>
-          <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591165384/WooChaHee_satbqe.jpg" />
-        <% end %>
+        <% @user.avatar_pic %>
+        <%# if @user.name == "Yun" %>
+          <!-- <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1589709320/Yun_Chung_Profile_Photo_2_rlfgi5.jpg" /> -->
+        <%# else %>
+          <!-- <img class="mx-3 avatar-users-index-bordered-new" alt="avatar-bordered" src="https://res.cloudinary.com/deyqjsowe/image/upload/v1591165384/WooChaHee_satbqe.jpg" /> -->
+        <%# end %>
       </div>
 
       <div>
